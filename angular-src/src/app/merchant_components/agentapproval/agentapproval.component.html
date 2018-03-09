@@ -1,0 +1,7 @@
+<h2>Awaiting Approvals</h2>
+<div class="container" *ngFor="let agents of agentsList">
+  <ul class="list-group">
+    <li class="list-group-item">{{agents}} <span style="float: right;" ><button (click)="acceptAgent(agents)">Accept</button><button (click)="deleteItem(agents)">Decline</button>  </span></li>
+      <p></p>
+  </ul>
+</div>

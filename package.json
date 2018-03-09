@@ -1,0 +1,27 @@
+{
+  "name": "seteamproject",
+  "version": "1.0.0",
+  "description": "Textile Management App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "angular-core": "0.0.5",
+    "angular2-flash-message": "^1.0.2",
+    "angular2-flash-messages": "^2.0.5",
+    "bcryptjs": "*",
+    "body-parser": "^1.18.2",
+    "bower": "^1.8.2",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*",
+    "path": "^0.12.7"
+  },
+  "author": "Chinmay Ghag",
+  "license": "ISC"
+}
