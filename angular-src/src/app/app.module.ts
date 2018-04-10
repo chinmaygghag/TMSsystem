@@ -31,11 +31,22 @@ import { UserauthserviceService } from './services/users/userauthservice.service
 import { UserValidateService } from './services/users/user-validate.service';
 import { AgentProfileComponent } from "./agent-component/agent-profile/agent-profile.component";
 import { FlashMessagesModule } from 'angular2-flash-messages';
-
+import { ViewCatalogComponent } from "./user-component/view-catalog/view-catalog.component";
+import { BsDropdownModule } from 'ng2-bootstrap';
+import { CreateCatalogComponent} from "./merchant_components/create-catalog/create-catalog.component";
+import { CreatCatalogServiceService} from "./services/catalogService/creat-catalog-service.service";
+import { GetCatalogsService} from "./services/catalogService/get-catalogs.service";
+import { SaveUserDataService } from "./services/miscService/save-user-data.service";
+import { PlaceOrderService} from "./services/placeorders/place-order.service";
+import { ReceivedOrdersComponent} from "./agent-component/received-orders/received-orders.component";
+import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receivedOrdersForMerchant/received-orders-from-merchant/received-orders-from-merchant.component";
+import { GetOrdersService } from "./services/merchant/get-orders.service";
+import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
 
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
+  {path: 'merchant/home/receivedOrders',component:ReceivedOrdersFromMerchantComponent},
   {path: 'merchant/home/approvals', component: AgentapprovalComponent},
   {path: 'merchant/home', component: HomeComponent},
   {path: 'merchant/login', component: LoginComponent},
@@ -48,7 +59,11 @@ const appRoutes: Routes = [
   {path: 'user/cross',component: CrossComponent},
   {path: 'user/registration', component: UserRegisterComponent },
   {path: 'user/login', component: UserLoginComponent },
-  {path: 'agent/profile', component: AgentProfileComponent}
+  {path: 'agent/profile', component: AgentProfileComponent},
+  {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
+  {path: 'agent/home', component: ReceivedOrdersComponent},
+  {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent}
   ];
 
 @NgModule({
@@ -72,7 +87,12 @@ const appRoutes: Routes = [
     VerticalComponent,
     UserLoginComponent,
     UserRegisterComponent,
-    AgentProfileComponent
+    AgentProfileComponent,
+    ViewCatalogComponent,
+    CreateCatalogComponent,
+    ReceivedOrdersComponent,
+    ReceivedOrdersFromMerchantComponent,
+    CustomizeCatalogComponent
   ],
   imports: [
     BrowserModule,
@@ -80,6 +100,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [MerchantAuthServiceService,
     MerchantFlashMessageServiceService,
@@ -88,6 +109,11 @@ const appRoutes: Routes = [
     ValidateserviceService,
     AuthserviceService,
     AgentvalidationService,
+    CreatCatalogServiceService,
+    GetCatalogsService,
+    SaveUserDataService,
+    PlaceOrderService,
+    GetOrdersService,
     MerchantServicesService],
     bootstrap: [AppComponent]
 })

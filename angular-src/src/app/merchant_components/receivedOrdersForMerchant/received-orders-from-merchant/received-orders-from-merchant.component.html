@@ -1,0 +1,31 @@
+
+<div class="container" *ngFor="let orders of orders">
+
+  <div class = "row">
+    <div class="col-md-3">
+      <img src="http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png" style="padding:10px;width:200px;height:200px">
+    </div>
+    <div class="col-md-2">
+    </div>
+
+    <div class="col-md-4">
+      <h3 style="color: crimson">{{orders.desc}}</h3>
+      <h4 style="color: darkblue;font-size: 15px">{{orders.length}} </h4>
+      <h5 style="color: darkcyan;font-size: 15px">{{orders.cost}}</h5>
+
+    </div>
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-2">
+      <br><br>
+      <a class="btn btn-primary" style="background-color: #e2f442" >Assign Order to Agent</a>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+

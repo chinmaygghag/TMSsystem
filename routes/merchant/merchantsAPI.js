@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const agent = require('../../models/agent');
+const order = require('../../models/orders');
 
 
 router.get('/getAgents',function (req,res,next) {
@@ -34,6 +35,14 @@ router.post('/test',function (req,res,next) {
     res.json({success : true});
 });
 
-
+router.get('/orderReceivedForMerchant',function (req,res,next) {
+    order.getOrderFromOrderIDForMerchant(function (err,orders) {
+        if (err) throw err;
+        res.json({
+            success: true,
+            orders: orders
+        })
+    })
+});
 
 module.exports = router;

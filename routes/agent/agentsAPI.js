@@ -83,4 +83,15 @@ router.get('/profile', function (req, res, next) {
     res.send('Welcome to profile page');
 });
 
+
+router.get('/orderforagents',function (req,res,next) {
+   username = req.body.username;
+
+
+
+});
+
+
+
+
 module.exports = router; //export the router to connect and show the page

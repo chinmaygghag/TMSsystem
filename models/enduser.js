@@ -19,7 +19,13 @@ const userSchema = mongoose.Schema({
     password:{
         type : String,
         required:true
-    }
+    },
+    orders:[
+        String
+    ],
+    catalogs:[
+        String
+    ]
 });
 
 //so that it can be used from outside
@@ -27,7 +33,7 @@ const user = module.exports = mongoose.model('User', userSchema );
 
 module.exports.getUserById = function(id, callback){
     user.findById(id, callback);
-}
+};
 
 module.exports.addUser = function(newUser, callback){
     user.find({email : newUser.email}, function (err,docs) {
@@ -57,5 +63,14 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 module.exports.getUserByUserName = function(username, callback){
     const query = {'username': username };
     user.findOne(query, callback);
+};
+
+
+module.exports.addOrders = function (username,orderId,callback) {
+    console.log(username);
+    console.log(orderId);
+    user.update({username: username},{
+    $push : {orders : orderId}
+    },callback);
 };
 

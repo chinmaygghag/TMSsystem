@@ -13,7 +13,7 @@ export class UserHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  plainPage(){
+  /*plainPage(){
     this.router.navigate(['/user/plain']);
   }
   verticalPage(){
@@ -24,6 +24,14 @@ export class UserHomeComponent implements OnInit {
   }
   crossPage(){
     this.router.navigate(['/user/cross']);
+  }*/
+
+  openNav(){
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
   }
 
 }

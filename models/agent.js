@@ -36,7 +36,17 @@ const agentSchema = mongoose.Schema({
     activeStatus: {
         type: String,
         required: true
+    },
+    orders: [
+        String
+    ],
+    orders : {
+        acceptOrders : Number,
+        declineOrders : Number,
+        receivedOrders : Number,
+        deliveredOrders: Number
     }
+
 });
 
 // Agent activeStatus Flag values will be
@@ -105,4 +115,10 @@ module.exports.changeStatusForAgent = function (username,changeStatus,callback) 
              }
          })
      })
+};
+
+
+module.exports.getAllOrders = function (username,callback) {
+  const query = ({'name': username});
+  agent.find(query,['orders'],callback);
 };

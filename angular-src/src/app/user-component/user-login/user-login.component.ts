@@ -3,6 +3,7 @@ import { UserauthserviceService } from '../../services/users/userauthservice.ser
 import { UserValidateService } from '../../services/users/user-validate.service';
 import { Router} from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-user-login',
@@ -18,7 +19,9 @@ export class UserLoginComponent implements OnInit {
   constructor(private authService : UserauthserviceService,
               private validateService : UserValidateService,
               private router : Router,
-              private _flashMessagesService: FlashMessagesService) { }
+              private _flashMessagesService: FlashMessagesService,
+              private userDataService: SaveUserDataService) {
+  }
 
   ngOnInit() {
   }
@@ -40,7 +43,7 @@ export class UserLoginComponent implements OnInit {
     this.authService.loginUser(user).subscribe(data => {
       if(data.success){
         console.log("Login Successful!");
-
+        this.userDataService.username = user.username;
         this.router.navigate(['/user/home']);
       }else{
         console.log("Login has failed");

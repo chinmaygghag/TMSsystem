@@ -1,0 +1,40 @@
+<form (submit)="onCreateCatalogSubmit()">
+<div class="row">
+<div class = "col-md-12">
+  <h3>URl </h3>
+  <div>
+    <input name="imageURL" [(ngModel)]="imageURL" type="textarea" id="imageURL" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+  </div>
+</div>
+
+<div class = "col-md-12">
+  <h3>Description of the cloth </h3>
+  <div>
+    <input name="desc" [(ngModel)]="desc" type="textarea" id="desc" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+  </div>
+</div>
+
+<div class = "col-md-12">
+  <h3>Per unit cost </h3>
+  <div>
+    <input name="unitLengthCost" [(ngModel)]="unitLengthCost" type="text" id="unitLengthCost" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+  </div>
+</div>
+
+
+<div class = "col-md-12">
+  <h3>Item name </h3>
+  <div>
+    <input name="title" [(ngModel)]="title" type="text" id="title" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+  </div>
+</div>
+
+
+
+<div class="col-md-12">
+  <input type = "submit"  class="btn btn-primary" style="margin-top:40px;margin-left:100px" value="Upload">
+
+</div>
+
+</div>
+</form>

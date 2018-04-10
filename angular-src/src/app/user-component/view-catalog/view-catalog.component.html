@@ -1,0 +1,27 @@
+<div class="container" *ngFor="let catalog of catalogList " >
+<div class="row" style="borderTop: 5px; padding: 15px;">
+  <div class="col-md-3">
+    <img src="{{catalog.imageURL}}" alt="Design Image"  height="300"
+         width="300" class="img-fluid img-thumbnail">
+  </div>
+  <div class="col-md-4">
+    <div class="container">
+      <h3>{{catalog.title}}</h3>
+      <h5>
+        {{catalog.desc}}
+      </h5>
+    </div>
+  </div>
+  <div class="col-md-2" >
+    Length: <input type="length" name="length"><br>
+  </div>
+
+  <div class="col-md-2" >
+    <label>Per inch cost is {{catalog.unitLengthCost}} $</label>
+  </div>
+
+  <div class="col-md-1">
+    <button (click)="placeOrder(catalog)">Place Order</button>
+  </div>
+</div>
+</div>

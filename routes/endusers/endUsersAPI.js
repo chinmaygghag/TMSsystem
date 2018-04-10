@@ -4,6 +4,7 @@ const User = require('../../models/enduser');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
+const Order = require('../../models/orders');
 
 //Register
 router.post('/register', function (req, res, next) {
@@ -65,11 +66,40 @@ router.post('/authenticate', function (req, res, next) {
     console.log('entering compare password');
 });
 
-//Profile
-router.get('/profile', function (req, res, next) { //passport.authenticate('jwt',{session:false}),
-    console.log(req.body);
-    res.json('Reached');
-//res.send(req);
+
+router.post('/place_order',function (req,res,next) {
+    username = req.body.username;
+    catalogName = req.body.catalogName;
+    cost = req.body.finalcost;
+
+
+    console.log(req);
+    console.log(catalogName);
+    console.log(cost);
+    let order = new Order(
+        {
+            catalog: catalogName,
+            cost: cost,
+            statusForCustomer: "placed",
+            statusForMerchant: "received"
+        }
+    );
+
+    Order.insertOrders(order,function (err,orderDetails) {
+        if (err) throw err;
+
+        {
+            console.log(orderDetails);
+            User.addOrders(username, orderDetails, function (err, user) {
+            if (err) {
+                res.json({success: false, msg: 'Order could not be placed'});
+            } else {
+                res.json({success: true, msg: 'Order Placed Successfully'});
+            }
+        })
+    }
+    })
+
 });
 
 module.exports = router; //export the router to connect and show the page

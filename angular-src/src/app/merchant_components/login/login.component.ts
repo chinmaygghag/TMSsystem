@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ValidateserviceService} from "../../services/merchant/validateservice.service";
 import {MerchantAuthServiceService} from "../../services/merchant/merchant-auth-service.service";
 import {Router} from "@angular/router";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private validateService: ValidateserviceService,
               private authService: MerchantAuthServiceService,
-              private router: Router
+              private router: Router,
+              private saveUserSession: SaveUserDataService
               ) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
     };
 
     if(this.authService.checkMerchantLogin(merchant)){
+      this.saveUserSession.username = this.username;
       this.router.navigate(['/merchant/home']);
     }
   }
