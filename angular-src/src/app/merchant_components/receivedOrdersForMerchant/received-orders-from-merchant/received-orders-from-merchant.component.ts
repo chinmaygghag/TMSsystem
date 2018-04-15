@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {GetOrdersService} from "../../../services/merchant/get-orders.service";
+import {MerchantServicesService} from "../../../services/merchant/merchant-services.service";
+
+
 
 @Component({
   selector: 'app-received-orders-from-merchant',
@@ -10,49 +13,70 @@ import {GetOrdersService} from "../../../services/merchant/get-orders.service";
 export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   orders = [];
+  agents = [];
 
   constructor(private router:Router,
-              private getAllOrders:GetOrdersService) { }
+              private getAllOrders:GetOrdersService,
+              private getActiveAgents: MerchantServicesService) { }
 
   ngOnInit() {
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
+    console.log("Here");
+    this.getAllOrders.getOrdersForMerchant(this.orders).subscribe(
+      data => {
+        if (data.success) {
+        console.log(data);
+          data.orders.forEach(i=>{
+            if(i._id != undefined)
+            // console.log(i.name);
+              this.orders.push(i._id+"\n"+
+                i.catalog+"\n"+
+                i.cost
+            );
+          });
+        }
+      });
+
+    this.getActiveAgents.getActiveAgents().subscribe(
+      data => {
+        if (data.success) {
+          console.log(data);
+          data.agent.forEach(i=>{
+            if(i.name != undefined)
+              console.log(i.name);
+            this.agents.push(i.name);
+          });
+        }
+      });
 
 
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
-
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
-
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
-      "50$",
-      "5in"))
 
   }
+ getAgents(){
+   console.log("getagents");
+   this.getActiveAgents.getActiveAgents().subscribe(
+     data => {
+       if (data.success) {
+         console.log(data);
+         data.agent.forEach(i=>{
+           if(i.name != undefined)
+            console.log(i.name);
+             this.agents.push(i.name);
+         });
+       }
+     });
+ }
+
+
 
 }
 
 class Orders{
   constructor(private imageUrl:String,
               private desc: String,
-              private cost: String,
-              private length: String){
+              //private cost: String,
+              private title: String){
 
   }
+
+
 }

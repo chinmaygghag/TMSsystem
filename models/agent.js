@@ -97,10 +97,18 @@ module.exports.getUserByUserName = function (username, callback) {
 
 
 module.exports.getAgentsByStatus = function (callback) {
-    const query = {activeStatus: '1'};
+    const query = ({activeStatus: '1'});
+    console.log(query);
     agent.find(query,callback);
+
 };
 
+module.exports.getActiveAgents = function (callback) {
+    const query = ({activeStatus: '2'});
+    console.log(query);
+    agent.find(query,callback);
+
+};
 
 module.exports.changeStatusForAgent = function (username,changeStatus,callback) {
     console.log(username);

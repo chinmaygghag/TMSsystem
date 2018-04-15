@@ -62,6 +62,7 @@ export class ViewCatalogComponent implements OnInit {
     this.placeOrderService.placeOrders(orderElement).subscribe(
       data => {
         if (data.success) {
+          console.log(data.msg)
           this._flashMessagesService.show('Order Placed Successfully!', { cssClass: 'alert-success', timeout: 1000 });
         }
       });

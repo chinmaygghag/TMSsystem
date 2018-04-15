@@ -44,5 +44,15 @@ router.get('/orderReceivedForMerchant',function (req,res,next) {
         })
     })
 });
+router.get('/getActiveAgents',function (req,res,next) {
+    agent.getActiveAgents(function (err,agent) {
+        console.log("function")
+        if (err) throw err;
+        res.json({
+            success: true,
+            agent: agent
+        })
+    })
+});
 
 module.exports = router;

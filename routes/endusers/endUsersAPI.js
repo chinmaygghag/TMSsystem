@@ -89,6 +89,7 @@ router.post('/place_order',function (req,res,next) {
         if (err) throw err;
 
         {
+            //console.log('order placed');
             console.log(orderDetails);
             User.addOrders(username, orderDetails, function (err, user) {
             if (err) {

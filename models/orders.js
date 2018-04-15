@@ -64,8 +64,5 @@ module.exports.getOrderFromOrderIDForAgent = function (orderId,callback) {
 
 module.exports.getOrderFromOrderIDForMerchant = function (callback) {
     const query = ({'statusForMerchant' : "received"});
-    order.findOne(query,callback);
+    order.find(query,callback);
 };
-
-
-

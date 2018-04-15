@@ -42,6 +42,8 @@ import { ReceivedOrdersComponent} from "./agent-component/received-orders/receiv
 import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receivedOrdersForMerchant/received-orders-from-merchant/received-orders-from-merchant.component";
 import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
+import { CartComponent} from "./user-component/user-cart/cart/cart.component";
+import {CheckoutComponent} from "./user-component/checkout/checkout.component";
 
 
 const appRoutes: Routes = [
@@ -61,6 +63,8 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
+  {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home', component: ReceivedOrdersComponent},
   {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent}
@@ -92,7 +96,9 @@ const appRoutes: Routes = [
     CreateCatalogComponent,
     ReceivedOrdersComponent,
     ReceivedOrdersFromMerchantComponent,
-    CustomizeCatalogComponent
+    CustomizeCatalogComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
