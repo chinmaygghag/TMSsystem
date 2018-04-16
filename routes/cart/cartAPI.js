@@ -24,5 +24,24 @@ router.post('/addToCart',function (req,res) {
 });
 
 
+router.post('/getCartItem',function (req,res) {
+
+    const username = req.body.username;
+
+    cartAPI.getCartItems(username,function (err,cartItems) {
+        if (err){
+            res.json({success: false, msg: 'Cannot get Cart Item'});
+        }
+        else
+        {
+            res.json(
+                {
+                    success : true,
+                    cartItems : cartItems
+                }
+            )
+        }
+    });
+});
 
 module.exports = router;

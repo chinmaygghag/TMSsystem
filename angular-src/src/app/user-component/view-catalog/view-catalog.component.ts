@@ -22,12 +22,13 @@ export class ViewCatalogComponent implements OnInit {
 
   // to place order
   catalogname: String;
-  finalcost: String;
-  cloth_length : String;
+  finalcost: number;
+  cloth_length : number;
+  unitLength: number;
 
 
   constructor(private catalogService:GetCatalogsService,
-  private _flashMessagesService: FlashMessagesService,
+              private _flashMessagesService: FlashMessagesService,
               private userDataService: SaveUserDataService,
               private placeOrderService: PlaceOrderService,
               private cartService : CartServiceService) {
@@ -53,26 +54,26 @@ export class ViewCatalogComponent implements OnInit {
 
 
   addToCart(catalog){
+    this.unitLength = catalog.unitLengthCost;
+    const totalCost = this.cloth_length*this.unitLength;
     const cartItem = {
       username : this.userDataService.username,
       catalogName : catalog.title,
       lengthEntered: this.cloth_length,
       catalogImage: catalog.imageURL,
-      clothName: "Silk"
+      clothName: "Silk",
+      totalCost : totalCost
     };
-
+    console.log("here");
     this.cartService.addToCart(cartItem).subscribe(data=>{
       if (data.success){
         console.log("Added to Cart")
       }
     })
   }
-
-
-
-
 }
-  class Catalog {
+
+class Catalog {
     constructor(public imageURL: String,
                 public title: String,
                 public desc: String,

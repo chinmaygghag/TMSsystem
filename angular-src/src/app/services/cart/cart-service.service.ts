@@ -14,4 +14,12 @@ export class CartServiceService {
 
   }
 
+
+  getCartElement(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/cart/getCartItem',username,{headers:headers})
+      .map(res=>res.json());
+  }
+
 }

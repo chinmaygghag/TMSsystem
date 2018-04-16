@@ -1,26 +1,23 @@
 <div class="jumbotron">
-  <div class="row">
+  <div class="row" *ngFor="let item of cartItems">
     <div class="col-md-4"  style="width: 50%; overflow: hidden;">
-      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyVfE0TwY9RuEkrzoDHIoySFffzzehgnk0lxmQTVNU5nPX6W344A" alt="Card image cap"  height="200"
+      <img class="card-img-top" src="{{item.imageURL}}" alt="Card image cap"  height="200"
       width="200"  >
     </div>
     <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 20px" align="center">
-      <h4>SILK
+      <h4>Name : {{item.clothName}}
       </h4>
-
     </div>
     <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 20px">
       <div class="row">
-        <h4>Length of the ordered cloth :</h4>
+        <h4>Length of the ordered cloth : {{item.length}}</h4>
       </div>
         <div class="row">
       </div>
-
-
     </div>
     <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 20px">
       <div class="row">
-        <h4>Cost of the ordered cloth :</h4>
+        <h4>Cost of the ordered cloth : {{item.totalCost}}</h4>
       </div>
         <div class="row">
       </div>
@@ -44,8 +41,8 @@
       </h3>
 
     </div>
-    <div class="col-md-2">
-      <h3 align="left"> $ <!--{{catalog.title}}--> </h3>
+    <div class="col-md-5">
+      <h3 align="left"> $ {{totalCost}} </h3>
     </div>
 
     <div class="col-md-2" style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; " align="center">
