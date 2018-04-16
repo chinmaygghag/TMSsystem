@@ -44,7 +44,11 @@ import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
 import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
 import { SliderModule} from "angular-image-slider";
+import { CartComponent} from "./user-component/user-cart/cart/cart.component";
+import {CheckoutComponent} from "./user-component/checkout/checkout.component";
+import { CartServiceService} from "./services/cart/cart-service.service";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -63,9 +67,11 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
+  {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home', component: ReceivedOrdersComponent},
-  {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent}
+  {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
   ];
 
 @NgModule({
@@ -96,6 +102,8 @@ const appRoutes: Routes = [
     ReceivedOrdersFromMerchantComponent,
     CustomizeCatalogComponent,
     FooterComponentComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -119,6 +127,7 @@ const appRoutes: Routes = [
     SaveUserDataService,
     PlaceOrderService,
     GetOrdersService,
+    CartServiceService,
     MerchantServicesService],
     bootstrap: [AppComponent]
 })
