@@ -1,16 +1,17 @@
-<table id = "login" style="width:80%;margin-top:130px">
+
+<body background = "http://www.dzdesign.pl/wp-content/uploads/2017/05/anthology4.1.jpg" style="height:400px;width:100%">
+
+<table id = "login" style="width:100%">
   <tr>
-    <td id="image" >
-      <img src="https://www.knoll.com/media/445/301/THP_About,0.jpg" style="width:450px;height:400px">
-    </td>
-    <td id="login_form" >
+
+    <td id="login_form"  >
       <form (submit)="onSubmitUserLogin()">
         <table id="form">
-          <th><h3 style="color:#ff0066; font-weight:bold">Login</h3>
+          <th><h3 style="margin-top:40px;margin-left:700px;color:#2C333B;font-family:Century Gothic;font-size: 80px; font-weight:bold">Login</h3>
           </th>
           <tr >
             <td>
-              <label for="username" style="float:left; width:100%; margin-bottom: 10px; font-size: 16px">Username*</label>
+              <label for="username" style="font-family:Century Gothic;margin-left:750px;color:#2C333B; width:100%; margin-bottom: 10px; font-size: 20px">Username*</label>
             </td>
             <td>
               <input name="username" [(ngModel)]="username" type="text" id="username" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
@@ -18,7 +19,7 @@
           </tr>
           <tr >
             <td>
-              <label for="password" style="float:left; width:100%; margin-bottom: 10px; font-size: 16px">Password*</label>
+              <label for="password" style="font-family:Century Gothic;margin-left:750px;color:#2C333B;float:left; width:100%; margin-bottom: 10px; font-size: 20px">Password*</label>
             </td>
             <td>
               <input name="password" [(ngModel)]="password" type="password" id="password" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
@@ -26,15 +27,17 @@
           </tr>
           <tr id="buttons" >
             <td >
-              <input type = "submit"  class="btn .btn-primary" style="margin-top:40px;margin-left:100px;background-color:#00cccc" value="Submit">
+              <input type = "submit"  class="btn .btn-primary" style="float:left;margin-top:40px;margin-left:800px;background-color:tomato" value="Submit">
             </td>
+            <td>
+              <a class="btn .btn-primary" [routerLink] = "['/user/registration']" style="float:left;margin-top:40px;background-color:tomato">Sign Up!</a>
+
+            </td>
+
           </tr>
         </table>
       </form>
     </td>
   </tr>
 </table>
-
-
-
-
+</body>

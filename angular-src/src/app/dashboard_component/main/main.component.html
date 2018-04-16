@@ -1,12 +1,68 @@
-<div class="jumbotron text-center">
-  <h1>Textile Management System</h1>
-  <p class="lead">Welcome to textile Management System</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<angular-image-slider [images]="imagesUrl" height=200px width=200px></angular-image-slider>
+
+<br><br>
+<div class="row">
+  <div class="col-sm-4"><img src="http://lostininternet.com/wp-content/uploads/2015/06/paper-cutout-art-fashion-design-shamekh-bluwi-05.jpg" height="250" width="350"></div>
+  <div class="col-sm-4"><img src="https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/light-blue-pattern-wallpaper-baby-blue-fabric-with-floral-pattern-texture.jpg" height="250" width="350"></div>
+  <div class="col-sm-4"><img src="http://ornellagallo.com/wp-content/uploads/2016/07/figurins7-cutouts-.jpg" height="250" width="350"></div>
+
+</div>
+<br><br>
+<div class="row">
+  <div class="col-sm-3"><img src="https://cdn.architecturendesign.net/wp-content/uploads/2016/01/AD-Paper-Cutout-Art-Fashion-Dresses-Edgar-Artis-11.jpg" height="200" width="250"></div>
+  <div class="col-sm-3"><img src="https://3.bp.blogspot.com/-06Dm_TpvzJs/V19pDnqWNnI/AAAAAAAAow4/6fe8BjEWPhYAtV56jMaOy5Rw2VjH4EvNgCLcB/s1600/Pictures-of-beach-wedding-dresses.jpg" height="200" width="250"></div>
+  <div class="col-sm-3"><img src="https://s-media-cache-ak0.pinimg.com/originals/84/db/57/84db57acce62402132a62430518c36fb.jpg" height="200" width="250"></div>
+  <div class="col-sm-3"><img src="https://img0.etsystatic.com/137/0/11382487/il_fullxfull.985653752_ub3h.jpg" height="200" width="250"></div>
 </div>
 
+<div class="row" style="margin-top:20px">
+  <div class="col-sm-3"> Fabrics for Party Dresses</div>
+  <div class="col-sm-3">Fabrics for Wedding Outfits</div>
+  <div class="col-sm-3">Fabrics for Casuals</div>
+  <div class="col-sm-3">Fabrics for Traditional attires</div>
+</div>
+
+
+<div class="row" style="margin-top:5px">
+  <div class="col-sm-3"> Starting from $20</div>
+  <div class="col-sm-3">Starting from $20</div>
+  <div class="col-sm-3">Starting from $20</div>
+  <div class="col-sm-3">Starting from $20</div>
+</div>
+
+<div class="row" id = "labels" style="margin-top:10px">
+  <div class="col-sm-3"><a class="btn btn-primary" [routerLink] = "['/merchant/login']">View items</a></div>
+  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/merchant/login']">View items</a></div>
+  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/merchant/login']">View items</a></div>
+  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/merchant/login']">View items</a></div>
+</div>
+
+<div id=footer style="margin-top: 100px;background-color:#212F3D">
+
+
+</div>
 
 <div class="row">
   <div class = "col-md-4">
     <h3>Agent </h3>
+    <p>Agent Details</p>
     <div>
       <a class="btn btn-primary" [routerLink] = "['/agent/register']">Register</a>
       <a class="btn btn-primary" [routerLink] = "['/agent/login']">Login</a>
@@ -15,17 +71,25 @@
 
   <div class = "col-md-4">
     <h3>Merchant </h3>
-
+    <p>Agent Details</p>
     <div>
       <a class="btn btn-primary" [routerLink] = "['/merchant/login']">Login</a>
     </div>
   </div>
 
   <div class = "col-md-4">
-    <h3>Customer </h3>
+    <h3>User </h3>
+    <p>User Details</p>
     <div>
       <a class="btn btn-primary" [routerLink] = "['/user/registration']">Register</a>
       <a class="btn btn-primary" [routerLink] = "['/user/login']">Login</a>
     </div>
   </div>
 </div>
+</body>
+</html>
+
+
+
+
+

@@ -2,30 +2,39 @@ const express = require('express');
 const router = express.Router();
 const catalogAPI = require('../../models/catalog');
 const multer = require('multer');
-const storage = multer.diskStorage({ //multers disk storage settings
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null,'./angular-src/src/assets/')
+    },
     filename: function (req, file, cb) {
-        console.log("Here");
-        cb(null, file.originalname);
+        cb(null, file.originalname)
     }
 });
-
 const upload = multer({
-    storage: storage,
-    limits: {fileSize: 1000000}
-}).single('file');
+    storage:storage
+});
 
+router.post('/upload',upload.single('file'),function (req,res) {
+    console.log(req);
+    // if (req.file != null){
 
+    // }
 
-router.post('/upload',function (req,res) {
-   upload(req,res,function (err) {
-       if (err){
-           res.json({success:false});
-           return;
-       }else{
-           console.log(req.file);
-           res.json({success: true, filename: req.file});
-       }
-   });
+   //upload(req,res,function (err) {
+   //    if (err){
+    //       res.json({success:false});
+    //       return;
+    //   }else{
+     //      console.log(req.file);
+     //      res.json({success: true, filename: req.file});
+     //  }
+   //});
+    //fs.createReadStream('/tmp/'+req.file.originalname).pipe(fs.createWriteStream('newLog.log'));
+    if (req.file == null){
+        res.json({success: false})
+    } else{
+    res.json({success:true, filename: req.file.originalname});
+    }
 });
 
 
