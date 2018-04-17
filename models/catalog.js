@@ -33,3 +33,8 @@ module.exports.addCatalogElement = function (catalogElement,callback) {
   catalogElement.save(callback);
 };
 
+
+module.exports.getCatalogElement = function (catalogName,callback) {
+    const query = {title : catalogName};
+    catalog.find(query,callback);
+}

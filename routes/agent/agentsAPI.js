@@ -87,10 +87,11 @@ router.get('/profile', function (req, res, next) {
 router.get('/orderforagents',function (req,res,next) {
    username = req.body.username;
 
-
-
 });
 
+router.post('/assignOrder',function (req,res) {
+
+});
 
 
 

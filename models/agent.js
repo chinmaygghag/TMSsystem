@@ -37,7 +37,7 @@ const agentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    orders: [
+    ordersAssigned: [
         String
     ],
     orders : {
@@ -97,10 +97,18 @@ module.exports.getUserByUserName = function (username, callback) {
 
 
 module.exports.getAgentsByStatus = function (callback) {
-    const query = {activeStatus: '1'};
+    const query = ({activeStatus: '1'});
+    console.log(query);
     agent.find(query,callback);
+
 };
 
+module.exports.getActiveAgents = function (callback) {
+    const query = ({activeStatus: '2'});
+    console.log(query);
+    agent.find(query,callback);
+
+};
 
 module.exports.changeStatusForAgent = function (username,changeStatus,callback) {
     console.log(username);
@@ -121,4 +129,11 @@ module.exports.changeStatusForAgent = function (username,changeStatus,callback) 
 module.exports.getAllOrders = function (username,callback) {
   const query = ({'name': username});
   agent.find(query,['orders'],callback);
+};
+
+
+module.exports.assignOrders = function (username,orderId,callback) {
+    username.update({username: username},{
+        $push : {orders : orderId}
+    },callback);
 };

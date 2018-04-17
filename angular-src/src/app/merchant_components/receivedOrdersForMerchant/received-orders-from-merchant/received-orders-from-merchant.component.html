@@ -1,31 +1,41 @@
 
-<div class="container" *ngFor="let orders of orders">
+<div class="container" *ngFor="let order of orders">
 
   <div class = "row">
     <div class="col-md-3">
-      <img src="http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png" style="padding:10px;width:200px;height:200px">
+      <img src="../../../../assets/add-a-picture-icon-44909.png" style="padding:10px;width:200px;height:200px">
     </div>
-    <div class="col-md-2">
-    </div>
+    <!--<div class="col-md-2">-->
+    <!--</div>-->
 
-    <div class="col-md-4">
-      <h3 style="color: crimson">{{orders.desc}}</h3>
-      <h4 style="color: darkblue;font-size: 15px">{{orders.length}} </h4>
-      <h5 style="color: darkcyan;font-size: 15px">{{orders.cost}}</h5>
-
+    <div class="col-md-3">
+      <h4 style="color: darkcyan">{{order}}</h4>
     </div>
-    <div class="col-md-1">
-    </div>
+      <!--<h4 style="color: darkblue;font-size: 15px">{{order.catalog}} </h4>-->
+      <!--<h5 style="color: darkcyan;font-size: 15px">{{order.title}}</h5>-->
 
-    <div class="col-md-2">
+    <!--</div>-->
+    <!--<div class="col-md-1">-->
+    <!--</div>-->
+
+    <div class="col-md-3" style=" width:100%;">
       <br><br>
-      <a class="btn btn-primary" style="background-color: #e2f442" >Assign Order to Agent</a>
+      <h4 style="color: darkcyan"><label>Assign Agent</label></h4>
+        <select [(ngModel)]="getagent">
+        <option *ngFor="let agent of agents" [value]="agent._id">{{agent}}</option>
+        </select>
     </div>
+      <div class="col-md-3">
+      <br><br>
+      <a class="btn btn-primary" style="background-color: #e2f442"  (click) = "assignAgents()">Assign Order to Agent</a>
+      </div>
 
 
   </div>
 </div>
 
+<!--</div><div id="container" width="100px"></div>-->
+<!--<button (click)="progress()">changeStatus</button>-->
 
 
 

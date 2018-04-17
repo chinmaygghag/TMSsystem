@@ -27,9 +27,13 @@
     "angular2-flash-message": "^1.0.2",
     "angular2-flash-messages": "^2.0.5",
     "angularjs-slider": "^6.5.1",
+    "chart.js": "^2.7.2",
     "core-js": "^2.5.3",
     "ng-slider": "^2.2.6",
+    "ng2": "^0.2.4",
     "ng2-bootstrap": "^1.6.3",
+    "ng2-charts": "^1.6.0",
+    "progressbar.js": "^1.0.1",
     "rxjs": "^5.5.6",
     "ts-helpers": "^1.1.2",
     "zone.js": "^0.8.20"

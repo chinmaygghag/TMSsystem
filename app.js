@@ -32,6 +32,7 @@ const merchants = require('./routes/merchant/merchantsAPI');
 const agents = require('./routes/agent/agentsAPI');
 const endUsers = require('./routes/endusers/endUsersAPI');
 const create = require('./routes/catalog-design/catalogDesignAPI');
+const cart = require('./routes/cart/cartAPI');
 
 
 
@@ -46,6 +47,7 @@ app.use('/merchants',merchants);
 app.use('/agents',agents);
 app.use('/endUsers',endUsers);
 app.use('/create',create);
+app.use('/cart',cart);
 
 // app.use(passport.initialize());
 // app.use(passport.session());

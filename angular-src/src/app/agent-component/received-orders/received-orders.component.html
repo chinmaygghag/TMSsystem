@@ -1,28 +1,140 @@
 
-<div class="container" *ngFor="let orders of orders">
-
-  <div class = "row">
-    <div class="col-md-3">
-      <img src="http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png" style="padding:10px;width:200px;height:200px">
-    </div>
-    <div class="col-md-2">
-    </div>
-
-    <div class="col-md-4">
-      <h3 style="color: crimson">{{orders.desc}}</h3>
-      <h4 style="color: darkblue;font-size: 15px">{{orders.length}} </h4>
-    </div>
-    <div class="col-md-1">
-    </div>
-
-    <div class="col-md-2">
-      <br><br>
-      <a class="btn btn-primary" style="background-color: #e2f442" >Change Order Status</a>
-    </div>
 
 
+<div class="jumbotron">
+  <label style="text-align: center">
+    <h2>
+      Accept Orders From Merchant :
+    </h2>
+  </label>
+  <div class="row" *ngFor="let item of orders" style="margin-top: 30px">
+    <div class="col-md-2"  style="width: 50%; overflow: hidden;">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS90_aPFimWEigdHYDyL3UDg4HEx45bApLXC2PXX4J2Fe_ppNN6" alt="Card image cap"  height="200"
+           width="200"  >
+    </div>
+    <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px" align="center">
+      <h5 style="color: deepskyblue">Type of Cloth :
+      </h5>
+      <div class="row" style="text-align: center; margin-left: 40px; " align="center">
+       <strong><h4>{{item.desc}}</h4></strong>
+      </div>
+    </div>
+    <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; text-align: center" align="center">
+      <div class="row">
+        <h5 style="color: deepskyblue">Cloth Length :</h5>
+      </div>
+      <div class="row" style="text-align: center; margin-left: 20px" align="center">
+        <h4>{{item.length}}</h4>
+      </div>
+      <div class="row">
+
+      </div>
+
+    </div>
+    <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px" align="center">
+      <div class="row">
+        <h5 style="color: deepskyblue">Total Cost : </h5>
+      </div>
+      <div class="row" style="text-align: center; margin-left: 20px" align="center">
+        <h4>{{item.cost}}</h4>
+      </div>
+      <div class="row">
+      </div>
+
+    </div>
+    <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
+      <a class="btn btn-primary" >Accept</a>
+
+    </div>
+    <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
+      <a class="btn btn-primary" >Decline</a>
+
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+<!--<div class="container" *ngFor="let order of orders">-->
+
+  <!--<div class = "row">-->
+    <!--<div class="col-md-3">-->
+      <!--<img src="../../../../assets/add-a-picture-icon-44909.png" style="padding:10px;width:200px;height:200px">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="col-md-2">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<div class="col-md-3">-->
+      <!--<h4 style="color: darkcyan">{{order}}</h4>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<h4 style="color: darkblue;font-size: 15px">{{order.catalog}} </h4>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h5 style="color: darkcyan;font-size: 15px">{{order.title}}</h5>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="col-md-1">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<div class="col-md-3" style=" width:100%;">-->
+      <!--<br><br>-->
+      <!--<h4 style="color: darkcyan"><label>Assign Agent</label></h4>-->
+      <!--<select [(ngModel)]="getagent">-->
+        <!--<option *ngFor="let agent of agents" [value]="agent._id">{{agent}}</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<div class="col-md-3">-->
+      <!--<br><br>-->
+      <!--<a class="btn btn-primary" style="background-color: #e2f442"  (click) = "assignAgents()">Assign Order to Agent</a>-->
+    <!--</div>-->
+
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;</div><div id="container" width="100px"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<button (click)="progress()">changeStatus</button>&ndash;&gt;-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container" *ngFor="let orders of orders">-->
+
+  <!--<div class = "row">-->
+    <!--<div class="col-md-3">-->
+      <!--<img src="http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png" style="padding:10px;width:200px;height:200px">-->
+    <!--</div>-->
+    <!--<div class="col-md-2">-->
+    <!--</div>-->
+
+    <!--<div class="col-md-4">-->
+      <!--<h3 style="color: crimson">{{orders.desc}}</h3>-->
+      <!--<h4 style="color: darkblue;font-size: 15px">{{orders.length}} </h4>-->
+    <!--</div>-->
+    <!--<div class="col-md-1">-->
+    <!--</div>-->
+
+    <!--<div class="col-md-2">-->
+      <!--<br><br>-->
+      <!--<a class="btn btn-primary" style="background-color: #e2f442" >Change Order Status</a>-->
+    <!--</div>-->
+
+
+  <!--</div>-->
+<!--</div>-->
 
 
 

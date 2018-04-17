@@ -26,6 +26,13 @@ export class UserHomeComponent implements OnInit {
     this.router.navigate(['/user/cross']);
   }*/
 
+
+  viewCatalogue(){
+    this.router.navigate(['/user/home/viewcatalog']);
+  }
+
+
+
   openNav(){
     document.getElementById("mySidenav").style.width = "250px";
   }

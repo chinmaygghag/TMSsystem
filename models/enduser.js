@@ -67,8 +67,6 @@ module.exports.getUserByUserName = function(username, callback){
 
 
 module.exports.addOrders = function (username,orderId,callback) {
-    console.log(username);
-    console.log(orderId);
     user.update({username: username},{
     $push : {orders : orderId}
     },callback);
