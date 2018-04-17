@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "mongoose-delete": "^0.4.0",
     "multer": "^1.3.0",
     "ng2-fan-menu": "^1.0.1",
     "ng2-fancy-image-uploader": "^2.0.1",

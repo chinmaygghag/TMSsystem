@@ -22,4 +22,15 @@ export class CartServiceService {
       .map(res=>res.json());
   }
 
+
+  removeCartElement(id){
+    console.log(id);
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/cart/deleteCartItem',id,{headers:headers})
+      .map(res=>res.json());
+  }
+
+
+
 }
