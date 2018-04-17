@@ -14,6 +14,10 @@ const orderSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    catalogImage:{
+      type: String,
+      required: true
+    },
     cost:{
       type: String,
       required: true

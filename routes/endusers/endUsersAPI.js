@@ -81,7 +81,8 @@ router.post('/place_order',function (req,res,next) {
             catalog: catalogName,
             cost: cost,
             statusForCustomer: "placed",
-            statusForMerchant: "received"
+            statusForMerchant: "received",
+            statusForAgent: ""
         }
     );
 

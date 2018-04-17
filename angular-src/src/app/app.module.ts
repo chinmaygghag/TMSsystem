@@ -42,13 +42,23 @@ import { ReceivedOrdersComponent} from "./agent-component/received-orders/receiv
 import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receivedOrdersForMerchant/received-orders-from-merchant/received-orders-from-merchant.component";
 import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
+<<<<<<< HEAD
 
+=======
+import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
+import { SliderModule} from "angular-image-slider";
+>>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
 import { CartComponent} from "./user-component/user-cart/cart/cart.component";
 import {CheckoutComponent} from "./user-component/checkout/checkout.component";
+import { CartServiceService} from "./services/cart/cart-service.service";
+import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
+<<<<<<< HEAD
 import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
 import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
+=======
+>>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -71,8 +81,8 @@ const appRoutes: Routes = [
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home', component: ReceivedOrdersComponent},
-  {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent}
-  ];
+  {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
+];
 
 @NgModule({
   declarations: [
@@ -101,12 +111,18 @@ const appRoutes: Routes = [
     ReceivedOrdersComponent,
     ReceivedOrdersFromMerchantComponent,
     CustomizeCatalogComponent,
+<<<<<<< HEAD
 
     CartComponent,
     CheckoutComponent,
 
     FooterComponentComponent,
 
+=======
+    FooterComponentComponent,
+    CartComponent,
+    CheckoutComponent
+>>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
   ],
   imports: [
     BrowserModule,
@@ -130,8 +146,9 @@ const appRoutes: Routes = [
     SaveUserDataService,
     PlaceOrderService,
     GetOrdersService,
+    CartServiceService,
     MerchantServicesService],
-    bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 
 

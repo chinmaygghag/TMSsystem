@@ -24,8 +24,8 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
     this.getAllOrders.getOrdersForMerchant(this.orders).subscribe(
       data => {
         if (data.success) {
-        console.log(data);
-          data.orders.forEach(i=>{
+        data.orders.forEach(i=>{
+            console.log(i);
             if(i._id != undefined)
             // console.log(i.name);
               this.orders.push(i._id+"\n"+
@@ -48,9 +48,12 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
         }
       });
 
+  }
 
+  assignAgents(order){
 
   }
+
  getAgents(){
    console.log("getagents");
    this.getActiveAgents.getActiveAgents().subscribe(

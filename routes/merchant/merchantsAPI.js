@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const agent = require('../../models/agent');
 const order = require('../../models/orders');
-
+const catalog = require('../../models/catalog')
 
 router.get('/getAgents',function (req,res,next) {
     agent.getAgentsByStatus(function (err,agents) {
@@ -44,6 +44,7 @@ router.get('/orderReceivedForMerchant',function (req,res,next) {
         })
     })
 });
+
 router.get('/getActiveAgents',function (req,res,next) {
     agent.getActiveAgents(function (err,agent) {
         console.log("function")
