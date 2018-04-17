@@ -42,27 +42,21 @@ import { ReceivedOrdersComponent} from "./agent-component/received-orders/receiv
 import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receivedOrdersForMerchant/received-orders-from-merchant/received-orders-from-merchant.component";
 import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
-<<<<<<< HEAD
-
-=======
-import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
-import { SliderModule} from "angular-image-slider";
->>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
 import { CartComponent} from "./user-component/user-cart/cart/cart.component";
 import {CheckoutComponent} from "./user-component/checkout/checkout.component";
 import { CartServiceService} from "./services/cart/cart-service.service";
-import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
-<<<<<<< HEAD
+import { AgentHistogramComponent} from "./merchant_components/agent-histogram/agent-histogram.component";
 import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
 import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
-=======
->>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
+import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
+
+import {ChartsModule} from "ng2-charts";
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'merchant/home/receivedOrders',component:ReceivedOrdersFromMerchantComponent},
+  {path: 'merchant/home/histogram', component: AgentHistogramComponent},
   {path: 'merchant/home/approvals', component: AgentapprovalComponent},
   {path: 'merchant/home', component: HomeComponent},
   {path: 'merchant/login', component: LoginComponent},
@@ -80,7 +74,9 @@ const appRoutes: Routes = [
   {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
-  {path: 'agent/home', component: ReceivedOrdersComponent},
+  {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
+  {path: 'agent/home/process', component: AgentProcessComponent},
+  {path: 'agent/home', component: AgentHomeComponent},
   {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
 ];
 
@@ -111,18 +107,13 @@ const appRoutes: Routes = [
     ReceivedOrdersComponent,
     ReceivedOrdersFromMerchantComponent,
     CustomizeCatalogComponent,
-<<<<<<< HEAD
-
+    CheckoutComponent,
+    AgentProcessComponent,
+    FooterComponentComponent,
     CartComponent,
     CheckoutComponent,
+    AgentHistogramComponent
 
-    FooterComponentComponent,
-
-=======
-    FooterComponentComponent,
-    CartComponent,
-    CheckoutComponent
->>>>>>> ac12b7fa37775049f2cc6c136676296c1a8c67a6
   ],
   imports: [
     BrowserModule,
@@ -132,7 +123,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ChartsModule
   ],
   providers: [MerchantAuthServiceService,
     MerchantFlashMessageServiceService,

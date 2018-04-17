@@ -1,59 +1,220 @@
-<div class="row">
-  <div class="col-md-4">
-    <h3> Pending Agents Approval </h3>
-    <!--<p>Count</p>-->
-    <div>
-      <a class="btn btn-primary" [routerLink]="['/merchant/home/approvals']">More Information</a>
+
+
+<div class="jumbtron text-center">
+  <div id="reposition">
+    <head>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <div id="container" >
+      <img src="https://sep.yimg.com/ay/yhst-10775676472182/coming-soon-jay-cyn-designs-for-birch-organic-fabrics-farm-fresh-chicken-wire-multi-1.gif" height = "350px" style="width:100%">
     </div>
-  </div>
+    <!--<div class = "row">-->
+      <!--<div class="col-sm-3">-->
+        <!--<td >-->
+          <!--<div class="circleBase type4" (click)="viewCatalogue()" >-->
+            <!--<label style="margin-top: 70px; margin-left: 40px; color: burlywood; text-align: center">-->
+              <!--<h2>SILK FABRIC</h2>-->
+            <!--</label>-->
+          <!--</div>-->
+        <!--</td>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3">-->
+        <!--<td >-->
+          <!--<div class="circleBase type3"  (click)="viewCatalogue()">-->
+            <!--<label style="margin-top: 70px; margin-left: 10px; color: antiquewhite; text-align: center">-->
+              <!--<h2>COTTON FABRIC</h2>-->
+            <!--</label>-->
+          <!--</div>-->
+        <!--</td>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3">-->
+        <!--<td  >-->
+          <!--<div class="circleBase type2"  (click)="viewCatalogue()">-->
+            <!--<label style="margin-top: 70px; margin-left: 20px; color: antiquewhite;text-align: center">-->
+              <!--<h2>VELVET FABRIC</h2>-->
+            <!--</label>-->
+          <!--</div>-->
+        <!--</td>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3">-->
+        <!--<td >-->
+          <!--<div class="circleBase type1"  (click)="viewCatalogue()">-->
+            <!--<label style="margin-top: 70px; margin-left: 20px; color: antiquewhite; text-align: center">-->
+              <!--<h2>POLYESTER FABRIC</h2>-->
+            <!--</label>-->
+          <!--</div>-->
+        <!--</td>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--</body>-->
 
-  <div class="col-md-4">
-    <h3>Orders Received From Users </h3>
-    <div>
-      <a class="btn btn-primary" [routerLink]="['/merchant/home/receivedOrders']">View Orders</a>
+  <!--</div>-->
+<!--</div>-->
+
+   <div class="row">
+     <div class="col-md-5">
+       <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
+         <div class="row" align="center">
+           <a class="botton" [routerLink] = "['/merchant/home/approvals']" style="margin-left: 100px ">
+             <h4 style="text-align: center">Approve Agents!</h4>
+           </a>
+         </div>
+       </div>
+     </div>
+
+     <div class="col-md-2"></div>
+
+     <div class="col-md-5">
+       <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
+         <div class="row" align="center">
+           <a class="botton" [routerLink] = "['/merchant/home/receivedOrders']" style="margin-left: 50px ">
+             <h4 style="text-align: center">Orders Received From Customers!</h4>
+           </a>
+         </div>
+       </div>
+     </div>
+
+   </div>
+
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
+          <div class="row" align="center">
+            <a class="botton" [routerLink] = "['/merchant/createcatalog']" style="margin-left: 50px ">
+              <h4 style="text-align: center">Create Catalog For Customers!</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      <div class="col-md-5">
+        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
+          <div class="row" align="center">
+            <a class="botton" [routerLink] = "['receivedOrders']" style="margin-left: 120px ">
+              <h4 style="text-align: center">Track Orders!</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Track Orders from Agents </h3>
-    <div>
-      <a class="btn btn-primary" [routerLink]="">Get Details </a>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Create Catalog Item </h3>
-    <div>
-      <a class="btn btn-primary" [routerLink]="['/merchant/createcatalog']">Create a Catalog Component </a>
-    </div>
-  </div>
 
 
+    <div class="row">
+      <div class="col-md-5">
+        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
+          <div class="row" align="center">
+            <a class="botton" [routerLink] = "['receivedOrders']" style="margin-left: 60px ">
+              <h4 style="text-align: center">Approve Customer's Design!</h4>
+            </a>
+          </div>
+        </div>
+      </div>
 
-  <div class="col-md-4">
+      <div class="col-md-2"></div>
 
-    <div>
-
-    </div>
-  </div>
-  <div class="col-md-4">
-
-    <div>
+      <div class="col-md-5">
+        <div class="jumbotron" style="color: #7386D5; margin-top: 40px; text-align: center">
+          <div class="row" align="center">
+            <a class="botton" [routerLink] = "['histogram']" style="margin-left: 120px ">
+              <h4 style="text-align: center">Agent Statistic!</h4>
+            </a>
+          </div>
+        </div>
+      </div>
 
     </div>
-  </div>
-  <div class="col-md-4">
-
-    <div>
-
-    </div>
-  </div>
 
 
-  <div class="col-md-4">
-    <h3>Update Order Details For Customer </h3>
-    <div>
-      <a class="btn btn-primary" [routerLink]="">Update Details</a>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="row">-->
+  <!--<div class="col-md-4">-->
+    <!--<h3> Pending Agents Approval </h3>-->
+    <!--&lt;!&ndash;<p>Count</p>&ndash;&gt;-->
+    <!--<div>-->
+      <!--<a class="btn btn-primary" [routerLink]="['/merchant/home/approvals']">More Information</a>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-4">-->
+    <!--<h3>Orders Received From Users </h3>-->
+    <!--<div>-->
+      <!--<a class="btn btn-primary" [routerLink]="['/merchant/home/receivedOrders']">View Orders</a>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-4">-->
+    <!--<h3>Track Orders from Agents </h3>-->
+    <!--<div>-->
+      <!--<a class="btn btn-primary" [routerLink]="">Get Details </a>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="col-md-4">-->
+    <!--<h3>Create Catalog Item </h3>-->
+    <!--<div>-->
+      <!--<a class="btn btn-primary" [routerLink]="['/merchant/createcatalog']">Create a Catalog Component </a>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+
+  <!--<div class="col-md-4">-->
+
+    <!--<div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-4">-->
+
+    <!--<div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-4">-->
+
+    <!--<div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+
+
+  <!--<div class="col-md-4">-->
+    <!--<h3>Update Order Details For Customer </h3>-->
+    <!--<div>-->
+      <!--<a class="btn btn-primary" [routerLink]="">Update Details</a>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

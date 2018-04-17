@@ -15,10 +15,34 @@ export class ReceivedOrdersComponent implements OnInit {
               private getAllOrders:GetOrdersService) { }
 
   ngOnInit() {
-    this.orders.push(new Orders("http://piedmontfabrics.com/wp-content/uploads/2014/12/JapaneseCotton.png",
-      "This is just the demo data",
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
       "50$",
-      "5in"))
+      "50 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "100$",
+      "100 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "75$",
+      "60 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "150$",
+      "120 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "200$",
+      "250 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "400$",
+      "450 inches"))
+    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
+      "Silk",
+      "500$",
+      "650 inches"))
 
   }
 
