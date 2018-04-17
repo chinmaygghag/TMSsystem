@@ -1,33 +1,42 @@
+<div class="jumbotron">
 <form (submit)="onCreateCatalogSubmit()">
+  <label>
+    <h3 style="color: #6d7fcc">
+      Create Catalog Item :
+    </h3>
+  </label>
 <div class="row">
 <div class = "col-md-12">
-  <h3>URl </h3>
+  <h4>Image Of the Design : </h4>
   <div>
     <input type="file" name="file" (change)="fileChangeEvent($event)">
   </div>
 </div>
 
+  <div class = "col-md-12" style="margin-top: 20px">
+    <h4>Cloth Name : </h4>
+    <div>
+      <input name="title" [(ngModel)]="title" type="text" id="title" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+    </div>
+  </div>
+
 <div class = "col-md-12">
-  <h3>Description of the cloth </h3>
+  <h4>Description of the cloth :</h4>
   <div>
-    <input name="desc" [(ngModel)]="desc" type="textarea" id="desc" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+    <input name="desc" [(ngModel)]="unitLengthCost" type="text" id="desc" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="200" />
+
   </div>
 </div>
 
 <div class = "col-md-12">
-  <h3>Per unit cost </h3>
+  <h4>Per unit cost :</h4>
   <div>
     <input name="unitLengthCost" [(ngModel)]="unitLengthCost" type="text" id="unitLengthCost" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
   </div>
 </div>
 
 
-<div class = "col-md-12">
-  <h3>Item name </h3>
-  <div>
-    <input name="title" [(ngModel)]="title" type="text" id="title" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
-  </div>
-</div>
+
 
 
 
@@ -39,4 +48,4 @@
 </div>
 </form>
 
-
+</div>
