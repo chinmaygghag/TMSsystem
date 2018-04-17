@@ -25,7 +25,7 @@ app.use(function(req, res, next) { //allow cross origin requests
 
 app.use(bodyParser.json());
 
-app.use(multer({dest:'./angular-src/src/assets/'}).single('file'));
+//app.use(multer({dest:'./angular-src/src/assets/'}).single('file'));
 
 
 const merchants = require('./routes/merchant/merchantsAPI');

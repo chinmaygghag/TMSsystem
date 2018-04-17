@@ -38,7 +38,8 @@ export class ViewCatalogComponent implements OnInit {
       if(data.success){
         data.catalogs.forEach(
           i=>{
-              this.catalogList.push(new Catalog(i.imageURL,i.title,i.desc,i.unitLengthCost));
+              const imageUrl = "../../../assets/"+i.imageURL;
+              this.catalogList.push(new Catalog(imageUrl,i.title,i.desc,i.unitLengthCost));
           });
         console.log(this.catalogList);
       }

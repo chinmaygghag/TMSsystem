@@ -3,7 +3,7 @@
 <div class = "col-md-12">
   <h3>URl </h3>
   <div>
-    <input name="imageURL" [(ngModel)]="imageURL" type="textarea" id="imageURL" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="100" />
+    <input type="file" name="file" (change)="fileChangeEvent($event)">
   </div>
 </div>
 
@@ -38,3 +38,5 @@
 
 </div>
 </form>
+
+

@@ -42,9 +42,13 @@ import { ReceivedOrdersComponent} from "./agent-component/received-orders/receiv
 import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receivedOrdersForMerchant/received-orders-from-merchant/received-orders-from-merchant.component";
 import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
+
 import { CartComponent} from "./user-component/user-cart/cart/cart.component";
 import {CheckoutComponent} from "./user-component/checkout/checkout.component";
 
+import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
+import { SliderModule} from "angular-image-slider";
+import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -97,13 +101,19 @@ const appRoutes: Routes = [
     ReceivedOrdersComponent,
     ReceivedOrdersFromMerchantComponent,
     CustomizeCatalogComponent,
+
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+
+    FooterComponentComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SliderModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
     BsDropdownModule.forRoot()
