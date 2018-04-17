@@ -18,7 +18,7 @@ const cartSchema = mongoose.Schema({
         required: true},
 
     totalCost:{
-        type: String,
+        type: Number,
         required: true},
 
     catalogImage:{
@@ -33,8 +33,7 @@ const cartSchema = mongoose.Schema({
 const cart = module.exports = mongoose.model('Cart', cartSchema);
 
 module.exports.addToCart = function (cartItem,callback) {
-    const totalCost = cartItem.lengthEntered * cartItem.perUnitLengthCost;
-    cartItem.total=totalCost;
+    console.log(cartItem);
     cartItem.save(callback);
 };
 

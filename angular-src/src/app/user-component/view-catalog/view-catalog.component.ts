@@ -4,6 +4,7 @@ import {GetCatalogsService} from "../../services/catalogService/get-catalogs.ser
 import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 import {PlaceOrderService} from "../../services/placeorders/place-order.service";
 import {CartServiceService} from "../../services/cart/cart-service.service";
+import {Router} from "@angular/router";
 
 
 
@@ -22,7 +23,7 @@ export class ViewCatalogComponent implements OnInit {
   // to place order
   catalogname: String;
   finalcost: number;
-  cloth_length : number;
+  cloth_length : any=[];
   unitLength: number;
 
 
@@ -30,11 +31,13 @@ export class ViewCatalogComponent implements OnInit {
               private _flashMessagesService: FlashMessagesService,
               private userDataService: SaveUserDataService,
               private placeOrderService: PlaceOrderService,
-              private cartService : CartServiceService) {
+              private cartService : CartServiceService,
+              private router: Router) {
 
   }
 
   ngOnInit() {
+    if(this.userDataService.username != null){
     this.userObject = this.userDataService.username;
     console.log(this.userObject);
     this.catalogService.getCatalog().subscribe(data=>
@@ -49,16 +52,24 @@ export class ViewCatalogComponent implements OnInit {
         console.log(this.catalogList);
       }
     });
+    }else{
+      this.router.navigate(['/user/login']);
+    }
   }
 
+  // trackByIndex(index: number, obj: any): any {
+  //   return index;
+  // }
 
-  addToCart(catalog){
+  addToCart(catalog,index){
+    console.log(this.cloth_length[index]);
     this.unitLength = catalog.unitLengthCost;
-    const totalCost = this.cloth_length*this.unitLength;
+    const totalCost = this.cloth_length[index]*this.unitLength;
+    console.log(totalCost);
     const cartItem = {
       username : this.userDataService.username,
       catalogName : catalog.title,
-      lengthEntered: this.cloth_length,
+      lengthEntered: this.cloth_length[index],
       catalogImage: catalog.imageURL,
       clothName: "Silk",
       totalCost : totalCost
@@ -66,9 +77,13 @@ export class ViewCatalogComponent implements OnInit {
     console.log("here");
     this.cartService.addToCart(cartItem).subscribe(data=>{
       if (data.success){
-        console.log("Added to Cart")
+        console.log("Added to Cart");
+        this._flashMessagesService.show('Item Added to Cart!', { cssClass: 'alert-success', timeout: 3000 });
+      }else{
+        console.log(data);
       }
     })
+
   }
 }
 

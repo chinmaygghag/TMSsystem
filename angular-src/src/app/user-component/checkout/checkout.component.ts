@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private saveUserData: SaveUserDataService,
+              private router: Router) { }
 
   ngOnInit() {
+    if (this.saveUserData.username != null){
+
+    } else {
+      this.router.navigate(['/user/login']);
+    }
   }
 
 }
