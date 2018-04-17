@@ -46,4 +46,17 @@ router.post('/getCartItem',function (req,res) {
     });
 });
 
+
+router.post('/deleteCartItem',function (req,res) {
+   const id = req.body.id;
+   cartAPI.deleteCartItem(id,function (err,callback) {
+       if (err){
+           res.json({success : false, msg : 'Could Not be removed'});
+       } else{
+           res.json({success : true, msg : 'Item removed Successfully'});
+       }
+   })
+
+});
+
 module.exports = router;

@@ -44,3 +44,7 @@ module.exports.getCartItems = function (username,callback) {
 };
 
 
+module.exports.deleteCartItem = function (id,callback) {
+  const query = { _id : id};
+  cart.find(query).remove(callback).exec();
+};

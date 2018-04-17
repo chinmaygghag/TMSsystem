@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CartServiceService} from "../../../services/cart/cart-service.service";
 import {SaveUserDataService} from "../../../services/miscService/save-user-data.service";
 import {Router} from "@angular/router";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,9 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService : CartServiceService,
               private userDataService: SaveUserDataService,
-              private router: Router) { }
+              private router: Router,
+              private _flashMessagesService: FlashMessagesService
+          ) { }
 
 
   ngOnInit() {
@@ -31,9 +34,10 @@ export class CartComponent implements OnInit {
           i=>{
             const image =  "../" + i.catalogImage;
             this.totalCost += parseInt(i.totalCost) ;
+            console.log(i._id);
             console.log(typeof i.totalCost);
             console.log(typeof this.totalCost);
-            this.cartItems.push(new CartItem(image,i.catalogName,i.lengthEntered,i.totalCost,i.clothName));
+            this.cartItems.push(new CartItem(image,i.catalogName,i.lengthEntered,i.totalCost,i.clothName,i._id));
           }
         );
       }
@@ -42,6 +46,25 @@ export class CartComponent implements OnInit {
       this.router.navigate(['/user/login']);
     }
   }
+
+
+  deleteElement(cartItem){
+
+    const index: number = this.cartItems.indexOf(cartItem);
+
+    const id = {
+      "_id":cartItem.id
+    };
+    this.cartService.removeCartElement(id).subscribe(data =>{
+      if (data.success){
+        this._flashMessagesService.show('Item Removed!', { cssClass: 'alert-success', timeout: 3000 });
+        this.totalCost -= parseInt(cartItem.totalCost);
+        this.cartItems.splice(index,1)
+      } else{
+        this._flashMessagesService.show('Unable to remove Item!', { cssClass: 'alert-success', timeout: 3000 });
+      }
+    })
+  }
 }
 
 class CartItem {
@@ -49,7 +72,8 @@ class CartItem {
               public title: String,
               public length: String,
               public totalCost: String,
-              public typeOfCloth: String) {
+              public typeOfCloth: String,
+              public id:String) {
   }
 
 }
