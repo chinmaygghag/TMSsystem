@@ -10,14 +10,16 @@ import {Router} from "@angular/router";
 export class CheckoutComponent implements OnInit {
 
   constructor(private saveUserData: SaveUserDataService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit() {
-    if (this.saveUserData.username != null){
+      if (this.saveUserData.username != null){
 
-    } else {
-      this.router.navigate(['/user/login']);
+      } else {
+        this.router.navigate(['/user/login']);
+      }
     }
-  }
+
 
 }
