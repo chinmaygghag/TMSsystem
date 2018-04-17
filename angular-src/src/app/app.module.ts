@@ -72,7 +72,7 @@ const appRoutes: Routes = [
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home', component: ReceivedOrdersComponent},
   {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
-  ];
+];
 
 @NgModule({
   declarations: [
@@ -129,7 +129,7 @@ const appRoutes: Routes = [
     GetOrdersService,
     CartServiceService,
     MerchantServicesService],
-    bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 
 

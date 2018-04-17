@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CreatCatalogServiceService} from "../../services/catalogService/creat-catalog-service.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {GetCatalogsService} from "../../services/catalogService/get-catalogs.service";
 import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
@@ -44,12 +43,12 @@ export class ViewCatalogComponent implements OnInit {
       if(data.success){
         data.catalogs.forEach(
           i=>{
-              const imageUrl = "../../../assets/"+i.imageURL;
-              this.catalogList.push(new Catalog(imageUrl,i.title,i.desc,i.unitLengthCost));
+            const imageUrl = "../../../assets/"+i.imageURL;
+            this.catalogList.push(new Catalog(imageUrl,i.title,i.desc,i.unitLengthCost));
           });
         console.log(this.catalogList);
       }
-      });
+    });
   }
 
 
@@ -74,11 +73,11 @@ export class ViewCatalogComponent implements OnInit {
 }
 
 class Catalog {
-    constructor(public imageURL: String,
-                public title: String,
-                public desc: String,
-                public unitLengthCost: String) {
-    }
+  constructor(public imageURL: String,
+              public title: String,
+              public desc: String,
+              public unitLengthCost: String) {
+  }
 
 }
 

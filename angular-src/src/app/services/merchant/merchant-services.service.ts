@@ -23,4 +23,12 @@ export class MerchantServicesService {
       .map(res=>res.json());
   }
 
+  getActiveAgents(){
+    let headers = new Headers();
+    headers.append('Content-type','application-json');
+
+    return this.http.get("http://localhost:3001/merchants/getActiveAgents")
+      .map((res) => res.json());
+  }
+
 }

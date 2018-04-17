@@ -9,8 +9,8 @@ import {SaveUserDataService} from "../../../services/miscService/save-user-data.
 })
 export class CartComponent implements OnInit {
 
-    cartItems = [];
-    totalCost: number;
+  cartItems = [];
+  totalCost: number;
 
   constructor(private cartService : CartServiceService,
               private userDataService: SaveUserDataService) { }
