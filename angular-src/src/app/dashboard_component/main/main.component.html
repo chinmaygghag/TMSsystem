@@ -15,47 +15,64 @@
 
 </head>
 <body>
-<angular-image-slider [images]="imagesUrl" height=200px width=200px></angular-image-slider>
+<!------ Banner picture ---------->
+<div class="container" >
+  <img src="https://www.onlinefabricstore.net/images/homepage/home-sunbrella-02-2018.jpg" height = "400px" width="100%">
+</div>
+<!------ Square divs ---------->
+<div class= "row" style="margin-top:10px">
+  <div class="col-sm-3" style="border:solid;height:300px;border-color: #F5F5F5">
+    <div class="row" style="margin-left:2px;height:50px;width:95%;border-bottom:solid;border-bottom-color:  #82D8E3;border-bottom-width: 5px;color: #002E36;font-size: 24px;">SILK</div>
+    <div class="row" style="margin-top:5px;margin-left:2px;">
+      <img src="https://1.bp.blogspot.com/-mXOCFXUFzwg/WQw2S7yMojI/AAAAAAAABk0/SYPq36aIUmAP6aF9Ce7rNHbe7abvUGJ_wCLcB/s1600/94.png"  height= "230px" width = "90%">
+    </div>
+  </div>
+  <div class="col-sm-3" style="border:solid;height:300px;border-color: #F5F5F5">
+    <div class="row" style="margin-left:2px;height:50px;width:95%;border-bottom:solid;border-bottom-color:  #ADE422;border-bottom-width: 5px;color: #002E36;font-size: 24px;">COTTON</div>
+    <div class="row" style="margin-top:5px;margin-left:2px;">
+      <img src="https://d1a6t1943usoj7.cloudfront.net/v1/dc944e68-2f4a-4971-85ae-a3f8341dfa12/w756/konacottonfabricbytheyard_aiid1873077.jpg"  height= "230px" width = "90%">
+    </div>
+  </div>
+  <div class="col-sm-3" style="border:solid;height:300px;border-color: #F5F5F5">
+    <div class="row" style="margin-left:2px;height:50px;width:95%;border-bottom:solid;border-bottom-color:  #FFA724;border-bottom-width: 5px;color: #002E36;font-size: 24px;">HANDLOOM</div>
+    <div class="row" style="margin-top:5px;margin-left:2px;">
+      <img src="https://i.pinimg.com/originals/4d/06/79/4d0679652172179be3e005f356724ec4.jpg"  height= "230px" width = "90%">
+    </div>
+  </div>
+  <div class="col-sm-3" style="border:solid;height:300px;border-color: #F5F5F5">
+    <div class="row" style="margin-left:2px;height:50px;width:95%;border-bottom:solid;border-bottom-color: #FF5252;border-bottom-width: 5px;color: #002E36;font-size: 24px;">LACE</div>
+    <div class="row" style="margin-top:5px;margin-left:2px;">
+      <img src="https://img.etsystatic.com/il/28efb8/1146107452/il_570xN.1146107452_34uc.jpg?version=0"  height= "230px" width = "90%">
 
-<br><br>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron" style="margin-top:10px;height:70px">
+  <div class="row" style="color: #444;font-size: 20px;">
+    The most trending items
+    <a style="margin-left:20px;" class="btn btn-primary" [routerLink] = "['/merchant/login']">View All</a>
+  </div>
+</div>
 <div class="row">
-  <div class="col-sm-4"><img src="http://lostininternet.com/wp-content/uploads/2015/06/paper-cutout-art-fashion-design-shamekh-bluwi-05.jpg" height="250" width="350"></div>
-  <div class="col-sm-4"><img src="https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/light-blue-pattern-wallpaper-baby-blue-fabric-with-floral-pattern-texture.jpg" height="250" width="350"></div>
-  <div class="col-sm-4"><img src="http://ornellagallo.com/wp-content/uploads/2016/07/figurins7-cutouts-.jpg" height="250" width="350"></div>
+  <angular-image-slider [images]="imagesUrl" style="width:100%;" height=170px></angular-image-slider>
+</div>
+
+<!------ Pop up ---------->
+
+<div class="container" style="margin-top:30px;height:70px;color:#444;font-size: 20px">
+  Explore our variety range of fabrics for cushion covers and upholsters
+  <a style="margin-left:20px;" [routerLink] = "['/merchant/login']">Click here</a>
 
 </div>
-<br><br>
 <div class="row">
-  <div class="col-sm-3"><img src="https://cdn.architecturendesign.net/wp-content/uploads/2016/01/AD-Paper-Cutout-Art-Fashion-Dresses-Edgar-Artis-11.jpg" height="200" width="250"></div>
-  <div class="col-sm-3"><img src="https://3.bp.blogspot.com/-06Dm_TpvzJs/V19pDnqWNnI/AAAAAAAAow4/6fe8BjEWPhYAtV56jMaOy5Rw2VjH4EvNgCLcB/s1600/Pictures-of-beach-wedding-dresses.jpg" height="200" width="250"></div>
-  <div class="col-sm-3"><img src="https://s-media-cache-ak0.pinimg.com/originals/84/db/57/84db57acce62402132a62430518c36fb.jpg" height="200" width="250"></div>
-  <div class="col-sm-3"><img src="https://img0.etsystatic.com/137/0/11382487/il_fullxfull.985653752_ub3h.jpg" height="200" width="250"></div>
-</div>
-
-<div class="row" style="margin-top:20px">
-  <div class="col-sm-3"> Fabrics for Party Dresses</div>
-  <div class="col-sm-3">Fabrics for Wedding Outfits</div>
-  <div class="col-sm-3">Fabrics for Casuals</div>
-  <div class="col-sm-3">Fabrics for Traditional attires</div>
+  <img src="https://www.missprint.co.uk/wp-content/uploads/2016/01/Cushions-Sofa-Landscape.jpg" height="400" width="100%">
 </div>
 
 
-<div class="row" style="margin-top:5px">
-  <div class="col-sm-3"> Starting from $20</div>
-  <div class="col-sm-3">Starting from $20</div>
-  <div class="col-sm-3">Starting from $20</div>
-  <div class="col-sm-3">Starting from $20</div>
-</div>
 
-<div class="row" id = "labels" style="margin-top:10px">
-  <div class="col-sm-3"><a class="btn btn-primary" [routerLink] = "['/user/login']">View items</a></div>
-  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/user/login']">View items</a></div>
-  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/user/login']">View items</a></div>
-  <div class="col-sm-3" ><a class="btn btn-primary" [routerLink] = "['/user/login']">View items</a></div>
-</div>
 
-<div id=footer style="margin-top: 100px;background-color:#212F3D">
-</div>
+
 </body>
 </html>
 
