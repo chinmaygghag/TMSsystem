@@ -50,6 +50,8 @@ import { FooterComponentComponent } from "./dashboard_component/footer-component
 import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
+import { ViewItemComponent} from "./user-component/view-item/view-item.component";
+
 import {ChartsModule} from "ng2-charts";
 
 
@@ -113,7 +115,9 @@ const appRoutes: Routes = [
     FooterComponentComponent,
     CartComponent,
     CheckoutComponent,
-    AgentHistogramComponent
+    AgentHistogramComponent,
+    ViewItemComponent
+
   ],
   imports: [
     BrowserModule,
@@ -125,7 +129,6 @@ const appRoutes: Routes = [
     FlashMessagesModule.forRoot(),
     BsDropdownModule.forRoot(),
     ChartsModule
-    // PopupModule.forRoot()
   ],
   providers: [MerchantAuthServiceService,
     MerchantFlashMessageServiceService,
@@ -143,6 +146,7 @@ const appRoutes: Routes = [
     MerchantServicesService],
   bootstrap: [AppComponent]
 })
+
 
 
 
