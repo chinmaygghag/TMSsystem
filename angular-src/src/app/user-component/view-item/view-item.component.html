@@ -41,18 +41,7 @@
           </div>
       </div>
 
-      <div class="row">
-        <br>
-        <div class="col-md-5" align="left">
-          <h5><strong>  Cost per Unit:</strong></h5>
-        </div>
 
-          <div class="col-md-7" align="left">
-          <p>
-            $ 20
-          </p>
-          </div>
-      </div>
 
       <div class="row">
         <br>
@@ -70,6 +59,36 @@
       </div>
 
 
+
+      <div class="row">
+        <!--<div class="container" *ngFor="let type of clothtypes; let j=index">-->
+        <br>
+        <div class="col-md-5" align="left">
+          <h5><strong> Select Cloth Type :</strong></h5>
+        </div>
+
+        <div class="col-md-7" align="left">
+          <p>
+            <select >
+              <option *ngFor="let type of clothtypes; let j=index" [value]="type.cloth">{{type.cloth}}</option>
+            </select>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+        <div class="col-md-5" align="left">
+          <h5><strong>  Cost per Unit:</strong></h5>
+        </div>
+
+        <div class="col-md-7" align="left">
+          <p *ngIf="j===type.cloth" >{{type.cost}}
+          </p>
+        </div>
+      </div>
+
+      <!--</div>-->
 
     </div>
     <div class="col-md-3">
