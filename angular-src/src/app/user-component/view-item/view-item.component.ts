@@ -16,6 +16,7 @@ export class ViewItemComponent implements OnInit {
 
   constructor() {
 
+
   }
 
   ngOnInit() {

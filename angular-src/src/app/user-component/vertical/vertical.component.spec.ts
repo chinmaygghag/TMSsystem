@@ -22,6 +22,7 @@ describe('VerticalComponent', () => {
     fixture.detectChanges();
   });
 
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

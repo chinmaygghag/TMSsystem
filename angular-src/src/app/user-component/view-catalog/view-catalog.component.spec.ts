@@ -26,3 +26,4 @@ describe('ViewCatalogComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
