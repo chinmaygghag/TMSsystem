@@ -1,0 +1,100 @@
+<div class="jumbotron">
+  <div class="row" style="text-align: center" align="center">
+
+    <div class="col-md-5">
+      <div class="item">
+        <img class="card-img-top" src="https://www.earlypiano.co.uk/wp-content/uploads/2013/02/Worsted-Hitchpin-Cloth.jpg" alt="Card image cap"  height="300"
+             width="300"  >
+
+        <div class="item-overlay top"></div>
+      </div>
+
+
+      <!--<div class="zoom">-->
+      <!--<img class="card-img-top" src="https://www.earlypiano.co.uk/wp-content/uploads/2013/02/Worsted-Hitchpin-Cloth.jpg" alt="Card image cap"  height="300"-->
+           <!--width="300"  >-->
+      <!--</div>-->
+
+    </div>
+
+    <div class="col-md-4">
+      <br><br>
+      <div class="row" style="text-align: center" align="center">
+        <div class="col-md-5" align="left">
+        <h4><strong>Title :</strong></h4>
+        </div>
+        <div class="col-md-7" align="left">
+          <h4><strong>SILK</strong></h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+        <div class="col-md-5" align="left">
+        <h5><strong>Description :</strong></h5>
+        </div>
+
+          <div class="col-md-7" align="left">
+        <p>
+          qfbvfuehvfcfvi qfb qfbi qfbvvi qfbvfuehvfcfvi
+        </p>
+          </div>
+      </div>
+
+
+
+      <div class="row">
+        <br>
+        <div class="col-md-5" align="left">
+          <h5><strong> Enter Cloth&nbsp;Length :</strong></h5>
+        </div>
+
+        <div class="col-md-7" align="left">
+          <p>
+            <input name="cloth_length_{{i}}" [(ngModel)]="cloth_length[i]" type="text" id="agency_name_{{i}}"
+                   style="width:50%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;"
+                   value="" maxlength="50" />
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <!--<div class="container" *ngFor="let type of clothtypes; let j=index">-->
+        <br>
+        <div class="col-md-5" align="left">
+          <h5><strong> Select Cloth Type :</strong></h5>
+        </div>
+
+        <div class="col-md-7" align="left">
+          <p>
+            <select >
+              <option *ngFor="let type of clothtypes; let j=index" [value]="type.cloth">{{type.cloth}}</option>
+            </select>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+        <div class="col-md-5" align="left">
+          <h5><strong>  Cost per Unit:</strong></h5>
+        </div>
+
+        <div class="col-md-7" align="left">
+          <p *ngIf="j===type.cloth" >{{type.cost}}
+          </p>
+        </div>
+      </div>
+
+      <!--</div>-->
+
+    </div>
+    <div class="col-md-3">
+      <br><br><br><br>
+      <a class="btn btn-primary" style="margin-left: 50px " (click)="addToCart(catalog,i)">Add to cart</a>
+    </div>
+
+  </div>
+</div>

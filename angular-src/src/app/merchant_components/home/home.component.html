@@ -1,220 +1,71 @@
 
 
-<div class="jumbtron text-center">
-  <div id="reposition">
-    <head>
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <!------ Include the above in your HEAD tag ---------->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta charset="utf-8">
-
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-    <div id="container" >
-      <img src="https://sep.yimg.com/ay/yhst-10775676472182/coming-soon-jay-cyn-designs-for-birch-organic-fabrics-farm-fresh-chicken-wire-multi-1.gif" height = "350px" style="width:100%">
-    </div>
-    <!--<div class = "row">-->
-      <!--<div class="col-sm-3">-->
-        <!--<td >-->
-          <!--<div class="circleBase type4" (click)="viewCatalogue()" >-->
-            <!--<label style="margin-top: 70px; margin-left: 40px; color: burlywood; text-align: center">-->
-              <!--<h2>SILK FABRIC</h2>-->
-            <!--</label>-->
-          <!--</div>-->
-        <!--</td>-->
-      <!--</div>-->
-      <!--<div class="col-sm-3">-->
-        <!--<td >-->
-          <!--<div class="circleBase type3"  (click)="viewCatalogue()">-->
-            <!--<label style="margin-top: 70px; margin-left: 10px; color: antiquewhite; text-align: center">-->
-              <!--<h2>COTTON FABRIC</h2>-->
-            <!--</label>-->
-          <!--</div>-->
-        <!--</td>-->
-      <!--</div>-->
-      <!--<div class="col-sm-3">-->
-        <!--<td  >-->
-          <!--<div class="circleBase type2"  (click)="viewCatalogue()">-->
-            <!--<label style="margin-top: 70px; margin-left: 20px; color: antiquewhite;text-align: center">-->
-              <!--<h2>VELVET FABRIC</h2>-->
-            <!--</label>-->
-          <!--</div>-->
-        <!--</td>-->
-      <!--</div>-->
-      <!--<div class="col-sm-3">-->
-        <!--<td >-->
-          <!--<div class="circleBase type1"  (click)="viewCatalogue()">-->
-            <!--<label style="margin-top: 70px; margin-left: 20px; color: antiquewhite; text-align: center">-->
-              <!--<h2>POLYESTER FABRIC</h2>-->
-            <!--</label>-->
-          <!--</div>-->
-        <!--</td>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--</body>-->
-
-  <!--</div>-->
-<!--</div>-->
-
-   <div class="row">
-     <div class="col-md-5">
-       <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-         <div class="row" align="center">
-           <a class="botton" [routerLink] = "['/merchant/home/approvals']" style="margin-left: 100px ">
-             <h4 style="text-align: center">Approve Agents!</h4>
-           </a>
-         </div>
-       </div>
-     </div>
-
-     <div class="col-md-2"></div>
-
-     <div class="col-md-5">
-       <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-         <div class="row" align="center">
-           <a class="botton" [routerLink] = "['/merchant/home/receivedOrders']" style="margin-left: 50px ">
-             <h4 style="text-align: center">Orders Received From Customers!</h4>
-           </a>
-         </div>
-       </div>
-     </div>
-
-   </div>
 
 
-    <div class="row">
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['/merchant/createcatalog']" style="margin-left: 50px ">
-              <h4 style="text-align: center">Create Catalog For Customers!</h4>
-            </a>
-          </div>
+
+    <div class="row" style="height:300px">
+      <div class="col-md-8" style="border:solid;border-color: #F5F5F5">
+        <div class="row"  [routerLink] = "['histogram']"style="height:230px;background-color: #F5F5F5;">
+          <img src="https://plot.ly/static/img/literacy/fig3.jpg" style="margin-left:20px;margin-top:10px;" width="85%" height="200px">
+        </div>
+        <div class="row" [routerLink] = "['histogram']" style="height:70px">
+          <p style="margin-top : 20px;margin-left:75px;color: black;font-size: 24px;">Click here to see the statistics of agents</p>
+
         </div>
       </div>
+      <div class="col-md-4" style="border:solid;border-color: #F5F5F5">
+        <div class="row" [routerLink] = "['/merchant/createcatalog']" style="height:220px;background-color:#1ABC9C">
+          <img src="https://img1.etsystatic.com/024/0/5376838/il_570xN.564978191_hg95.jpg" style="margin-left:20px;margin-top:10px;" height="185px" width="90%">
+        </div>
+        <div class="row" [routerLink] = "['/merchant/createcatalog']" style="height:70px;background-color: #339966">
+          <p style="margin-top : 20px;margin-left:35px;color: white;font-size: 24px;">Click here to create catalogue</p>
 
-      <div class="col-md-2"></div>
-
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['receivedOrders']" style="margin-left: 120px ">
-              <h4 style="text-align: center">Track Orders!</h4>
-            </a>
-          </div>
         </div>
       </div>
-
     </div>
 
 
-    <div class="row">
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['receivedOrders']" style="margin-left: 60px ">
-              <h4 style="text-align: center">Approve Customer's Design!</h4>
-            </a>
-          </div>
+
+    <!------ Square blocks ---------->
+    <div class= "row" style="margin-top:10px">
+      <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:150px;width:95%;background-color:#adebeb;margin-top:5px;margin-left:2px;">
+          <img src = "https://www.usfleettracking.com/sites/all/themes/usft_material/images/tracking-icon.svg" style="margin-left:12px;margin-top:10px;" height="120px" width="90%">
+        </div>
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:60px;width:95%;background-color:#33cccc;margin-left:2px;">
+          <p style="margin-left:50px;margin-top:10px;color: white;font-size: 20px;">Track orders</p>
         </div>
       </div>
 
-      <div class="col-md-2"></div>
-
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px; text-align: center">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['histogram']" style="margin-left: 120px ">
-              <h4 style="text-align: center">Agent Statistic!</h4>
-            </a>
-          </div>
+      <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:150px;width:95%;background-color:#ffad33;margin-top:5px;margin-left:2px;">
+          <img src = "http://cdn.onlinewebfonts.com/svg/img_513926.png" style="margin-left:20px;margin-top:10px;" height="120px" width="80%">
+        </div>
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:60px;width:95%;background-color:#ff8c1a;margin-left:2px;">
+          <p style="margin-left:30px;color: white;margin-top:10px;font-size: 20px;">Approve agents</p>
         </div>
       </div>
+
+      <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:150px;width:95%;background-color:#4dd2ff;margin-top:5px;margin-left:2px;">
+          <img src = "http://www.gazetadopovo.com.br/blogs/giro-sustentavel/wp-content/uploads/sites/62/2016/04/compliance-icon-3.png" style="margin-left:12px;margin-top:10px;" height="120px" width="90%">
+        </div>
+        <div class="row" [routerLink] = "['/merchant/home/approvals']" style="height:60px;width:95%;background-color:#00bfff;margin-left:2px;">
+          <p style="margin-left:20px;margin-top:10px;color: white;font-size: 20px;">Change order status</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+        <div class="row" [routerLink] = "['/merchant/home/receivedOrders']" style="height:150px;width:95%;background-color:#ff6666;margin-top:5px;margin-left:2px;">
+          <img src = "http://www.droid-life.com/wp-content/uploads/2015/04/action-launcher-icon-980x686.jpg" style="margin-left:12px;margin-top:10px;" height="120px" width="90%">
+        </div>
+        <div class="row" [routerLink] = "['/merchant/home/receivedOrders']" style="height:60px;width:95%;background-color:#ff5050;margin-left:2px;">
+          <p style="margin-left:30px;margin-top:10px;color: white;font-size: 20px;">View received orders</p>
+        </div>
+      </div>
+
 
     </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="row">-->
-  <!--<div class="col-md-4">-->
-    <!--<h3> Pending Agents Approval </h3>-->
-    <!--&lt;!&ndash;<p>Count</p>&ndash;&gt;-->
-    <!--<div>-->
-      <!--<a class="btn btn-primary" [routerLink]="['/merchant/home/approvals']">More Information</a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="col-md-4">-->
-    <!--<h3>Orders Received From Users </h3>-->
-    <!--<div>-->
-      <!--<a class="btn btn-primary" [routerLink]="['/merchant/home/receivedOrders']">View Orders</a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="col-md-4">-->
-    <!--<h3>Track Orders from Agents </h3>-->
-    <!--<div>-->
-      <!--<a class="btn btn-primary" [routerLink]="">Get Details </a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="col-md-4">-->
-    <!--<h3>Create Catalog Item </h3>-->
-    <!--<div>-->
-      <!--<a class="btn btn-primary" [routerLink]="['/merchant/createcatalog']">Create a Catalog Component </a>-->
-    <!--</div>-->
-  <!--</div>-->
-
-
-
-  <!--<div class="col-md-4">-->
-
-    <!--<div>-->
-
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="col-md-4">-->
-
-    <!--<div>-->
-
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="col-md-4">-->
-
-    <!--<div>-->
-
-    <!--</div>-->
-  <!--</div>-->
-
-
-  <!--<div class="col-md-4">-->
-    <!--<h3>Update Order Details For Customer </h3>-->
-    <!--<div>-->
-      <!--<a class="btn btn-primary" [routerLink]="">Update Details</a>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->

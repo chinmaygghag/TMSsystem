@@ -1,75 +1,42 @@
-<div class="jumbtron text-center">
-  <div id="reposition">
-    <head>
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <!------ Include the above in your HEAD tag ---------->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta charset="utf-8">
 
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-    <div id="container" >
-      <img src="https://sep.yimg.com/ay/yhst-10775676472182/coming-soon-jay-cyn-designs-for-birch-organic-fabrics-farm-fresh-chicken-wire-multi-1.gif" height = "350px" style="width:100%">
+
+<div class= "row" style="margin-top:10px">
+  <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+    <div class="row" [routerLink] = "['#']" style="height:150px;width:95%;background-color:#adebeb;margin-top:5px;margin-left:2px;">
+      <img src = "https://images.vexels.com/media/users/3/144178/isolated/lists/3d71188c55922ea5cef056f9aeb042f2-doctor-profile-icon.png" style="margin-left:12px;margin-top:10px;" height="120px" width="80%">
     </div>
-
-    <div class="row">
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-          <div class="row" align="center">
-            <a class="botton"  style="margin-left: 100px ">
-              <h4 style="text-align: center">Agent Profile</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2"></div>
-
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 40px">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['receivedOrders']" style="margin-left: 120px ">
-              <h4 style="text-align: center">Accepts orders</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-
-
-
+    <div class="row" [routerLink] = "['#']" style="height:60px;width:95%;background-color:#33cccc;margin-left:2px;">
+      <p style="margin-left:50px;margin-top:10px;color: white;font-size: 20px;">Agent profile</p>
     </div>
-
-
-    <div class="row">
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 30px">
-          <div class="row" align="center">
-            <a class="botton" [routerLink] = "['process']" style="margin-left: 100px ">
-              <h4 style="text-align: center">Process Orders</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2"></div>
-
-      <div class="col-md-5">
-        <div class="jumbotron" style="color: #7386D5; margin-top: 30px">
-          <div class="row" align="center">
-            <a class="botton"  style="margin-left: 120px ">
-              <h4 style="text-align: center">Payments</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    </body>
   </div>
+
+  <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+    <div class="row" [routerLink] = "['receivedOrders']" style="height:150px;width:95%;background-color:#ffe0b3;margin-top:5px;margin-left:2px;">
+      <img src = "http://icons.iconarchive.com/icons/tpdkdesign.net/refresh-cl/256/System-Package-icon.png" style="margin-left:20px;margin-top:10px;" height="120px" width="80%">
+    </div>
+    <div class="row" [routerLink] = "['receivedOrders']" style="height:60px;width:95%;background-color:#ffc266;margin-left:2px;">
+      <p style="margin-left:30px;color: white;margin-top:10px;font-size: 20px;">Accept order</p>
+    </div>
+  </div>
+
+  <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+    <div class="row" [routerLink] = "['process']" style="height:150px;width:95%;background-color:#b3ecff;margin-top:5px;margin-left:2px;">
+      <img src = "http://www.splashcpq.com/wp-content/uploads/2017/09/icon-order-fulfillment-blue-300x234.png" style="margin-left:12px;margin-top:10px;" height="120px" width="90%">
+    </div>
+    <div class="row" [routerLink] = "['process']" style="height:60px;width:95%;background-color:#4dd2ff;margin-left:2px;">
+      <p style="margin-left:20px;margin-top:10px;color: white;font-size: 20px;">Process Orders</p>
+    </div>
+  </div>
+
+  <div class="col-sm-3" style="border:solid;height:230px;border-color: #F5F5F5">
+    <div class="row" [routerLink] = "['#']" style="height:150px;width:95%;background-color:#ffb3b3;margin-top:5px;margin-left:2px;">
+      <img src = "http://pluspng.com/img-png/png-debt-debt-collection-01-png-1000.png" style="margin-left:20px;margin-top:10px;" height="120px" width="75%">
+    </div>
+    <div class="row" [routerLink] = "['#']" style="height:60px;width:95%;background-color:#ff8080;margin-left:2px;">
+      <p style="margin-left:30px;margin-top:10px;color: white;font-size: 20px;">Payments    </p>
+    </div>
+  </div>
+
+
 </div>
+

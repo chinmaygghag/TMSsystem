@@ -50,6 +50,7 @@ import { FooterComponentComponent } from "./dashboard_component/footer-component
 import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
+import { ViewItemComponent} from "./user-component/view-item/view-item.component";
 
 import {ChartsModule} from "ng2-charts";
 
@@ -71,6 +72,7 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'user/home/viewcatalog/viewitem', component:ViewItemComponent},
   {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
@@ -112,7 +114,8 @@ const appRoutes: Routes = [
     FooterComponentComponent,
     CartComponent,
     CheckoutComponent,
-    AgentHistogramComponent
+    AgentHistogramComponent,
+    ViewItemComponent
 
   ],
   imports: [
