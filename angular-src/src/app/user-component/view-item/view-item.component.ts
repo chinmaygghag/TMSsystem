@@ -10,42 +10,32 @@ export class ViewItemComponent implements OnInit {
 
 
   clothtypes = [];
-
-
-
-
+  selectedItem: Object = {};
+  clothCost:String;
   constructor() {
 
   }
 
   ngOnInit() {
     this.clothtypes.push(new clothTypes("SILK",
-      "25"))
+      "$25"));
     this.clothtypes.push(new clothTypes("COTTON",
-      "15"))
+      "$15"));
     this.clothtypes.push(new clothTypes("LINEN",
-      "10"))
+      "$10"));
     this.clothtypes.push(new clothTypes("WOOL",
-      "18"))
+      "$18"));
     this.clothtypes.push(new clothTypes("SYNTHETIC FIBERS",
-      "20"))
+      "$20"));
     this.clothtypes.push(new clothTypes("RAYON",
-      "15"))
-
-
+      "$15"));
   }
-
-
-
-
-
-
 }
 
 
 class clothTypes {
-  constructor(private cloth: String,
-              private cost: String) {
+  constructor(public cloth: String,
+              public  cost: String) {
 
   }
 }

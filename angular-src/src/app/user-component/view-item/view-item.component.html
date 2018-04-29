@@ -24,7 +24,7 @@
         <h4><strong>Title :</strong></h4>
         </div>
         <div class="col-md-7" align="left">
-          <h4><strong>SILK</strong></h4>
+          <h4><strong>Plain</strong></h4>
         </div>
       </div>
 
@@ -48,14 +48,12 @@
         <div class="col-md-5" align="left">
           <h5><strong> Enter Cloth&nbsp;Length :</strong></h5>
         </div>
+        <div class="col-md-5">
+          <input type="text" placeholder="Length(centimeters)">
 
-        <div class="col-md-7" align="left">
-          <p>
-            <input name="cloth_length_{{i}}" [(ngModel)]="cloth_length[i]" type="text" id="agency_name_{{i}}"
-                   style="width:50%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;"
-                   value="" maxlength="50" />
-          </p>
         </div>
+
+
       </div>
 
 
@@ -69,8 +67,10 @@
 
         <div class="col-md-7" align="left">
           <p>
-            <select >
-              <option *ngFor="let type of clothtypes; let j=index" [value]="type.cloth">{{type.cloth}}</option>
+            <select [(ngModel)]="selectedItem" required>
+              <option *ngFor="let clothType of clothtypes" [ngValue]="clothType">
+                {{clothType.cloth}}
+              </option>
             </select>
           </p>
         </div>
@@ -81,10 +81,9 @@
         <div class="col-md-5" align="left">
           <h5><strong>  Cost per Unit:</strong></h5>
         </div>
-
+        <label>{{selectedItem.cost}}</label>
         <div class="col-md-7" align="left">
-          <p *ngIf="j===type.cloth" >{{type.cost}}
-          </p>
+
         </div>
       </div>
 

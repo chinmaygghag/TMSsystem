@@ -68,39 +68,40 @@ router.post('/authenticate', function (req, res, next) {
 
 
 router.post('/place_order',function (req,res,next) {
-    username = req.body.username;
-    catalogName = req.body.catalogName;
-    cost = req.body.finalcost;
-
-
-    console.log(req);
-    console.log(catalogName);
-    console.log(cost);
-    let order = new Order(
-        {
-            catalog: catalogName,
-            cost: cost,
-            statusForCustomer: "placed",
-            statusForMerchant: "received",
-            statusForAgent: ""
-        }
-    );
-
-    Order.insertOrders(order,function (err,orderDetails) {
-        if (err) throw err;
-
-        {
-            //console.log('order placed');
-            console.log(orderDetails);
-            User.addOrders(username, orderDetails, function (err, user) {
-            if (err) {
-                res.json({success: false, msg: 'Order could not be placed'});
-            } else {
-                res.json({success: true, msg: 'Order Placed Successfully'});
+    const username = req.body.username;
+    console.log(req.body);
+    const orders = req.body.orders;
+    for (var i = 0; i < orders.length; i++) {
+        let order = new Order(
+            {
+                catalog: orders[i].catalog,
+                cost: orders[i].cost,
+                clothName: orders[i].clothName,
+                length: orders[i].length,
+                catalogImage: orders[i].catalogImage,
+                address: orders[i].address,
+                username: orders[i].username,
+                statusForCustomer: "placed",
+                statusForMerchant: "received",
+                statusForAgent: ""
+            }
+        );
+        Order.insertOrders(order,function (err,orderDetails) {
+            if (err) throw err;
+            {
+                //console.log('order placed');
+                console.log(orderDetails);
+                User.addOrders(username, orderDetails, function (err, user) {
+                    if (err) {
+                        res.json({success: false, msg: 'Order could not be placed'});
+                    } else {
+                        res.json({success: true, msg: 'Order Placed Successfully'});
+                    }
+                })
             }
         })
     }
-    })
+
 
 });
 

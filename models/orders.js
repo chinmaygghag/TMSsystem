@@ -6,13 +6,17 @@ const config = require('../config/database');
 
 //creating a order schema
 const orderSchema = mongoose.Schema({
-    details:{
-        type: String
-        // required: true
-    },
     catalog:{
         type: String,
         required: true
+    },
+    username:{
+        type: String,
+        required: true
+    },
+    address:{
+      type: String,
+      required: true
     },
     catalogImage:{
       type: String,
@@ -23,8 +27,13 @@ const orderSchema = mongoose.Schema({
       required: true
     },
     length:{
-        type: String
-        // required: true
+        type: String,
+        required: true
+    },
+    clothName:{
+        type: String,
+        required: true
+
     },
     statusForCustomer:{ // "placed","ready","delivered"
         type: String

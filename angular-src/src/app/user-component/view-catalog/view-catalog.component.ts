@@ -27,6 +27,11 @@ export class ViewCatalogComponent implements OnInit {
   unitLength: number;
 
 
+
+  clothtypes = [];
+  selectedItem: Object = {};
+
+
   constructor(private catalogService:GetCatalogsService,
               private _flashMessagesService: FlashMessagesService,
               private userDataService: SaveUserDataService,
@@ -37,9 +42,23 @@ export class ViewCatalogComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
+    this.clothtypes.push(new clothTypes("SILK",
+      "$",25));
+    this.clothtypes.push(new clothTypes("COTTON",
+      "$",15));
+    this.clothtypes.push(new clothTypes("LINEN",
+      "$",10));
+    this.clothtypes.push(new clothTypes("WOOL",
+      "$",18));
+    this.clothtypes.push(new clothTypes("SYNTHETIC FIBERS",
+      "$",20));
+    this.clothtypes.push(new clothTypes("RAYON",
+      "$",15));
+
     if(this.userDataService.username != null){
     this.userObject = this.userDataService.username;
-    console.log(this.userObject);
     this.catalogService.getCatalog().subscribe(data=>
     {
       console.log(data.success);
@@ -57,15 +76,16 @@ export class ViewCatalogComponent implements OnInit {
     }
   }
 
-  // trackByIndex(index: number, obj: any): any {
-  //   return index;
-  // }
-
-  addToCart(catalog,index){
+  addToCart(catalog,index,clothType){
     console.log(this.cloth_length[index]);
     this.unitLength = catalog.unitLengthCost;
-    const totalCost = this.cloth_length[index]*this.unitLength;
-    console.log(totalCost);
+    const clothCost = Number(clothType);
+    console.log("ClothCost "+clothCost);
+    console.log("UnitLength + ClothCost  " +Number(this.unitLength)+Number(clothCost));
+    const totalCost = Number(this.cloth_length[index])*(Number(this.unitLength)+Number(clothCost));
+
+    console.log("Total Cost : "+totalCost);
+
     const cartItem = {
       username : this.userDataService.username,
       catalogName : catalog.title,
@@ -74,10 +94,8 @@ export class ViewCatalogComponent implements OnInit {
       clothName: "Silk",
       totalCost : totalCost
     };
-    console.log("here");
     this.cartService.addToCart(cartItem).subscribe(data=>{
       if (data.success){
-        console.log("Added to Cart");
         this._flashMessagesService.show('Item Added to Cart!', { cssClass: 'alert-success', timeout: 3000 });
       }else{
         console.log(data);
@@ -85,6 +103,7 @@ export class ViewCatalogComponent implements OnInit {
     })
 
   }
+
 }
 
 class Catalog {
@@ -94,5 +113,14 @@ class Catalog {
               public unitLengthCost: String) {
   }
 
+}
+
+
+class clothTypes {
+  constructor(public cloth: String,
+              public currency: String,
+              public  cost: Number) {
+
+  }
 }
 

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './dashboard_component/navbar/navbar.component';
 import { LoginComponent } from './merchant_components/login/login.component';
 import { HomeComponent } from './merchant_components/home/home.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 import { MainComponent } from './dashboard_component/main/main.component';
 
 import { MerchantAuthServiceService} from "./services/merchant/merchant-auth-service.service";
@@ -43,7 +43,7 @@ import { ReceivedOrdersFromMerchantComponent} from "./merchant_components/receiv
 import { GetOrdersService } from "./services/merchant/get-orders.service";
 import { CustomizeCatalogComponent} from "./user-component/customize-catalog/customize-catalog.component";
 import { CartComponent} from "./user-component/user-cart/cart/cart.component";
-import {CheckoutComponent} from "./user-component/checkout/checkout.component";
+import { CheckoutComponent} from "./user-component/checkout/checkout.component";
 import { CartServiceService} from "./services/cart/cart-service.service";
 import { AgentHistogramComponent} from "./merchant_components/agent-histogram/agent-histogram.component";
 import { FooterComponentComponent } from "./dashboard_component/footer-component/footer-component.component";
@@ -51,9 +51,9 @@ import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
 import { ViewItemComponent} from "./user-component/view-item/view-item.component";
+import { ChartsModule} from "ng2-charts";
 
-import {ChartsModule} from "ng2-charts";
-
+import { SaveStateService } from "./services/miscService/save-state.service";
 
 
 const appRoutes: Routes = [
@@ -81,6 +81,7 @@ const appRoutes: Routes = [
   {path: 'agent/home/process', component: AgentProcessComponent},
   {path: 'agent/home', component: AgentHomeComponent},
   {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
+  {path: 'user/home/viewcatalog/viewitem',component:ViewItemComponent}
 ];
 
 @NgModule({
@@ -117,8 +118,8 @@ const appRoutes: Routes = [
     CheckoutComponent,
     AgentHistogramComponent,
     ViewItemComponent
-
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -130,6 +131,7 @@ const appRoutes: Routes = [
     BsDropdownModule.forRoot(),
     ChartsModule
   ],
+
   providers: [MerchantAuthServiceService,
     MerchantFlashMessageServiceService,
     UserauthserviceService,
@@ -143,6 +145,7 @@ const appRoutes: Routes = [
     PlaceOrderService,
     GetOrdersService,
     CartServiceService,
+    SaveStateService,
     MerchantServicesService],
   bootstrap: [AppComponent]
 })
