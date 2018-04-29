@@ -17,6 +17,7 @@ export class CheckoutComponent implements OnInit {
   address1: string;
   address2: string;
   cartItems = [];
+  name: string;
 
   constructor(private saveUserData: SaveUserDataService,
               private router: Router,
@@ -40,6 +41,7 @@ export class CheckoutComponent implements OnInit {
     const username = {
       username : this.saveUserData.username
     };
+    console.log(username+" :  username ");
     this.cartService.getCartElement(username).subscribe(data=>{
       if (data.success){
         const cost = 0;
@@ -61,7 +63,7 @@ export class CheckoutComponent implements OnInit {
         );
       }
     });
-
+    console.log(this.cartItems+" :  cartItems ");
     const placeOrder = {
       "username" : this.saveUserData.username,
       "orders" : this.cartItems

@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
 const Order = require('../../models/orders');
+const cart = require('../../models/cart');
 
 //Register
 router.post('/register', function (req, res, next) {
@@ -99,7 +100,8 @@ router.post('/place_order',function (req,res,next) {
                     }
                 })
             }
-        })
+        });
+        cart.delete()
     }
 
 
