@@ -14,6 +14,7 @@ export class ViewItemComponent implements OnInit {
   clothCost:String;
   constructor() {
 
+
   }
 
   ngOnInit() {
