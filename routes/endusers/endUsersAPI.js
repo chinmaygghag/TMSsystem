@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
 const Order = require('../../models/orders');
+const cart = require('../../models/cart');
 
 //Register
 router.post('/register', function (req, res, next) {
@@ -63,7 +64,6 @@ router.post('/authenticate', function (req, res, next) {
 
         });
     });
-    console.log('entering compare password');
 });
 
 
@@ -83,11 +83,10 @@ router.post('/place_order',function (req,res,next) {
                 username: orders[i].username,
                 statusForCustomer: "placed",
                 statusForMerchant: "received",
-                statusForAgent: ""
+                statusForAgent: "Nothing"
             }
         );
         Order.insertOrders(order,function (err,orderDetails) {
-
             if (err) throw err;
             {
                 //console.log('order placed');
@@ -100,34 +99,8 @@ router.post('/place_order',function (req,res,next) {
                     }
                 })
             }
-        })
+        });
     }
-
-
 });
-
-router.get('/orderhistory',function (req,res,next) {
-    const username = req.body.username;
-
-    Order.getOrderbyUserName(username, function (err, order) {
-        console.log(err);
-        if (!order) {
-            console.log("order not found");
-            return res.json({success: false, msg: 'Order not found'});
-        }
-        if (err) throw err;
-        else
-            res.json({
-                success: true,
-                Order: order
-            })
-
-
-
-
-    })
-});
-
-
 
 module.exports = router; //export the router to connect and show the page

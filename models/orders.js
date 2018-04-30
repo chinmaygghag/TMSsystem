@@ -84,3 +84,4 @@ module.exports.getOrderFromOrderIDForMerchant = function (callback) {
     const query = ({'statusForMerchant' : "received"});
     order.find(query,callback);
 };
+
