@@ -64,7 +64,6 @@ router.post('/authenticate', function (req, res, next) {
 
         });
     });
-    console.log('entering compare password');
 });
 
 
@@ -84,7 +83,7 @@ router.post('/place_order',function (req,res,next) {
                 username: orders[i].username,
                 statusForCustomer: "placed",
                 statusForMerchant: "received",
-                statusForAgent: ""
+                statusForAgent: "Nothing"
             }
         );
         Order.insertOrders(order,function (err,orderDetails) {
@@ -101,10 +100,7 @@ router.post('/place_order',function (req,res,next) {
                 })
             }
         });
-        cart.delete()
     }
-
-
 });
 
 module.exports = router; //export the router to connect and show the page
