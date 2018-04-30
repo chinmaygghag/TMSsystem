@@ -51,6 +51,8 @@ import { SliderModule} from "angular-image-slider";
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
 import { ViewItemComponent} from "./user-component/view-item/view-item.component";
+import { OrderHistoryComponent} from "./user-component/order-history/order-history.component";
+
 import { ChartsModule} from "ng2-charts";
 
 import { SaveStateService } from "./services/miscService/save-state.service";
@@ -74,6 +76,7 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'user/home/orderhistory', component: OrderHistoryComponent},
   {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
@@ -117,7 +120,8 @@ const appRoutes: Routes = [
     CartComponent,
     CheckoutComponent,
     AgentHistogramComponent,
-    ViewItemComponent
+    ViewItemComponent,
+    OrderHistoryComponent
   ],
 
   imports: [

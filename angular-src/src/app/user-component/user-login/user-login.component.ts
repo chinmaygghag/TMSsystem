@@ -44,7 +44,7 @@ export class UserLoginComponent implements OnInit {
       if(data.success){
         console.log("Login Successful!");
         this.userDataService.username = user.username;
-        this.router.navigate(['/user/home']);
+        this.router.navigate(['/user/home/orderhistory']);
       }else{
         console.log("Login has failed");
         this._flashMessagesService.show('Login has failed!', { cssClass: 'alert-success', timeout: 3000 });

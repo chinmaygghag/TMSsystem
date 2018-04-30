@@ -38,4 +38,12 @@ export class PlaceOrderService {
 
   }
 
+  getOrdersbyUsename(username){
+    console.log(username);
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3001/endUsers/orderhistory',username)
+      .map(res=>res.json());
+  }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-user-home',
@@ -8,9 +9,11 @@ import {Router} from '@angular/router';
 })
 export class UserHomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private userData: SaveUserDataService) { }
 
   ngOnInit() {
+    console.log(this.userData.username);
   }
 
   /*plainPage(){

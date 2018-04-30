@@ -70,6 +70,11 @@ module.exports.getOrderFromOrderID = function (orderId,callback) {
     order.findOne(query,callback);
 };
 
+module.exports.getOrderbyUserName = function (username,callback) {
+    const query = ({'username':username});
+    order.find(query,callback);
+};
+
 module.exports.getOrderFromOrderIDForAgent = function (orderId,callback) {
     const query = ({'_id':orderId , 'statusForAgent' : "Received"});
     order.findOne(query,callback);
