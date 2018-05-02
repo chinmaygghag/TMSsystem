@@ -70,7 +70,7 @@ const appRoutes: Routes = [
   {path: 'user/cross',component: CrossComponent},
   {path: 'user/registration', component: UserRegisterComponent },
   {path: 'user/login', component: UserLoginComponent },
-  {path: 'agent/profile', component: AgentProfileComponent},
+  {path: 'agent/home/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
   {path: 'user/home/viewcatalog/viewitem', component:ViewItemComponent},
   {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
