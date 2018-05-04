@@ -59,13 +59,7 @@ const order = module.exports = mongoose.model('Order', orderSchema );
 
 
 module.exports.insertOrders = function (orderDetails,callback) {
-  orderDetails.save(function (err, orderDetails) {
-      if(err) throw callback(err);
-      else{
-          console.log(orderDetails._id);
-          return callback(null,orderDetails._id);
-      }
-  })
+  orderDetails.save(orderDetails,callback);
 };
 
 module.exports.getOrderFromOrderID = function (orderId,callback) {

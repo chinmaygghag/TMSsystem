@@ -80,7 +80,6 @@ export class ViewCatalogComponent implements OnInit {
 
 
   updatePrice(val:any,j){
-    console.log(val);
     for (let i = 0; i < this.clothtypes.length; i++) {
       if (this.clothtypes[i].cloth == val){
         console.log(this.clothtypes[i]);

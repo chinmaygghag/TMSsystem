@@ -67,9 +67,9 @@ router.post('/authenticate', function (req, res, next) {
 });
 
 
-router.post('/place_order',function (req,res,next) {
+router.post('/place_order',function (req,res) {
     const username = req.body.username;
-    console.log(req.body.orders.length);
+    console.log(req.body.orders);
     const orders = req.body.orders;
     for (var i = 0; i < orders.length; i++) {
         const cartId = orders[i].cartId;
@@ -90,20 +90,15 @@ router.post('/place_order',function (req,res,next) {
         );
         Order.insertOrders(order,function (err,orderDetails) {
             if (err) throw err;
-            {
-                User.addOrders(username, orderDetails, function (err, user) {
-                    if (err) {
-                        res.json({success: false, msg: 'Order could not be placed'});
-                    } else {
-                        cart.deleteCartItem(cartId,function (err,callback) {
-                            if (err){
-                                res.json({success : false, msg : 'Could Not be removed'});
-                            } else{
-                                res.json({success: true, msg: 'Order Placed Successfully'});
-                            }
-                        });
+            else{
+                console.log("Here after order is inserted");
+                cart.deleteCartItem(cartId,function (err,callback) {
+                    if (err){
+                        throw err;
+                    } else{
+                        res.json({success: true, msg: 'Order Placed Successfully'});
                     }
-                })
+                });
             }
         });
     }
