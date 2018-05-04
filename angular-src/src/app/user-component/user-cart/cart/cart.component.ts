@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
   deleteElement(cartItem){
 
     const index: number = this.cartItems.indexOf(cartItem);
-
+    console.log(index);
     const id = {
       "_id":cartItem.id
     };

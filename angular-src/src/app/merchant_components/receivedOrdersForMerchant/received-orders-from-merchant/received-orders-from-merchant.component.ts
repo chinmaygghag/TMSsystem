@@ -21,7 +21,7 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   ngOnInit() {
     console.log("Here");
-    this.getAllOrders.getOrdersForMerchant(this.orders).subscribe(
+    this.getAllOrders.getOrdersForMerchant().subscribe(
       data => {
         if (data.success) {
         data.orders.forEach(i=>{
@@ -50,23 +50,21 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   }
 
-  assignAgents(order){
-
-  }
-
- getAgents(){
-   console.log("getagents");
-   this.getActiveAgents.getActiveAgents().subscribe(
-     data => {
-       if (data.success) {
-         console.log(data);
-         data.agent.forEach(i=>{
-           if(i.name != undefined)
-            console.log(i.name);
-             this.agents.push(i.name);
-         });
-       }
-     });
+  assignAgent(orderId,agentName){
+    console.log(agentName);
+    const index: number = this.orders.indexOf(orderId);
+    const order = {
+      id: orderId,
+      agentName: agentName
+    };
+    this.getActiveAgents.assignAgent(order).subscribe(data=>{
+      if (data.success){
+        console.log("Order Assigned to agent");
+        this.orders.splice(index,1)
+      } else{
+        console.log("Could Not Assign Order");
+      }
+    })
  }
 
 

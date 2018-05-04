@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
 
+
 //test
 /*router.get('/register', (req, res, next)=>{
     res.send('Welcome to agents page');
@@ -13,6 +14,7 @@ const config = require('../../config/database');
 
 //Register
 router.post('/register', function (req, res, next) {
+    console.log(req);
     let newAgent = new agent_obj({
         agency_name: req.body.agency_name,
         email: req.body.email,
@@ -78,20 +80,12 @@ router.post('/authenticate', function (req, res, next) {
 //console.log("password:"+password, "agent.password:"+agent.password);
 });
 
-//Profile
-router.get('/profile', function (req, res, next) {
-    res.send('Welcome to profile page');
-});
-
 
 router.get('/orderforagents',function (req,res,next) {
    username = req.body.username;
 
 });
 
-router.post('/assignOrder',function (req,res) {
-
-});
 
 
 

@@ -31,4 +31,11 @@ export class MerchantServicesService {
       .map((res) => res.json());
   }
 
+  assignAgent(order){
+    let headers = new Headers();
+    headers.append('Content-type','application-json');
+    return this.http.post("http://localhost:3001/merchants/assignAgents",order,{headers:headers}).
+      map(res=>res.json());
+  }
+
 }

@@ -52,8 +52,10 @@ import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AgentProcessComponent} from "./agent-component/agent-process/agent-process.component";
 import { ViewItemComponent} from "./user-component/view-item/view-item.component";
 import { ChartsModule} from "ng2-charts";
-
+import{ RedirectLoginComponent } from "./redirect-login/redirect-login.component";
+import {OrderComponent} from "./user-component/order/order.component";
 import { SaveStateService } from "./services/miscService/save-state.service";
+import {PastorderComponent} from "./user-component/pastorder/pastorder.component";
 
 
 const appRoutes: Routes = [
@@ -74,14 +76,20 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
-  {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
+  // {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
   {path: 'agent/home/process', component: AgentProcessComponent},
   {path: 'agent/home', component: AgentHomeComponent},
   {path: 'user/home/customzieCatalog',component:CustomizeCatalogComponent},
-  {path: 'user/home/viewcatalog/viewitem',component:ViewItemComponent}
+  {path: 'user/home/viewcatalog/viewitem',component:ViewItemComponent},
+  {path: 'RedirectLoginComponent', component: RedirectLoginComponent},
+  {path: 'user/home/order',component : OrderComponent},
+  {path: 'user/home/cart/checkout', component: CheckoutComponent},
+  {path: 'user/home/cart',component:CartComponent},
+  {path: 'user/home/order',component : OrderComponent},
+  {path: 'user/home/pastorder',component : PastorderComponent}
 ];
 
 @NgModule({
@@ -117,7 +125,10 @@ const appRoutes: Routes = [
     CartComponent,
     CheckoutComponent,
     AgentHistogramComponent,
-    ViewItemComponent
+    ViewItemComponent,
+    RedirectLoginComponent,
+    OrderComponent,
+    PastorderComponent
   ],
 
   imports: [

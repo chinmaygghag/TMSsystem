@@ -14,6 +14,9 @@ const orderSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    agentName:{
+      type: String
+    },
     address:{
       type: String,
       required: true
@@ -33,13 +36,12 @@ const orderSchema = mongoose.Schema({
     clothName:{
         type: String,
         required: true
-
     },
-    statusForCustomer:{ // "placed","ready","delivered"
+    statusForCustomer:{ // "placed", "processed", "ready", "delivered"
         type: String
         // required: true
     },
-    statusForAgent:{ // "Received","Thread","Dye","Ready","Delivered"
+    statusForAgent:{ // "Received","Thread","Dye","Ready","Delivered", "Approved"
         type: String
         // required: true
     },
@@ -49,6 +51,7 @@ const orderSchema = mongoose.Schema({
     }
 
 });
+
 
 
 
@@ -70,13 +73,86 @@ module.exports.getOrderFromOrderID = function (orderId,callback) {
     order.findOne(query,callback);
 };
 
-module.exports.getOrderFromOrderIDForAgent = function (orderId,callback) {
-    const query = ({'_id':orderId , 'statusForAgent' : "Received"});
-    order.findOne(query,callback);
+module.exports.getOrderHistoryForUser = function (username, callback) {
+  const query = ({'username': username, 'statusForCustomer':'delivered'});
+  order.find(query,callback);
 };
+
+module.exports.getActiveOrderForUser = function(username,callback){
+  const query = ({"username" : username , $or:[
+          {'statusForCustomer':"ready"}, {'statusForCustomer':"placed"} , {'statusForCustomer':"processed"}
+      ]});
+  order.find(query,callback);
+};
+
+module.exports.updateOrderStatusForCustomer = function (orderId, statusToBeUpdated,callback) {
+    order.findOneAndUpdate({_id : orderId},{statusForCustomer: statusToBeUpdated},{new: true},function (err,order) {
+        callback(order);
+    })
+    /*order.findOne({_id : orderId}, function (err,order) {
+        order.statusForCustomer =  statusToBeUpdated;
+        order.save(callback)
+    })*/
+};
+
+
+module.exports.updateOrderStatusForMerchant = function (orderId, statusToBeUpdated,callback) {
+    // order.findOneAndUpdate({_id : orderId},{statusForMerchant: statusToBeUpdated},{new: true},function (err,order) {
+    //     callback(order);
+    // })
+
+    order.findOne({_id : orderId}, function (err,order) {
+        order.statusForMerchant =  statusToBeUpdated;
+        order.save(callback)
+    })
+};
+
+module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,callback) {
+    // order.findOneAndUpdate({_id : orderId},{statusForAgent: statusToBeUpdated},{new: true},function (err,order) {
+    //     callback(order);
+    // })
+
+    order.findOne({_id : orderId}, function (err,order) {
+        order.statusForAgent =  statusToBeUpdated;
+        order.save(callback)
+    })
+};
+
+module.exports.getOrderForAgent = function (agentName,status) {
+    const query = ({agentName: agentName, statusForAgent: status});
+    order.find(query,callback);
+};
+
+module.exports.assignAgents = function (orderId,agentName,callback) {
+   /* console.log("Order ID" +orderId + "  agentName "+agentName);
+    order.findOneAndUpdate({_id : orderId},{$set:{agentName :  agentName,
+    statusForAgent : "Received",
+    statusForMerchant: "Assigned",
+    statusForCustomer : "processed"}},{new:true},function (err,order) {
+        console.log("Orders : " +order);
+        if (err) throw err;
+        else{
+            callback(order);
+        }
+    });
+*/
+    order.findOne({_id : orderId}, function (err,order) {
+        order.agentName =  agentName;
+        order.statusForAgent = "Received";
+        order.statusForMerchant = "Assigned";
+        order.statusForCustomer = "processed";
+        order.save(callback)
+    })
+};
+
+
 
 module.exports.getOrderFromOrderIDForMerchant = function (callback) {
     const query = ({'statusForMerchant' : "received"});
     order.find(query,callback);
 };
 
+module.exports.getOrderForMerchant = function (status,callback) {
+    const query = ({'statusForMerchant': status});
+    order.find(query,callback);
+};

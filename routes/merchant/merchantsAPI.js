@@ -55,4 +55,23 @@ router.get('/getActiveAgents',function (req,res,next) {
     })
 });
 
+
+router.post('/assignAgents',function (req,res) {
+    const orderId = req.body.id;
+    const agentName = req.body.agentName;
+    order.assignAgents(orderId,agentName,function (err,callback) {
+       if (err) throw err;
+       else{
+           res.json(
+               {
+                   success: true,
+                   msg: "Order Assigned"
+               }
+           )
+       }
+    })
+});
+
+
+
 module.exports = router;

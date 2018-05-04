@@ -41,15 +41,13 @@ export class CheckoutComponent implements OnInit {
     const username = {
       username : this.saveUserData.username
     };
-    console.log(username+" :  username ");
     this.cartService.getCartElement(username).subscribe(data=>{
       if (data.success){
-        const cost = 0;
         data.cartItems.forEach(
 
           i=>{
-
             const order = {
+              "cartId": i._id,
               "catalog": i.catalogName,
               "username" : this.saveUserData.username,
               "address" : address,
@@ -63,11 +61,11 @@ export class CheckoutComponent implements OnInit {
         );
       }
     });
-    console.log(this.cartItems+" :  cartItems ");
     const placeOrder = {
       "username" : this.saveUserData.username,
       "orders" : this.cartItems
     };
+    console.log("After Order is created"+placeOrder);
     this.placeOrder.placeOrders(placeOrder).subscribe(data=>{
       if(data.success){
         console.log("Placed Order");
@@ -80,7 +78,8 @@ export class CheckoutComponent implements OnInit {
 
 }
 class CartItem {
-  constructor(public imageURL: String,
+  constructor(public cartId: String,
+              public imageURL: String,
               public title: String,
               public length: String,
               public totalCost: String,

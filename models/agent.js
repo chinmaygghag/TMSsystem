@@ -111,18 +111,9 @@ module.exports.getActiveAgents = function (callback) {
 };
 
 module.exports.changeStatusForAgent = function (username,changeStatus,callback) {
-    console.log(username);
-     agent.findOne({name : username},function (err,agent) {
-         console.log(agent);
-         agent.activeStatus = changeStatus;
-         console.log(changeStatus);
-         agent.save(function (err) {
-             if(err) throw err;
-             else{
-                 callback(true);
-             }
-         })
-     })
+     agent.findOneAndUpdate({name:username},{activeStatus: changeStatus},{new: true},function (err,agent) {
+         callback(agent);
+     });
 };
 
 

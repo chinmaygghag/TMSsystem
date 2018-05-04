@@ -8,7 +8,6 @@ const cartSchema = mongoose.Schema({
         type : String,
         required: true
     },
-
     catalogName : {
         type : String,
         required: true},
@@ -24,10 +23,12 @@ const cartSchema = mongoose.Schema({
     catalogImage:{
         type:  String,
         required: true},
-
     clothName:{
         type: String,
-        required: true}
+        required: true},
+    activeStatus:{
+        type: Boolean
+    }
 });
 
 const cart = module.exports = mongoose.model('Cart', cartSchema);
@@ -39,12 +40,14 @@ module.exports.addToCart = function (cartItem,callback) {
 
 
 module.exports.getCartItems = function (username,callback) {
-    const query = {username : username};
+    const query = {username : username, activeStatus: true};
     cart.find(query,callback);
 };
 
 
 module.exports.deleteCartItem = function (id,callback) {
-  const query = { _id : id};
-  cart.find(query).remove(callback).exec();
+    cart.findOne({_id : id}, function (err,cart) {
+      cart.activeStatus =  false;
+      cart.save(callback)
+  })
 };

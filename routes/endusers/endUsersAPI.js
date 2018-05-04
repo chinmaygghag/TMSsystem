@@ -69,9 +69,10 @@ router.post('/authenticate', function (req, res, next) {
 
 router.post('/place_order',function (req,res,next) {
     const username = req.body.username;
-    console.log(req.body);
+    console.log(req.body.orders.length);
     const orders = req.body.orders;
     for (var i = 0; i < orders.length; i++) {
+        const cartId = orders[i].cartId;
         let order = new Order(
             {
                 catalog: orders[i].catalog,
@@ -83,24 +84,72 @@ router.post('/place_order',function (req,res,next) {
                 username: orders[i].username,
                 statusForCustomer: "placed",
                 statusForMerchant: "received",
-                statusForAgent: "Nothing"
+                statusForAgent: "Nothing",
+                cartId : orders[i].cartId
             }
         );
         Order.insertOrders(order,function (err,orderDetails) {
             if (err) throw err;
             {
-                //console.log('order placed');
-                console.log(orderDetails);
                 User.addOrders(username, orderDetails, function (err, user) {
                     if (err) {
                         res.json({success: false, msg: 'Order could not be placed'});
                     } else {
-                        res.json({success: true, msg: 'Order Placed Successfully'});
+                        cart.deleteCartItem(cartId,function (err,callback) {
+                            if (err){
+                                res.json({success : false, msg : 'Could Not be removed'});
+                            } else{
+                                res.json({success: true, msg: 'Order Placed Successfully'});
+                            }
+                        });
                     }
                 })
             }
         });
     }
 });
+
+
+
+router.post('/get_active_orders',function (req,res,next) {
+   const username = req.body.username;
+   Order.getActiveOrderForUser(username,function (err,order) {
+       if (err) throw err;
+       else{
+           res.json(
+               {
+                   success: true,
+                   orders: order
+               }
+           )
+       }
+   });
+});
+
+
+
+router.post('/get_order_history',function (req,res,next) {
+    const username = req.body.username;
+    Order.getOrderHistoryForUser(username,function (err,order) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    orders: order
+                }
+            )
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
 
 module.exports = router; //export the router to connect and show the page

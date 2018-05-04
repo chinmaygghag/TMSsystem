@@ -12,7 +12,8 @@ router.post('/addToCart',function (req,res) {
         lengthEntered: req.body.lengthEntered,
         totalCost: req.body.totalCost,
         catalogImage: req.body.catalogImage,
-        clothName: req.body.clothName
+        clothName: req.body.clothName,
+        activeStatus: true
     });
     console.log(cartElement);
     cartAPI.addToCart(cartElement,function (err) {
@@ -48,7 +49,6 @@ router.post('/getCartItem',function (req,res) {
 
 
 router.post('/deleteCartItem',function (req,res) {
-   const id = req.body.id;
    cartAPI.deleteCartItem(id,function (err,callback) {
        if (err){
            res.json({success : false, msg : 'Could Not be removed'});

@@ -17,7 +17,7 @@ export class ViewCatalogComponent implements OnInit {
 
 
   catalogList = [];
-  cost: String;
+  // cost: String;
   userObject;
 
   // to place order
@@ -26,10 +26,12 @@ export class ViewCatalogComponent implements OnInit {
   cloth_length : any=[];
   unitLength: number;
 
-
+  cost = [];
 
   clothtypes = [];
   selectedItem: Object = {};
+
+  clothType: String;
 
 
   constructor(private catalogService:GetCatalogsService,
@@ -44,17 +46,17 @@ export class ViewCatalogComponent implements OnInit {
   ngOnInit() {
 
 
-    this.clothtypes.push(new clothTypes("SILK",
+    this.clothtypes.push(new clothTypes(0,"SILK",
       "$",25));
-    this.clothtypes.push(new clothTypes("COTTON",
+    this.clothtypes.push(new clothTypes(1,"COTTON",
       "$",15));
-    this.clothtypes.push(new clothTypes("LINEN",
+    this.clothtypes.push(new clothTypes(2,"LINEN",
       "$",10));
-    this.clothtypes.push(new clothTypes("WOOL",
+    this.clothtypes.push(new clothTypes(3,"WOOL",
       "$",18));
-    this.clothtypes.push(new clothTypes("SYNTHETIC FIBERS",
+    this.clothtypes.push(new clothTypes(4,"SYNTHETIC FIBERS",
       "$",20));
-    this.clothtypes.push(new clothTypes("RAYON",
+    this.clothtypes.push(new clothTypes(5,"RAYON",
       "$",15));
 
     if(this.userDataService.username != null){
@@ -75,6 +77,18 @@ export class ViewCatalogComponent implements OnInit {
       this.router.navigate(['/user/login']);
     }
   }
+
+
+  updatePrice(val:any,j){
+    console.log(val);
+    for (let i = 0; i < this.clothtypes.length; i++) {
+      if (this.clothtypes[i].cloth == val){
+        console.log(this.clothtypes[i]);
+        this.cost[j] = this.clothtypes[i].cost;
+      }
+    }
+  }
+
 
   addToCart(catalog,index,clothType){
     console.log(this.cloth_length[index]);
@@ -117,7 +131,9 @@ class Catalog {
 
 
 class clothTypes {
-  constructor(public cloth: String,
+  constructor(
+              public id: Number,
+              public cloth: String,
               public currency: String,
               public  cost: Number) {
 

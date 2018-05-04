@@ -12,6 +12,7 @@ export class AuthserviceService {
 
   registerAgent(agent){
     let headers = new Headers();
+    console.log(agent);
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3001/agents/register',agent,{headers:headers})
       .map(res=>res.json());
