@@ -16,6 +16,48 @@ router.get('/getAgents',function (req,res,next) {
 });
 
 
+router.get('/getWaitingCatalog', function(req,res,next){
+
+    catalog.getCatalogWaiting(function(err,catalogs){
+        if(err) throw err;
+        else
+            res.json({
+                success: true,
+                catalogs: catalogs
+
+            })
+    })
+});
+
+router.get('/declineCatalog',function(req,res,next){
+    const catalogName = req.body.catalogName;
+    catalog.declineStatusForCatalog(catalogName,function(isSuccess,err){
+        if(err) throw err;
+        else if(isSuccess){
+            res.json({
+                success: true
+            })
+        }
+    })
+
+});
+
+
+router.get('/approveCatalog',function(req,res,next){
+    const catalogName = req.body.catalogName;
+    catalog.approveStatusForCatalog(catalogName,function(isSuccess,err){
+        if(err) throw err;
+        else if(isSuccess){
+            res.json({
+                success: true
+            })
+        }
+    })
+
+});
+
+
+
 router.post('/changeAgentStatus',function (req,res,next) {
     console.log(req);
     const username = req.body.username;

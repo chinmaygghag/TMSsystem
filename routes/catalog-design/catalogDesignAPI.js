@@ -44,7 +44,8 @@ router.post('/catalogElement',function (req,res) {
         imageURL: req.body.imageURL,
         unitLengthCost: req.body.unitLengthCost,
         desc: req.body.desc,
-        title: req.body.title
+        title: req.body.title,
+        status: "approved"
     });
 
     catalogAPI.addCatalogElement(catalogElement, function (err, catalogElement) {
