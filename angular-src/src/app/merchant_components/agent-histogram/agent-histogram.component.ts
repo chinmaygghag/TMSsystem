@@ -13,9 +13,19 @@ export class AgentHistogramComponent implements OnInit {
   declineOrds = [];
   receivedOrds = [];
   deliveredOrds = [];
+  acceptOrdsData = null;
+  declineOrdsData = null;
+  receivedOrdsData = null;
+  deliveredOrdsData = null;
+  demoAgents = null;
   chart = [];
+
+  public barChartLabels:string[] = [] ;
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = true;
   constructor( private router:Router,
                private getActiveAgents: MerchantServicesService) {}
+
 
   ngOnInit() {
 
@@ -26,36 +36,99 @@ export class AgentHistogramComponent implements OnInit {
           data.agent.forEach(i=>{
             if(i.name != undefined)
               console.log(i.name);
-            this.agents.push(i.name);
-            this.acceptOrds.push(i.orders.acceptOrders);
-            this.declineOrds.push(i.orders.declineOrders);
-            this.receivedOrds.push(i.orders.receivedOrders);
-            this.deliveredOrds.push(i.orders.deliveredOrders);
-            console.log(this.agents);
-            console.log(this.acceptOrds);
-            console.log(this.declineOrds);
-            console.log(this.receivedOrds);
-            console.log(this.deliveredOrds);
+            this.agents.push(String(i.name));
+
+            this.acceptOrds.push(String(i.orders.acceptOrders));
+            this.declineOrds.push(String(i.orders.declineOrders));
+            this.receivedOrds.push(String(i.orders.receivedOrders));
+            this.deliveredOrds.push(String(i.orders.deliveredOrders));
+
+
 
           });
+
+          let receivedOrdsData = JSON.stringify(this.receivedOrds);
+          let acceptOrdsData = JSON.stringify(this.acceptOrds);
+          let declineOrdsData = JSON.stringify(this.declineOrds);
+          let deliveredOrdsData = JSON.stringify(this.deliveredOrds);
+          let demoAgent = JSON.stringify(this.agents);
+          this.receivedOrdsData = JSON.parse(receivedOrdsData);
+          this.acceptOrdsData = JSON.parse(acceptOrdsData);
+          this.declineOrdsData = JSON.parse(declineOrdsData);
+          this.deliveredOrdsData = JSON.parse(deliveredOrdsData);
+          this.demoAgents = JSON.parse(demoAgent);
+          console.log(this.demoAgents);
+          console.log(this.acceptOrdsData);
+          console.log(this.declineOrdsData);
+          console.log(this.receivedOrdsData);
+          console.log(this.deliveredOrdsData);
+
+
+          let datad = [];
+
+          let barChartLabels = this.demoAgents;
+          this.barChartLabels = barChartLabels;
+
+          datad[0] = this.acceptOrdsData;
+          datad[1] = this.declineOrdsData;
+          datad[2] = this.receivedOrdsData;
+          datad[3] = this.deliveredOrdsData;
+
+          let barChartData:any[] = [
+            {data: [], label: 'Orders Received'},
+            {data: [], label: 'Orders accepted'},
+            {data: [], label: 'Orders Declined' },
+            {data: [], label: 'Orders Delivered'}
+          ];
+
+          this.barChartData[0]['data'] = datad[0];
+          this.barChartData[1]['data'] = datad[1];
+          this.barChartData[2]['data'] = datad[2];
+          this.barChartData[3]['data'] = datad[3];
+          /*this.barChartData.forEach((data,index)=>{
+
+            this.barChartData[index]  = Object.assign({},this.barChartData[index],{
+              data: [this.barChartData[index].data,datad[index]]
+            })
+          })
+*/
+          //let clone = JSON.parse(JSON.stringify(barChartData));
+
+//          this.barChartLabels = [this.barChartLabels, barChartLabels];
+
+          //clone[0].data = datad;
+          //console.log("++++++++" + clone[1].data);
+          //clone[0][0].data = datad[0];
+          //clone[0][1].data = datad[1];
+          //clone[0][2].data = datad[2];
+          //clone[0][3].data = datad[3];
+
+          //this.barChartData = barChartData;
+          //console.log(clone[0]);
+          //this.barChartData = clone;
         }
       });
-
   }
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels:string[] = this.agents;
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
+
+  /*
+  this.demoAgents
+
+
+  {data: this.receivedOrdsData, label: 'Orders Received'},
+  {data: this.acceptOrdsData, label: 'Orders accepted'},
+  {data: this.declineOrdsData, label: 'Orders Declined' },
+  {data: this.deliveredOrdsData, label: 'Orders Delivered'}
+  */
 
   public barChartData:any[] = [
-    {data: this.receivedOrds, label: 'Orders Received'},
-    {data: this.acceptOrds, label: 'Orders accepted'},
-    {data: this.declineOrds, label: 'Orders Declined' },
-    {data: this.deliveredOrds, label: 'Orders Delivered'}
-
+    {data: this.receivedOrdsData, label: 'Orders Received'},
+    {data: this.acceptOrdsData, label: 'Orders accepted'},
+    {data: this.declineOrdsData, label: 'Orders Declined' },
+    {data: this.deliveredOrdsData, label: 'Orders Delivered'}
   ];
 
   public barChartColors:Array<any> = [
@@ -95,18 +168,10 @@ export class AgentHistogramComponent implements OnInit {
 
   /*public randomize():void {
     // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
+    let data = this.agents.orders ;
     let clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;
   }*/
 
 }
-
