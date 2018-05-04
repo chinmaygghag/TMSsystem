@@ -33,6 +33,7 @@ import { AgentProfileComponent } from "./agent-component/agent-profile/agent-pro
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ViewCatalogComponent } from "./user-component/view-catalog/view-catalog.component";
 import { BsDropdownModule } from 'ng2-bootstrap';
+import { ApproveCatalogComponent} from "./merchant_components/approve-catalog/approve-catalog.component";
 import { CreateCatalogComponent} from "./merchant_components/create-catalog/create-catalog.component";
 import { CreatCatalogServiceService} from "./services/catalogService/creat-catalog-service.service";
 import { GetCatalogsService} from "./services/catalogService/get-catalogs.service";
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
   // {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
@@ -128,7 +130,8 @@ const appRoutes: Routes = [
     ViewItemComponent,
     RedirectLoginComponent,
     OrderComponent,
-    PastorderComponent
+    PastorderComponent,
+    ApproveCatalogComponent
   ],
 
   imports: [
