@@ -48,6 +48,15 @@ export class CartComponent implements OnInit {
   }
 
 
+  checkoutClick(){
+    if(this.cartItems.length > 0) {
+        this.router.navigate(['/user/home/cart/checkout']);
+    }else{
+      this._flashMessagesService.show('Nothing to checkout', { cssClass: 'alert-success', timeout: 3000 });
+    }
+  }
+
+
   deleteElement(cartItem){
 
     const index: number = this.cartItems.indexOf(cartItem);
