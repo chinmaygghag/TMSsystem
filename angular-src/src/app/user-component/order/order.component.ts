@@ -45,3 +45,13 @@ export class OrderComponent implements OnInit {
   }
 
 }
+
+class order{
+  constructor(public catalogImage: String,
+              public clothName: String,
+              public length: String,
+              public catalog: String,
+              public cost: String){
+
+  }
+}

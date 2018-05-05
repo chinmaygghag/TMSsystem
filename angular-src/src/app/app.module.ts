@@ -58,7 +58,6 @@ import {OrderComponent} from "./user-component/order/order.component";
 import { SaveStateService } from "./services/miscService/save-state.service";
 import {PastorderComponent} from "./user-component/pastorder/pastorder.component";
 
-
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'merchant/home/receivedOrders',component:ReceivedOrdersFromMerchantComponent},
@@ -132,6 +131,7 @@ const appRoutes: Routes = [
     OrderComponent,
     PastorderComponent,
     ApproveCatalogComponent
+
   ],
 
   imports: [

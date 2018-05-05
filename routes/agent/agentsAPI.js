@@ -86,6 +86,21 @@ router.get('/orderforagents',function (req,res,next) {
 
 });
 
+router.post('/get_agent-profile',function (req,res,next) {
+    const username = req.body.username;
+    agent_obj.getAgentByUserName(username,function (err,agent) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    agent_obj: agent
+                }
+            )
+        }
+    });
+});
+
 
 
 

@@ -33,8 +33,16 @@ export class PastorderComponent implements OnInit {
           console.log(data);
           data.pastOrder.forEach(i => {
             console.log(i);
+            const order = {
+              "catalogImage": i.catalogImage,
+              "clothName": i.clothName,
+              "length" : i.length,
+              "catalog" : i.catalog,
+              "cost" : i.cost,
+
+            };
             // if(i._id != undefined)
-            this.pastOrder.push(i.catalogImage, i.clothName, i.length, i.catalog, i.cost);
+            this.pastOrder.push(order);
           });
         }
 
@@ -48,3 +56,12 @@ export class PastorderComponent implements OnInit {
   }
 
 
+class order{
+  constructor(public catalogImage: String,
+    public clothName: String,
+    public length: String,
+    public catalog: String,
+    public cost: String){
+
+  }
+}
