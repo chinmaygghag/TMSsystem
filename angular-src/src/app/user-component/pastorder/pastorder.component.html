@@ -63,8 +63,8 @@
         <li class="menu-item-has-children dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Orders</a>
           <ul class="sub-menu children dropdown-menu">
-            <li><i class="menu-icon fa fa-th"></i><a href="#">Active orders</a></li>
-            <li><i class="menu-icon fa fa-th"></i><a href="#">Past orders</a></li>
+            <li><i class="menu-icon fa fa-th"></i><a [routerLink]="['./order']">Active orders</a></li>
+            <li><i class="menu-icon fa fa-th"></i><a [routerLink]="['pastorder']">Past orders</a></li>
           </ul>
         </li>
         <li class="menu-item-has-children dropdown">
@@ -89,49 +89,50 @@
 
 <!-- Header-->
 <header id="header" class="header">
-    
-     
+
+
 
     <div class="header-menu"  style="height:30px">
      <div class="col-sm-8">
         <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
      </div>
-     <div class="col-sm-4"> 
+     <div class="col-sm-4">
        <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        <img class="user-avatar rounded-circle" src="images/admin.jpg" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">
     </a></div>
-        
-       
-     
+
+
+
    </div>
   </header>
 
   <div class="content mt-3">
-    
+
     <div class="col-sm-12">
-     
-        <div class="row">
+
+        <div class="row" *ngFor="let item of pastOrder">
             <div class="col-sm-3">
-                <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
+                <!--<img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">-->
+              {{item.catalogImage}}
               </div>
               <div class="col-sm-2">
-                  <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>
+                  <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.catalog}} </p>
                  </div>
                  <div class="col-sm-2" >
-                    <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Fabric Type</p> <!--dynamically needs to be populated-->
+                    <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.clothName}}</p> <!--dynamically needs to be populated-->
                   </div>
                   <div class="col-sm-2" >
-                      <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Quantity</p>  <!--dynamically needs to be populated-->
+                      <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.length}}</p>  <!--dynamically needs to be populated-->
                     </div>
                     <div class="col-sm-1" >
-                        <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Price</p>  <!--dynamically needs to be populated-->
+                        <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.cost}}</p>  <!--dynamically needs to be populated-->
                       </div>
                       <div class="col-sm-2">
                           <a class="btn .btn-primary" style="margin-top:40px;height:50px;width:100%;background-color: #FFBF00;font-size: 16px">Reorder</a>
                         </div>
-                  
+
           </div>
- 
+
     </div>
 
 
