@@ -68,7 +68,6 @@ router.post('/authenticate', function (req, res, next) {
 
 
 router.post('/place_order',function (req,res) {
-    const username = req.body.username;
     console.log(req.body.orders);
     const orders = req.body.orders;
     for (var i = 0; i < orders.length; i++) {
@@ -84,8 +83,7 @@ router.post('/place_order',function (req,res) {
                 username: orders[i].username,
                 statusForCustomer: "placed",
                 statusForMerchant: "received",
-                statusForAgent: "Nothing",
-                cartId : orders[i].cartId
+                statusForAgent: "Nothing"
             }
         );
         Order.insertOrders(order,function (err,orderDetails) {

@@ -16,20 +16,6 @@ const upload = multer({
 
 router.post('/upload',upload.single('file'),function (req,res) {
     console.log(req);
-    // if (req.file != null){
-
-    // }
-
-   //upload(req,res,function (err) {
-   //    if (err){
-    //       res.json({success:false});
-    //       return;
-    //   }else{
-     //      console.log(req.file);
-     //      res.json({success: true, filename: req.file});
-     //  }
-   //});
-    //fs.createReadStream('/tmp/'+req.file.originalname).pipe(fs.createWriteStream('newLog.log'));
     if (req.file == null){
         res.json({success: false})
     } else{
