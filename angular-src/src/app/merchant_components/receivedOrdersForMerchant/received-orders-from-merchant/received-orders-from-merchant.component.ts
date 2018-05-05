@@ -14,23 +14,32 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   orders = [];
   agents = [];
+  agentSelection = [];
 
   constructor(private router:Router,
               private getAllOrders:GetOrdersService,
               private getActiveAgents: MerchantServicesService) { }
 
   ngOnInit() {
-    console.log("Here");
     this.getAllOrders.getOrdersForMerchant().subscribe(
       data => {
         if (data.success) {
+
         data.orders.forEach(i=>{
-            console.log(i);
+            const imageUrl = "../"+i.catalogImage;
+            console.log(imageUrl);
+            console.log(i._id);
             if(i._id != undefined)
-            // console.log(i.name);
-              this.orders.push(i._id+"\n"+
-                i.catalog+"\n"+
-                i.cost
+            this.orders.push(new Orders(
+                i._id,
+                imageUrl,
+                i.catalog,
+                i.cost,
+                i.clothName,
+                i.length,
+                i.username,
+                i.address
+              )
             );
           });
         }
@@ -41,8 +50,9 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
         if (data.success) {
           console.log(data);
           data.agent.forEach(i=>{
-            if(i.name != undefined)
+            if(i.name != undefined){
               console.log(i.name);
+            }
             this.agents.push(i.name);
           });
         }
@@ -50,14 +60,21 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   }
 
+  changeAgent(val:any,i){
+    this.agentSelection[i] = val;
+  }
+
+
   assignAgent(orderId,agentName){
     console.log(agentName);
+    console.log(orderId);
     const index: number = this.orders.indexOf(orderId);
-    const order = {
+    const orderParam = {
       id: orderId,
       agentName: agentName
     };
-    this.getActiveAgents.assignAgent(order).subscribe(data=>{
+    console.log(orderParam);
+    this.getActiveAgents.assignAgent(orderParam).subscribe(data=>{
       if (data.success){
         console.log("Order Assigned to agent");
         this.orders.splice(index,1)
@@ -72,10 +89,14 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 }
 
 class Orders{
-  constructor(private imageUrl:String,
-              private desc: String,
-              //private cost: String,
-              private title: String){
+  constructor(private id: String,
+              private imageURL: String,
+              private catalog: String,
+              private cost: String,
+              private clothName: String,
+              private length: String,
+              private username: String,
+              private address: String){
 
   }
 

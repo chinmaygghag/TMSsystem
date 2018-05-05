@@ -75,7 +75,6 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
-
 }
 class CartItem {
   constructor(public cartId: String,

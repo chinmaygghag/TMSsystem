@@ -251,16 +251,16 @@
         <tbody *ngFor="let order of orders;let i = index;">
         <tr>
           <td>i</td>
-          <td><img src="{{order.catalogImage}}" alt="Card image cap" width="300" height="300" ></td>
+          <td><img src="{{order.imageURL}}" alt="Card image cap" width="300" height="300" ></td>
           <td>{{order.clothName}}</td>
           <td>{{order.length}}</td>
           <td>{{order.totalCost}}</td>
           <td>{{order.username}}</td>
           <td>{{order.address}}</td>
-          <td> <select >
-            <option id="agent_{{i}}" *ngFor="let agent of agents" [ngValue]="agent">{{agent}}</option>
+          <td> <select (change)="changeAgent($event.target.value,i)">
+            <option id="agent_{{i}}"  *ngFor="let agent of agents" [ngValue]="agent">{{agent}}</option>
           </select></td>
-          <td><a class="btn btn-primary" (click)="assignAgent(order._id,agent)">Assign Agent</a></td>
+          <td><a class="btn btn-primary" (click)="assignAgent(order.id,agentSelection[i])">Assign Agent</a></td>
         </tr>
         </tbody>
       </table>
@@ -275,10 +275,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
-
-
-
-
 
 <script>
   ( function ( $ ) {
