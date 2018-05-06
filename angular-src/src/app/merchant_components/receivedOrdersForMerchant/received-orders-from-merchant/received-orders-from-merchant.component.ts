@@ -66,14 +66,11 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
 
   assignAgent(orderId,agentName){
-    console.log(agentName);
-    console.log(orderId);
     const index: number = this.orders.indexOf(orderId);
     const orderParam = {
       id: orderId,
       agentName: agentName
     };
-    console.log(orderParam);
     this.getActiveAgents.assignAgent(orderParam).subscribe(data=>{
       if (data.success){
         console.log("Order Assigned to agent");
