@@ -99,11 +99,18 @@ router.get('/getActiveAgents',function (req,res,next) {
 });
 
 
-router.post('/assignAgents',function (req,res) {
+router.post('/assignAgents',function (req,res,next) {
     const orderId = req.body.id;
     const agentName = req.body.agentName;
+    console.log(req.body);
+    console.log("Order Id : " +orderId+ " AgentName : "+agentName);
     order.assignAgents(orderId,agentName,function (err,callback) {
-       if (err) throw err;
+       if (err) {
+           res.json({
+                success: false
+           });
+           throw err;
+       }
        else{
            res.json(
                {
@@ -112,7 +119,8 @@ router.post('/assignAgents',function (req,res) {
                }
            )
        }
-    })
+    });
+
 });
 
 
