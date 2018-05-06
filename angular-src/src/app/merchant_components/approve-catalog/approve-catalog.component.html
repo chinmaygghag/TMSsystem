@@ -75,82 +75,84 @@
 
 <div id="right-panel" class="right-panel">
 
-
-
-  <!-- Header-->
-  -<header id="header" class="header">
-
-
-  <div class="header-menu"  style="height:30px">
-
-    <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img class="user-avatar rounded-circle" src="images/admin.jpg" style="margin-left:800px" alt="User Avatar" height="40px" width="40px">
-    </a>
-
-  </div>
-</header>
-
-
-  <div class="breadcrumbs">
-    <div class="col-sm-4">
-      <div class="page-header float-left">
-        <div class="page-title">
-          <!--<h1>Dashboard</h1>-->
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-8">
-      <div class="page-header float-right">
-        <div class="page-title">
-          <ol class="breadcrumb text-right">
-            <li class="active"></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="content mt-3">
 
     <div class="col-sm-12">
 
-      <!------ Banner picture ---------->
-      <!--<div class="container" >
-       <img src="https://www.onlinefabricstore.net/images/homepage/home-sunbrella-02-2018.jpg" height = "400px" width="100%">
-   </div>-->
+      <div class="jumbotron" *ngFor="let catalog of catalogList; let  i= index;" >
+        <div  class="row" style="text-align: center" align="center">
 
-      <!--Slider-->
+          <div class="col-md-5">
+            <div class="item" >
+              <img class="card-img-top" src="{{catalog.imageURL}}"  height="300"
+                   width="300">
+
+              <div class="item-overlay top"></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <br><br>
+            <div class="row" style="text-align: center" align="center">
+              <div class="col-md-5" align="left">
+                <h4><strong>Title :</strong></h4>
+              </div>
+              <div class="col-md-7" align="left">
+                <h4><strong>{{catalog.title}}</strong></h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <br>
+              <div class="col-md-5" align="left">
+                <h5><strong>Description :</strong></h5>
+              </div>
+
+              <div class="col-md-7" align="left">
+                <p>
+                  {{catalog.desc}}
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <br>
+              <div class="col-md-5" align="left">
+                <h5><strong> Enter Cloth&nbsp;Length :</strong></h5>
+              </div>
+              <div class="col-md-5">
+                <input name="cost_{{i}}" [(ngModel)]="cost[i]" type="text"
+                       style="width:50%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;"
+                       value="" maxlength="50" />
+
+              </div>
+            </div>
+            <div class="col-md-3">
+              <br><br><br><br>
+              <a class="btn btn-primary" style="margin-left: 50px " (click)="approveCatalog(catalog,i,cost[i])">Approve</a>
+            </div>
+            <div class="col-md-4">
+              <br><br><br><br>
+              <a class="btn-danger btn-primary" style="margin-left: 50px " (click)="declineCatalog(catalog,i)">Decline</a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
 
 
 
 
-      <!------ Square divs ---------->
 
-    </div>
 
-    <div class="container" >
-      <h4>Awaiting Approvals</h4>
-      <div class="container" *ngFor="let agents of agentsList">
-        <ul class="list-group">
-          <li class="list-group-item">{{agents}} <span style="float: right;" ><button (click)="acceptAgent(agents)">Accept</button><button (click)="deleteItem(agents)">Decline</button>  </span></li>
-          <p></p>
-        </ul>
       </div>
     </div>
 
 
 
-    <!--/.col-->
 
 
-    <!--/.col-->
-
-
-    <!--/.col-->
-
-
-
-  </div> <!-- .content -->
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -9,7 +10,7 @@
   <title>TMS</title>
   <meta name="description" content="TMS">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -42,19 +43,19 @@
     <div id="main-menu" class="main-menu collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active">
-          <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>User Dashboard </a>
+          <a [routerLink]="['/user/home']" > <i class="menu-icon fa fa-dashboard"></i>User Dashboard </a>
         </li>
         <h3 class="menu-title">Order Console</h3><!-- /.menu-title -->
         <li class="menu-item-has-children dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
+          <a [routerLink] = "['/user/home/viewcatalog']"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
           <ul class="sub-menu children dropdown-menu">
-            <li><i class="fa fa-share-square-o"></i><a href="#">Silk Fabric</a></li>
+   <!--         <li><i class="fa fa-share-square-o"></i><a href="#">Silk Fabric</a></li>
             <li><i class="fa fa-share-square-o"></i><a href="#">Cotton Fabric</a></li>
             <li><i class="fa fa-share-square-o"></i><a href="#">Velvet Fabric</a></li>
-            <li><i class="fa fa-share-square-o"></i><a href="#">Polyster Fabric</a></li>
+            <li><i class="fa fa-share-square-o"></i><a href="#">Polyster Fabric</a></li>-->
           </ul>
         <li class="menu-item-has-children dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Cart</a>
+          <a [routerLink] ="['/user/home/cart']"> <i class="menu-icon fa fa-th"></i>Cart</a>
           <!--<ul class="sub-menu children dropdown-menu">
               <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
               <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
@@ -63,18 +64,18 @@
         <li class="menu-item-has-children dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Orders</a>
           <ul class="sub-menu children dropdown-menu">
-            <li><i class="menu-icon fa fa-th"></i><a href="#">Active orders</a></li>
-            <li><i class="menu-icon fa fa-th"></i><a href="#">Past orders</a></li>
+            <li><i class="menu-icon fa fa-th"></i><a [routerLink]="['/user/home/order']">Active orders</a></li>
+            <li><i class="menu-icon fa fa-th"></i><a [routerLink]="['/user/home/pastorder']">Past orders</a></li>
           </ul>
         </li>
-        <li class="menu-item-has-children dropdown">
+    <!--    <li class="menu-item-has-children dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Track Orders</a>
 
         </li>
         <li class="menu-item-has-children dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Order History</a>
 
-        </li>
+        </li>-->
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -87,53 +88,71 @@
 
 <div id="right-panel" class="right-panel">
 
-<!-- Header-->
-<header id="header" class="header">
-    
-     
+  <!-- Header-->
+  <header id="header" class="header">
+
+
 
     <div class="header-menu"  style="height:30px">
-     <div class="col-sm-8">
+      <div class="col-sm-8">
         <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
-     </div>
-     <div class="col-sm-4"> 
-       <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       <img class="user-avatar rounded-circle" src="images/admin.jpg" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">
-    </a></div>
-        
-       
-     
-   </div>
+      </div>
+      <div class="col-sm-4">
+        <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="user-avatar rounded-circle" src="images/admin.jpg" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">
+        </a></div>
+
+
+
+    </div>
   </header>
 
   <div class="content mt-3">
-    
+
     <div class="col-sm-12">
-     
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
-              </div>
-              <div class="col-sm-2">
-                  <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>
-                 </div>
-                 <div class="col-sm-2" >
-                    <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Fabric Type</p> <!--dynamically needs to be populated-->
-                  </div>
-                  <div class="col-sm-2" >
-                      <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Quantity</p>  <!--dynamically needs to be populated-->
-                    </div>
-                    <div class="col-sm-1" >
-                        <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Price</p>  <!--dynamically needs to be populated-->
-                      </div>
-                      <div class="col-sm-2">
-                          <a class="btn .btn-primary" style="margin-top:40px;height:50px;width:100%;background-color: #FFBF00;font-size: 16px">Reorder</a>
-                        </div>
-                  
-          </div>
- 
+
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
+        </div>
+        <div class="col-sm-2">
+          <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>
+        </div>
+        <div class="col-sm-2" style="margin-top:40px;height:50px;width:100%;font-size: 20px"><select>
+          <option value="silk">Silk</option>
+          <option value="cotton">Cotton</option>
+          <option value="handloom">Handloom</option>
+          <option value="lace">Lace</option>
+        </select></div>
+         <div class="col-sm-2" style="margin-top:40px;height:50px;width:100%;font-size: 20px"><select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+         </select></div>
+        <div class="col-sm-2" >
+          <p style="margin-top:40px;height:50px;font-size: 20px">Price</p>  <!--dynamically needs to be populated-->
+        </div>
+        <div class="col-sm-2">
+          <a class="btn .btn-primary" style="margin-top:40px;height:50px;background-color: #FFBF00;font-size: 20px">Reorder</a>
+        </div>
+
+
+      </div>
     </div>
+  </div>
 
+
+
+
+
+    <!--/.col-->
 
 
     <!--/.col-->
@@ -142,12 +161,9 @@
     <!--/.col-->
 
 
-    <!--/.col-->
 
-
-
-  </div> <!-- .content -->
-</div><!-- /#right-panel -->
+ <!-- .content -->
+<!-- /#right-panel -->
 
 <!-- Right Panel -->
 
@@ -178,6 +194,7 @@
     } );
   } )( jQuery );
 </script>
+</div>
 
 </body>
 </html>

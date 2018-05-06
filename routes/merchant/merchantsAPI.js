@@ -16,6 +16,49 @@ router.get('/getAgents',function (req,res,next) {
 });
 
 
+router.get('/getWaitingCatalog', function(req,res,next){
+    console.log("Get Waiting Catalog");
+    catalog.getCatalogWaiting(function(err,catalogs){
+        if(err) throw err;
+        else
+            res.json({
+                success: true,
+                catalogs: catalogs
+
+            })
+    })
+});
+
+router.get('/declineCatalog',function(req,res,next){
+    const catalogName = req.body.title;
+    catalog.declineStatusForCatalog(catalogName,function(isSuccess,err){
+        if(err) throw err;
+        else if(isSuccess){
+            res.json({
+                success: true
+            })
+        }
+    })
+
+});
+
+
+router.get('/approveCatalog',function(req,res,next){
+    const catalogName = req.body.title;
+    const cost = req.body.unitLengthCost;
+    catalog.approveStatusForCatalog(catalogName,cost,function(isSuccess,err){
+        if(err) throw err;
+        else if(isSuccess){
+            res.json({
+                success: true
+            })
+        }
+    })
+
+});
+
+
+
 router.post('/changeAgentStatus',function (req,res,next) {
     console.log(req);
     const username = req.body.username;
@@ -54,24 +97,5 @@ router.get('/getActiveAgents',function (req,res,next) {
         })
     })
 });
-
-
-router.post('/assignAgents',function (req,res) {
-    const orderId = req.body.id;
-    const agentName = req.body.agentName;
-    order.assignAgents(orderId,agentName,function (err,callback) {
-       if (err) throw err;
-       else{
-           res.json(
-               {
-                   success: true,
-                   msg: "Order Assigned"
-               }
-           )
-       }
-    })
-});
-
-
 
 module.exports = router;

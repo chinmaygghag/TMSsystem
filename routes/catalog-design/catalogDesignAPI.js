@@ -20,20 +20,20 @@ router.post('/upload',upload.single('file'),function (req,res) {
 
     // }
 
-   //upload(req,res,function (err) {
-   //    if (err){
+    //upload(req,res,function (err) {
+    //    if (err){
     //       res.json({success:false});
     //       return;
     //   }else{
-     //      console.log(req.file);
-     //      res.json({success: true, filename: req.file});
-     //  }
-   //});
+    //      console.log(req.file);
+    //      res.json({success: true, filename: req.file});
+    //  }
+    //});
     //fs.createReadStream('/tmp/'+req.file.originalname).pipe(fs.createWriteStream('newLog.log'));
     if (req.file == null){
         res.json({success: false})
     } else{
-    res.json({success:true, filename: req.file.originalname});
+        res.json({success:true, filename: req.file.originalname});
     }
 });
 
@@ -44,7 +44,8 @@ router.post('/catalogElement',function (req,res) {
         imageURL: req.body.imageURL,
         unitLengthCost: req.body.unitLengthCost,
         desc: req.body.desc,
-        title: req.body.title
+        title: req.body.title,
+        status: req.body.status
     });
 
     catalogAPI.addCatalogElement(catalogElement, function (err, catalogElement) {

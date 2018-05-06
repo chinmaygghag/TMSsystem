@@ -1,0 +1,84 @@
+import { Component, OnInit } from '@angular/core';
+import {MerchantServicesService} from "../../services/merchant/merchant-services.service";
+import {FlashMessagesService} from "angular2-flash-messages";
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-approve-catalog',
+  templateUrl: './approve-catalog.component.html',
+  styleUrls: ['./approve-catalog.component.css']
+})
+export class ApproveCatalogComponent implements OnInit {
+
+  catalogList = [];
+
+  title : String;
+  changeStatus: String;
+
+  constructor(private merchantService: MerchantServicesService,
+              private _flashMessagesService: FlashMessagesService,
+              private router: Router) {
+
+  }
+
+  ngOnInit() {
+    this.merchantService.getCatalogWaitingList().subscribe(data=>
+    {
+      console.log(data.success);
+      if(data.success){
+        data.catalogs.forEach(
+          i=>{
+            const imageUrl = "../../../assets/"+i.imageURL;
+            this.catalogList.push(new Catalog(imageUrl,i.title,i.desc));
+          });
+        console.log(this.catalogList);
+      }
+    });
+  }
+
+
+  approveCatalog(catalog,index,costPerUnitL){
+
+    const catalogObj = {
+      title: catalog.title,
+      unitLengthCost: costPerUnitL
+    }
+
+    this.merchantService.approveWaitinglistCatalog(catalogObj).subscribe(
+      data =>{
+        if(data.success){
+          this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this.catalogList.splice(index,1)
+        }
+      }
+    )
+  }
+  declineCatalog(catalog,index){
+    const catalogObj = {
+      title: catalog.title
+    }
+    this.merchantService.declineWaitinglistCatalog(catalogObj).subscribe(
+      data =>{
+        if(data.success){
+          this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this.catalogList.splice(index,1)
+        }
+      }
+    )
+
+
+  }
+
+
+
+
+
+}
+
+
+class Catalog {
+  constructor(public imageURL: String,
+              public title: String,
+              public desc: String) {
+  }
+}
