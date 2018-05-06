@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {PlaceOrderService} from "../../services/placeorders/place-order.service";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
+
 
 @Component({
   selector: 'app-pastorder',
@@ -7,9 +11,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PastorderComponent implements OnInit {
 
-  constructor() { }
+  pastOrder = [];
+
+
+  constructor(private placeOrder: PlaceOrderService,
+              private userDataService: SaveUserDataService,
+              private router: Router) { }
 
   ngOnInit() {
+
+    if(this.userDataService.username != null){
+      console.log(this.userDataService.username);
+      const username = {
+        username : this.userDataService.username
+      };
+      this.placeOrder.getPastOrders(username).subscribe(data=>{
+        if (data.success) {
+          if(data.pastOrder != null && data.pastOrder.length > 0 ){
+            data.pastOrder.forEach(i => {
+            console.log(i);
+            if(i != undefined){
+            this.pastOrder.push(new Order(i.catalogImage,i.clothType,i.length,i.catalog,i.cost));
+            }
+          });
+          }else{
+            console.log("Nothing Here");
+          }
+        }
+      })
+    }else{
+      this.router.navigate(['/user/login']);
+    }
   }
 
+  }
+
+
+class Order{
+  constructor(public catalogImage: String,
+    public clothName: String,
+    public length: String,
+    public catalog: String,
+    public cost: String){
+
+  }
 }

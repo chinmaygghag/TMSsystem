@@ -38,4 +38,18 @@ export class PlaceOrderService {
 
   }
 
+  getActiveOrders(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/endUsers/get_active_orders',username,{headers:headers})
+      .map(res=>res.json());
+  }
+
+  getPastOrders(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/endUsers/get_order_history',username,{headers:headers})
+      .map(res=>res.json());
+  }
+
 }

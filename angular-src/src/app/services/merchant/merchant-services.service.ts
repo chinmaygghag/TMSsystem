@@ -57,10 +57,4 @@ export class MerchantServicesService {
       .map(res=>res.json());
 
   }
-
-
-
-
-
-
 }

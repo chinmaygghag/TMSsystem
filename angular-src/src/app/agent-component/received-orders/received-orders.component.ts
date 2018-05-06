@@ -15,6 +15,12 @@ export class ReceivedOrdersComponent implements OnInit {
               private getAllOrders:GetOrdersService) { }
 
   ngOnInit() {
+
+
+
+
+
+
     this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
       "Silk",
       "50$",

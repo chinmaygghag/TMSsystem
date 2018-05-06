@@ -111,44 +111,55 @@
 
     <div class="col-sm-12">
 
-      <div class="row">
-        <div class="col-sm-2">
-          <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
-        </div>
-        <div class="col-sm-2">
-          <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>
-        </div>
-        <div class="col-sm-2" style="margin-top:40px;height:50px;width:100%;font-size: 20px"><select>
-          <option value="silk">Silk</option>
-          <option value="cotton">Cotton</option>
-          <option value="handloom">Handloom</option>
-          <option value="lace">Lace</option>
-        </select></div>
-         <div class="col-sm-2" style="margin-top:40px;height:50px;width:100%;font-size: 20px"><select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-         </select></div>
-        <div class="col-sm-2" >
-          <p style="margin-top:40px;height:50px;font-size: 20px">Price</p>  <!--dynamically needs to be populated-->
-        </div>
-        <div class="col-sm-2">
-          <a class="btn .btn-primary" style="margin-top:40px;height:50px;background-color: #FFBF00;font-size: 20px">Reorder</a>
+
+      <div *ngIf="pastOrder.length > 0;else other_content">
+
+        <div class="row">
+          <h3 style="text-align: center" align="center">
+            Past Orders
+          </h3>
         </div>
 
+        <div class="row" *ngFor="let item of pastOrder">
+            <div class="col-sm-3">
+                <!--<img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">-->
+              {{item.catalogImage}}
+              </div>
+              <div class="col-sm-2">
+                  <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.catalog}} </p>
+                 </div>
+                 <div class="col-sm-2" >
+                    <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.clothName}}</p> <!--dynamically needs to be populated-->
+                  </div>
+                  <div class="col-sm-2" >
+                      <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.length}}</p>  <!--dynamically needs to be populated-->
+                    </div>
+                    <div class="col-sm-1" >
+                        <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.cost}}</p>  <!--dynamically needs to be populated-->
+                      </div>
+                      <div class="col-sm-2">
+                          <a class="btn .btn-primary" style="margin-top:40px;height:50px;width:100%;background-color: #FFBF00;font-size: 16px">Reorder</a>
+                        </div>
 
+          </div>
       </div>
+
+      <ng-template #other_content>
+
+        <div class="jumbotron">
+          <div class="row" style="text-align: center" align="center">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" align="center">
+            <h4 style="text-align: center" align="center">
+              You have not place any orders yet.
+            </h4>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </ng-template>
+
     </div>
-  </div>
-
-
 
 
 
@@ -162,8 +173,8 @@
 
 
 
- <!-- .content -->
-<!-- /#right-panel -->
+  </div> <!-- .content -->
+</div><!-- /#right-panel -->
 
 <!-- Right Panel -->
 
@@ -194,7 +205,6 @@
     } );
   } )( jQuery );
 </script>
-</div>
 
 </body>
 </html>
