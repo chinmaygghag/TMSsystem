@@ -21,32 +21,23 @@ export class PastorderComponent implements OnInit {
   ngOnInit() {
 
     if(this.userDataService.username != null){
+      console.log(this.userDataService.username);
       const username = {
         username : this.userDataService.username
       };
       this.placeOrder.getPastOrders(username).subscribe(data=>{
-
-
-
-
         if (data.success) {
-          console.log(data);
-          data.pastOrder.forEach(i => {
+          if(data.pastOrder != null && data.pastOrder.length > 0 ){
+            data.pastOrder.forEach(i => {
             console.log(i);
-            const order = {
-              "catalogImage": i.catalogImage,
-              "clothName": i.clothName,
-              "length" : i.length,
-              "catalog" : i.catalog,
-              "cost" : i.cost,
-
-            };
-            // if(i._id != undefined)
-            this.pastOrder.push(order);
+            if(i != undefined){
+            this.pastOrder.push(new Order(i.catalogImage,i.clothType,i.length,i.catalog,i.cost));
+            }
           });
+          }else{
+            console.log("Nothing Here");
+          }
         }
-
-
       })
     }else{
       this.router.navigate(['/user/login']);
@@ -56,7 +47,7 @@ export class PastorderComponent implements OnInit {
   }
 
 
-class order{
+class Order{
   constructor(public catalogImage: String,
     public clothName: String,
     public length: String,
