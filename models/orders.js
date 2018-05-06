@@ -112,24 +112,12 @@ module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,c
     })
 };
 
-module.exports.getOrderForAgent = function (agentName,status) {
+module.exports.getOrderForAgent = function (agentName,status,callback) {
     const query = ({agentName: agentName, statusForAgent: status});
     order.find(query,callback);
 };
 
 module.exports.assignAgents = function (orderId,agentName,callback) {
-   /* console.log("Order ID" +orderId + "  agentName "+agentName);
-    order.findOneAndUpdate({_id : orderId},{$set:{agentName :  agentName,
-    statusForAgent : "Received",
-    statusForMerchant: "Assigned",
-    statusForCustomer : "processed"}},{new:true},function (err,order) {
-        console.log("Orders : " +order);
-        if (err) throw err;
-        else{
-            callback(order);
-        }
-    });
-*/
     order.findOne({_id : orderId}, function (err,order) {
         order.agentName =  agentName;
         order.statusForAgent = "Received";
@@ -138,8 +126,6 @@ module.exports.assignAgents = function (orderId,agentName,callback) {
         order.save(callback)
     })
 };
-
-
 
 module.exports.getOrderFromOrderIDForMerchant = function (callback) {
     const query = ({'statusForMerchant' : "received"});

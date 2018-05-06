@@ -4,7 +4,7 @@ const agent_obj = require('../../models/agent');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
-
+const order = require('../../models/orders');
 
 //test
 /*router.get('/register', (req, res, next)=>{
@@ -81,11 +81,49 @@ router.post('/authenticate', function (req, res, next) {
 });
 
 
-router.get('/orderforagents',function (req,res,next) {
-   username = req.body.username;
+router.post('/orderforagents',function (req,res,next) {
+   const agentName = req.body.agentName;
+   const status = req.body.status;
 
+    order.getOrderForAgent(agentName,status,function (err,order) {
+       if (err){
+           res.json(
+               {
+                   success : false,
+                   msg: err
+               }
+           )
+       }  else{
+           res.json(
+               {
+                   success : true,
+                   order : order
+               }
+           )
+       }
+    });
 });
 
+router.post('/get_agent-profile',function (req,res,next) {
+    const username = req.body.username;
+    agent_obj.getAgentByUserName(username,function (err,agent) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    agent_obj: agent
+                }
+            )
+        }
+    });
+});
+
+
+
+router.post('/acceptDeclineOrder',function (req,res,next) {
+
+});
 
 
 

@@ -95,6 +95,12 @@ module.exports.getUserByUserName = function (username, callback) {
     agent.findOne(query, callback);
 };
 
+module.exports.getAgentByUserName = function (username, callback) {
+    const query = {'username': username };
+    console.log("query:", query);
+    agent.findOne(query, callback);
+};
+
 
 module.exports.getAgentsByStatus = function (callback) {
     const query = ({activeStatus: '1'});
