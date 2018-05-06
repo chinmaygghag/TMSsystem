@@ -23,7 +23,8 @@ router.post('/register', function (req, res, next) {
         registration_number: req.body.registration_number,
         username: req.body.username,
         password: req.body.password,
-        activeStatus: "1"
+        activeStatus: "1",
+        score : 0
     });
 
     agent_obj.addAgent(newAgent, function (err, agent) {

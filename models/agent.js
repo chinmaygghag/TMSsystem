@@ -45,6 +45,9 @@ const agentSchema = mongoose.Schema({
         declineOrders : Number,
         receivedOrders : Number,
         deliveredOrders: Number
+    },
+    score :{
+      type: Number
     }
 
 });
@@ -106,7 +109,7 @@ module.exports.getAgentsByStatus = function (callback) {
 module.exports.getActiveAgents = function (callback) {
     const query = ({activeStatus: '2'});
     console.log(query);
-    agent.find(query,callback);
+    agent.find(query,callback).sort({score: -1});
 
 };
 
