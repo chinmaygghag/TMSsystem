@@ -19,7 +19,7 @@ router.post('/upload',upload.single('file'),function (req,res) {
     if (req.file == null){
         res.json({success: false})
     } else{
-    res.json({success:true, filename: req.file.originalname});
+        res.json({success:true, filename: req.file.originalname});
     }
 });
 
@@ -30,7 +30,8 @@ router.post('/catalogElement',function (req,res) {
         imageURL: req.body.imageURL,
         unitLengthCost: req.body.unitLengthCost,
         desc: req.body.desc,
-        title: req.body.title
+        title: req.body.title,
+        status: req.body.status
     });
 
     catalogAPI.addCatalogElement(catalogElement, function (err, catalogElement) {

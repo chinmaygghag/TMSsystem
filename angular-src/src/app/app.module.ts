@@ -9,6 +9,7 @@ import { LoginComponent } from './merchant_components/login/login.component';
 import { HomeComponent } from './merchant_components/home/home.component';
 import { RouterModule, Routes} from "@angular/router";
 import { MainComponent } from './dashboard_component/main/main.component';
+import { ApproveCatalogComponent} from "./merchant_components/approve-catalog/approve-catalog.component";
 
 import { MerchantAuthServiceService} from "./services/merchant/merchant-auth-service.service";
 import { MerchantFlashMessageServiceService} from "./services/merchant/merchant-flash-message-service.service";
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
   {path: 'user/login', component: UserLoginComponent },
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
+  {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
   // {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
@@ -95,6 +97,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ApproveCatalogComponent,
     NavbarComponent,
     LoginComponent,
     HomeComponent,
