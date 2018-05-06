@@ -24,7 +24,13 @@ router.post('/register', function (req, res, next) {
         username: req.body.username,
         password: req.body.password,
         activeStatus: "1",
-        score : 0
+        orders : {
+            acceptOrders : 0,
+            declineOrders : 0,
+            receivedOrders :0,
+            deliveredOrders: 0
+        },
+        score : 13
     });
 
     agent_obj.addAgent(newAgent, function (err, agent) {
