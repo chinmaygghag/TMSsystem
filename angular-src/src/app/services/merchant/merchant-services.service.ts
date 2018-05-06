@@ -18,7 +18,6 @@ export class MerchantServicesService {
   changeAgentApprovalStatus(agent){
     let headers = new Headers();
     headers.append('Content-type','application-json');
-    console.log(agent);
     return this.http.post('http://localhost:3001/merchants/changeAgentStatus',agent/*,{headers:headers}*/)
       .map(res=>res.json());
   }
@@ -26,16 +25,14 @@ export class MerchantServicesService {
   getActiveAgents(){
     let headers = new Headers();
     headers.append('Content-type','application-json');
-
     return this.http.get("http://localhost:3001/merchants/getActiveAgents")
       .map((res) => res.json());
   }
 
   assignAgent(order){
     let headers = new Headers();
-    console.log("Orders in service "+order);
     headers.append('Content-type','application-json');
-    return this.http.post("http://localhost:3001/merchants/assignAgents",order,{headers:headers}).
+    return this.http.post("http://localhost:3001/merchants/assignAgents",order).
       map(res=>res.json());
   }
 
