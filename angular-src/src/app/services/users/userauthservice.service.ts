@@ -12,6 +12,7 @@ export class UserauthserviceService {
   registerUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
+
     return this.http.post('http://localhost:3001/endUsers/register',user,{headers:headers})
       .map(res=>res.json());
   }
@@ -21,6 +22,7 @@ export class UserauthserviceService {
     return this.http.post('http://localhost:3001/endUsers/authenticate',user,{headers:headers})
       .map(res=>res.json());
   }
+
 
 
 }

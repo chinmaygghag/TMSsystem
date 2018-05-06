@@ -247,40 +247,70 @@
 
 
 
-    <div class="jumbtron text-center">
-      <div id="reposition" style="margin:100px">
-        <h1>View Orders</h1>
+    <div class="jumbtron text-center" >
+
+        <h1>Profile</h1>
+      <br>
+      <div class = "row">
       </div>
       <div class = "row">
+        <div class="col-md-2"></div>
         <div class="col-md-4">
-          <h4>A123</h4>
-          <img src="https://i1.wp.com/www.vitasino.com/wp-content/uploads/2016/05/fabrics.jpg?fit=750%2C290&ssl=1" (click)="openDetails()" style="width:250px;height:130px">
+          Agency Name :
         </div>
         <div class="col-md-4">
-          <h4>B123</h4>
-          <img src="https://www.spoonflower.com/assets/create/FabricCreate6.jpg" (click)="openDetails()" style="width:250px;height:250px,200px">
-
+          {{agent.agency_name}}
         </div>
-        <div class="col-md-4">
-          <h4>B123</h4>
-          <img src="http://parada.eu/www/images/photos/o_1alugth3v1siu17cat5v9ka1sphl.jpg" (click)="openDetails()" style="width:250px;height:130px">
-        </div>
+        <div class="col-md-2"></div>
       </div>
-      <div class = "row" style="margin-top:50px">
+      <br>
+      <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-4">
-          <h4>B123</h4>
-          <img src="https://i1.wp.com/www.vitasino.com/wp-content/uploads/2016/05/fabrics.jpg?fit=750%2C290&ssl=1" (click)="openDetails()" style="width:250px;height:130px">
+          Name :
         </div>
         <div class="col-md-4">
-          <h4>B123</h4>
-          <img src="https://www.spoonflower.com/assets/create/FabricCreate6.jpg" (click)="openDetails()" style="width:250px;height:250px,200px">
-
+          {{agent.name}}
         </div>
-        <div class="col-md-4">
-          <h4>B123</h4>
-          <img src="http://parada.eu/www/images/photos/o_1alugth3v1siu17cat5v9ka1sphl.jpg" (click)="openDetails()" style="width:250px;height:130px">
-        </div>
+        <div class="col-md-2"></div>
       </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          Email :
+        </div>
+        <div class="col-md-4">
+          {{agent.email}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          Address :
+        </div>
+        <div class="col-md-4">
+          {{agent.address}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          Registration Number :
+        </div>
+        <div class="col-md-4">
+          {{agent.registration_number}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+
+
+
     </div>
 
 
