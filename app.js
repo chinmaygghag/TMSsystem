@@ -25,9 +25,6 @@ app.use(function(req, res, next) { //allow cross origin requests
 
 app.use(bodyParser.json());
 
-//app.use(multer({dest:'./angular-src/src/assets/'}).single('file'));
-
-
 const merchants = require('./routes/merchant/merchantsAPI');
 const agents = require('./routes/agent/agentsAPI');
 const endUsers = require('./routes/endusers/endUsersAPI');
@@ -55,11 +52,11 @@ app.use('/cart',cart);
 // require('./config/passport')(passport);
 
 
-app.use(express.static(path.join(__dirname,'./dist')));
+app.use(express.static(path.join(__dirname,'angular-src/dist/')));
 
 
 app.get('/',function (req,res) {
-    res.sendFile(path.join(__dirname+ './dist/index.html'));
+    res.sendFile(path.join(__dirname+ 'angular-src/dist/index.html'));
 });
 
 app.listen(port, function () {
