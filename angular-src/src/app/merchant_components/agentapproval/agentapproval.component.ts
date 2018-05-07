@@ -27,7 +27,7 @@ export class AgentapprovalComponent implements OnInit {
           data.agents.forEach(i=>{
             if(i.name != undefined)
               // console.log(i.name);
-              this.agentsList.push(i.name);
+              this.agentsList.push(i.name, i.agency_name, i.registration_number);
           });
         }
       });
@@ -69,7 +69,7 @@ export class AgentapprovalComponent implements OnInit {
 }
 
 class AgentApprovalModel{
-  constructor(public agency_name: string,
+  constructor(public agency_name: String,
               public email : String,
               public name : String ,
               public address : String,

@@ -4,6 +4,8 @@ const agent_obj = require('../../models/agent');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
+const order = require('../../models/orders');
+
 
 
 //test
@@ -102,6 +104,58 @@ router.post('/get_agent-profile',function (req,res,next) {
 });
 
 
+router.post('/updateStatus',function (req,res,next) {
+    const orderId = req.body.orderId;
+    const statusToBeUpdated=req.body.statusToBeUpdated
+    console.log(statusToBeUpdated)
+    //const status=req.body.status;
+    //console.log(username);
+    order.updateOrderStatusForAgent(orderId,statusToBeUpdated,function (err,callback) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    //orders: order
+                }
+            )
+        }
+    });
+});
+
+router.post('/getProcessedOrders',function (req,res,next) {
+    const username = req.body.username;
+    //const status=req.body.status;
+    console.log(username);
+    order.getProcessedOrdersForAgent(username,function (err,order) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    orders: order
+                }
+            )
+        }
+    });
+});
+
+router.post('/get_agent_orders',function (req,res,next) {
+    const username = req.body.username;
+    //const status=req.body.status;
+    console.log(username);
+    order.getOrderForAgent(username,function (err,order) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    orders: order
+                }
+            )
+        }
+    });
+});
 
 
 module.exports = router; //export the router to connect and show the page

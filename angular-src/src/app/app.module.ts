@@ -58,6 +58,8 @@ import {OrderComponent} from "./user-component/order/order.component";
 import { SaveStateService } from "./services/miscService/save-state.service";
 import {PastorderComponent} from "./user-component/pastorder/pastorder.component";
 import { UserProfileComponent} from "./user-component/user-profile/user-profile.component";
+import { CompletedOrdersComponent} from "./agent-component/completed-orders/completed-orders.component";
+import {MerchantOrderTrackComponent} from "./merchant_components/merchant-order-track/merchant-order-track.component";
 
 
 const appRoutes: Routes = [
@@ -93,7 +95,9 @@ const appRoutes: Routes = [
   {path: 'user/home/cart/checkout', component: CheckoutComponent},
   {path: 'user/home/cart',component:CartComponent},
   {path: 'user/home/order',component : OrderComponent},
-  {path: 'user/home/pastorder',component : PastorderComponent}
+  {path: 'user/home/pastorder',component : PastorderComponent},
+  {path: 'merchant/home/merchantOrderTrack', component: MerchantOrderTrackComponent},
+  {path: 'agent/home/completedOrders', component: CompletedOrdersComponent}
 ];
 
 @NgModule({
@@ -134,7 +138,9 @@ const appRoutes: Routes = [
     OrderComponent,
     PastorderComponent,
     ApproveCatalogComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CompletedOrdersComponent,
+    MerchantOrderTrackComponent
 
   ],
 
