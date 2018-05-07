@@ -55,7 +55,7 @@ app.use('/cart',cart);
 // require('./config/passport')(passport);
 
 
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'dist')));
 
 app.get('/',function (req,res) {
     res.send("Invalid Endpoint")
