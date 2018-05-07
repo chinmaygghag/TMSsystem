@@ -37,7 +37,7 @@ const cart = require('./routes/cart/cartAPI');
 
 
 // PORT
-const port = 3001;
+const port = process.env.PORT;
 
 // CORS Middleware
 app.use(cors());
