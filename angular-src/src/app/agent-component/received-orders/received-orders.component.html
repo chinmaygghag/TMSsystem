@@ -293,12 +293,11 @@
 
         </div>
         <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
-          <a class="btn btn-primary" >Accept</a>
+          <a class="btn btn-primary" (click)="acceptOrder(item)">Accept</a>
 
         </div>
         <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
-          <a class="btn btn-primary" >Decline</a>
-
+          <a class="btn btn-primary" (click)="declineOrder(item)">Decline</a>
         </div>
       </div>
     </div>

@@ -27,4 +27,9 @@ export class GetOrdersService {
   }
 
 
+  acceptDeclineOrder(item){
+
+  }
+
+
 }

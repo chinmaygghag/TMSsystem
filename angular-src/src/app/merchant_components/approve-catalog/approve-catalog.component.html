@@ -55,8 +55,6 @@
         </li>
         <li class="menu-item-has-children dropdown">
           <a [routerLink] = "['/merchant/home/receivedOrders']"> <i class="menu-icon fa fa-th"></i>Received Orders</a>
-          <a [routerLink] = "['/merchant/home/merchantOrderTrack']"> <i class="menu-icon fa fa-th"></i>View Order progress</a>
-
         </li>
         <li class="menu-item-has-children dropdown">
           <a [routerLink] = "['RedirectLoginComponent']"> <i class="menu-icon fa fa-th"></i>Log Out</a>
@@ -113,80 +111,100 @@
 
     <div class="col-sm-12">
 
-      <div class="jumbotron" *ngFor="let catalog of catalogList; let  i= index;" >
-        <div  class="row" style="text-align: center" align="center">
+      <!------ Banner picture ---------->
+      <!--<div class="container" >
+       <img src="https://www.onlinefabricstore.net/images/homepage/home-sunbrella-02-2018.jpg" height = "400px" width="100%">
+   </div>-->
 
-          <div class="col-md-5">
-            <div class="item" >
-              <img class="card-img-top" src="{{catalog.imageURL}}"  height="300"
-                   width="300">
+      <!--Slider-->
 
-              <div class="item-overlay top"></div>
+
+
+
+      <!------ Square divs ---------->
+
+
+
+      <div class="jumbotron">
+        <label style="text-align: center">
+          <h2>
+            Design requested from customer :
+          </h2>
+        </label>
+        <div class="row" *ngFor="let catalog of catalogList" style="margin-top: 30px">
+          <div class="col-md-2"  style="width: 50%; overflow: hidden;">
+            <img class="card-img-top" src="{{catalog.imagesUrl}}"  height="200"
+                 width="200"  >
+          </div>
+          <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px" align="center">
+            <h5 style="color: deepskyblue">Name :
+            </h5>
+            <div class="row" style="text-align: center; margin-left: 40px; " align="center">
+              <strong><h4>{{catalog.title}}</h4></strong>
             </div>
           </div>
-          <div class="col-md-4">
-            <br><br>
-            <div class="row" style="text-align: center" align="center">
-              <div class="col-md-5" align="left">
-                <h4><strong>Title :</strong></h4>
-              </div>
-              <div class="col-md-7" align="left">
-                <h4><strong>{{catalog.title}}</strong></h4>
-              </div>
-            </div>
-
+          <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; text-align: center" align="center">
             <div class="row">
-              <br>
-              <div class="col-md-5" align="left">
-                <h5><strong>Description :</strong></h5>
-              </div>
-
-              <div class="col-md-7" align="left">
-                <p>
-                  {{catalog.desc}}
-                </p>
-              </div>
+              <h5 style="color: deepskyblue">Description :</h5>
             </div>
-
+            <div class="row" style="text-align: center; margin-left: 20px" align="center">
+              <h4>{{catalog.desc}}</h4>
+            </div>
             <div class="row">
-              <br>
-              <div class="col-md-5" align="left">
-                <h5><strong> Enter Cloth&nbsp;Length :</strong></h5>
-              </div>
-              <div class="col-md-5">
-                <input name="cost_{{i}}" [(ngModel)]="cost[i]" type="text"
-                       style="width:50%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;"
-                       value="" maxlength="50" />
 
-              </div>
-            </div>
-            <div class="col-md-3">
-              <br><br><br><br>
-              <a class="btn btn-primary" style="margin-left: 50px " (click)="approveCatalog(catalog,i,cost[i])">Approve</a>
-            </div>
-            <div class="col-md-4">
-              <br><br><br><br>
-              <a class="btn-danger btn-primary" style="margin-left: 50px " (click)="declineCatalog(catalog,i)">Decline</a>
             </div>
 
           </div>
+          <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px" align="center">
+            <div class="row">
+              <h5 style="color: deepskyblue">Enter Cost : </h5>
+            </div>
+            <div>
+              <input name="unitLengthCost" [(ngModel)]="unitLengthCost" type="text" id="unitLengthCost" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="20" />
+            </div>
+            <div class="row">
+            </div>
 
+          </div>
+          <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
+            <a class="btn btn-primary" >Accept</a>
 
+          </div>
+          <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
+            <a class="btn btn-primary" >Decline</a>
+
+          </div>
         </div>
       </div>
 
 
 
 
-
-
-      </div>
     </div>
 
+    <!--<div class="container" >-->
+    <!--<h4>Awaiting Approvals</h4>-->
+    <!--<div class="container" *ngFor="let item of catalog">-->
+    <!--<ul class="list-group">-->
+    <!--<li class="list-group-item">{{agents}} <span style="float: right;" ><button (click)="acceptAgent(agents)">Accept</button><button (click)="deleteItem(agents)">Decline</button>  </span></li>-->
+    <!--<p></p>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
 
 
 
+    <!--/.col-->
 
+
+    <!--/.col-->
+
+
+    <!--/.col-->
+
+
+
+  </div> <!-- .content -->
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->

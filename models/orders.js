@@ -132,3 +132,20 @@ module.exports.getOrderForMerchant = function (status,callback) {
     const query = ({'statusForMerchant': status});
     order.find(query,callback);
 };
+
+module.exports.acceptDeclineOrder = function (orderId,status) {
+    if (status === "Accept"){
+        order.findOne({_id:orderId},function(err,order){
+            order.statusForAgent = "Approved";
+            order.save(callback);
+        })
+    }else if(status === "Decline"){
+        order.findOne({_id:orderId},function (err,order) {
+            order.agentName =  "";
+            order.statusForAgent = "Received";
+            order.statusForMerchant = "Assigned";
+            order.statusForCustomer = "processed";
+            order.save(callback);
+        })
+    }
+};

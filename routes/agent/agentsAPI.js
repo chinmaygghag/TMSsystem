@@ -122,7 +122,13 @@ router.post('/get_agent-profile',function (req,res,next) {
 
 
 router.post('/acceptDeclineOrder',function (req,res,next) {
-
+    const orderId = req.body.orderId;
+    const statusToBeDone = req.body.status;
+    res.json({
+        success : true,
+        status : statusToBeDone
+    });
+    console.log(orderId);
 });
 
 

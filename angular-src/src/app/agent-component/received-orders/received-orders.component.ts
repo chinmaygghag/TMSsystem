@@ -30,10 +30,8 @@ export class ReceivedOrdersComponent implements OnInit {
       this.getAllOrders.getOrdersForAgent(orderParam).subscribe(data => {
         data.order.forEach(i => {
           const imageUrl = "../" + i.catalogImage;
-          console.log(imageUrl);
-          console.log(i._id);
           if (i._id != undefined)
-            this.orders.push(new Orders(i.catalogImage, i.clothName, i.cost, i.length)
+            this.orders.push(new Orders(i._id,imageUrl, i.clothName, i.cost, i.length)
             );
         });
       });
@@ -42,10 +40,40 @@ export class ReceivedOrdersComponent implements OnInit {
     }
   }
 
+
+  acceptOrder(item){
+    const itemToBeAccepted = {
+      orderId : item.orderId,
+      status: "Accept"
+    };
+    this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
+      if (data.success){
+
+      }else{
+
+      }
+    })
+  }
+
+  declineOrder(item){
+    const itemToBeAccepted = {
+      orderId : item.orderId,
+      status: "Decline"
+    };
+    this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
+      if (data.success){
+
+      } else{
+
+      }
+    })
+  }
+
 }
 
 class Orders{
-  constructor(private imageUrl:String,
+  constructor(private id: String,
+              private imageUrl:String,
               private desc: String,
               private cost: String,
               private length: String){
