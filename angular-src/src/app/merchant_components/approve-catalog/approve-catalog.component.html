@@ -55,12 +55,11 @@
         </li>
         <li class="menu-item-has-children dropdown">
           <a [routerLink] = "['/merchant/home/receivedOrders']"> <i class="menu-icon fa fa-th"></i>Received Orders</a>
-        </li>
-        <li>
-          <a [routerLink] = "['/merchant/home/approvecatalog']" > <i class="menu-icon fa fa-th"></i>Approve Design</a>
+          <a [routerLink] = "['/merchant/home/merchantOrderTrack']"> <i class="menu-icon fa fa-th"></i>View Order progress</a>
+
         </li>
         <li class="menu-item-has-children dropdown">
-          <a [routerLink] = "['/']"> <i class="menu-icon fa fa-th"></i>Log Out</a>
+          <a [routerLink] = "['RedirectLoginComponent']"> <i class="menu-icon fa fa-th"></i>Log Out</a>
 
         </li>
 
@@ -74,6 +73,41 @@
 <!-- Right Panel -->
 
 <div id="right-panel" class="right-panel">
+
+
+
+  <!-- Header-->
+  -<header id="header" class="header">
+
+
+  <div class="header-menu"  style="height:30px">
+
+    <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img class="user-avatar rounded-circle" src="images/admin.jpg" style="margin-left:800px" alt="User Avatar" height="40px" width="40px">
+    </a>
+
+  </div>
+</header>
+
+
+  <div class="breadcrumbs">
+    <div class="col-sm-4">
+      <div class="page-header float-left">
+        <div class="page-title">
+          <!--<h1>Dashboard</h1>-->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="page-header float-right">
+        <div class="page-title">
+          <ol class="breadcrumb text-right">
+            <li class="active"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="content mt-3">
 

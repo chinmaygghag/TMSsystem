@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 var count : number = 0;
 var ProgressBar = require('progressbar.js');
+import {Router} from "@angular/router";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
+
+import {Headers, Http} from "@angular/http";
+
 
 @Component({
   selector: 'app-agent-process',
@@ -8,137 +13,189 @@ var ProgressBar = require('progressbar.js');
   styleUrls: ['./agent-process.component.css']
 })
 export class AgentProcessComponent implements OnInit {
+  orders=['a','b','c','d'];
+  orderItems=[];
+  cartItems = [];
+  totalCost: number = 0;
+description:string;
+length:string;
 
-  constructor() { }
+x:string;
+status:string;
+clothName:string;
+id:string;
+statusForAgent:string;
+nextStatus:string;
+currentStatus:String;
+    constructor(private router: Router,private http: Http,private userDataService: SaveUserDataService) { }
 
   ngOnInit() {
-    if(count==0){
+/*    if(count==0){
       (<HTMLInputElement>document.getElementById("dye")).disabled = true;
         (<HTMLInputElement>document.getElementById("machinery")).disabled = true;
         (<HTMLInputElement>document.getElementById("completeorder")).disabled = true;
 
 
 
+    }*/
+    console.log('init')
+    if(this.userDataService.username != null){
+    const username = {
+      username : this.userDataService.username
+    };
+    console.log(this.userDataService.username)
+
+    this.getAgentReceivedOrders(username).subscribe(data=>{
+      if (data.success){
+        const cost = 0;
+        console.log(data.success)
+        data.orders.forEach(
+
+          i=>{
+          //  const image =  "../" + i.catalogImage;
+          //  this.totalCost += parseInt(i.totalCost) ;
+          this.id=i._id;
+            this.description=i.catalog;
+            this.totalCost=i.cost;
+            this.status=i.statusForCustomer;
+            this.clothName=i.clothName;
+            this.length=i.length;
+            this.statusForAgent=i.statusForAgent;
+
+            console.log(i._id);
+            console.log(typeof i.totalCost);
+            console.log(typeof this.totalCost);
+            if(i.statusForAgent=='received'){
+              this.currentStatus='received'
+              this.nextStatus='supplier'
+            }
+            if(i.statusForAgent=='supplier'){
+              this.currentStatus='supplier'
+              this.nextStatus='Dye'
+            }
+            if(i.statusForAgent=='Dye'){
+              this.currentStatus='Dye'
+              this.nextStatus='Machinery'
+            }
+            if(i.statusForAgent=='Machinery'){
+              this.currentStatus='Machinery'
+              this.nextStatus='Finishing'
+            }
+            if(i.statusForAgent=='Order Processed'){
+              this.currentStatus='Order Processed'
+              this.nextStatus=''
+            }
+            this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,i.statusForAgent,this.nextStatus,this.currentStatus));
+          }
+        );
+      }
+    })
     }
+
+
+//
+
   }
 
-  status() {
-   //var count=0;
+  getAgentReceivedOrders(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/agents/get_agent_orders',username,{headers:headers})
+      .map(res=>res.json());
+  }
 
-   count=count+1;
-   if(count==1){
-    (<HTMLInputElement>document.getElementById("supplier")).disabled = true;
-    var circle = new ProgressBar.Circle('#container',{trailWidth: 4,strokeWidth: 10});
-    (<HTMLInputElement>document.getElementById("dye")).disabled = false;
+update(order,stat,pos){
+  console.log(order.currentStatus)
+  console.log(order.nextStatus)
 
-    //move1(circle);
-    circle.animate(0.25);
-    //circle.animate(1);
-   circle.setText("Supplier Phase Done");
-   }
-   if(count==2){
-     //circle.destroy();
-     (<HTMLInputElement>document.getElementById("container")).innerHTML="";
+  if(order.currentStatus=='received' && order.nextStatus=='supplier'){
+    order.currentStatus=order.nextStatus
+    order.nextStatus='Dye';
+    this.changeBackend(order.id,order.currentStatus,pos)
 
-     (<HTMLInputElement>document.getElementById("dye")).disabled = true;
-     (<HTMLInputElement>document.getElementById("machinery")).disabled = false;
+ return
+    //this.orderIems.find(item => item.id == order.id).nextStatus = ;
 
-    //document.getElementById("dye").disabled = true;
-    //move2();
-    var circle = new ProgressBar.Circle('#container',{trailWidth: 4,strokeWidth: 10});
-   //circle.animate(0.50,{from: { color: '#eee' },
-  //to: { color: '#000' }});
-     circle.set(0.5);
-    circle.setText("Dying Phase Done");
+  }
+  if(order.currentStatus=='supplier' && order.nextStatus=='Dye'){
+    order.currentStatus=order.nextStatus
+    order.nextStatus='Machinery';
+    this.changeBackend(order.id,order.currentStatus,pos)
 
-   }
-   if(count==3){
-     (<HTMLInputElement>document.getElementById("container")).innerHTML="";
+    //this.orderIems.find(item => item.id == order.id).nextStatus = ;
+return
+  }
+  if(order.currentStatus=='Dye' && order.nextStatus=='Machinery'){
+    order.currentStatus=order.nextStatus
+    order.nextStatus='Finishing';
+    this.changeBackend(order.id,order.currentStatus,pos)
 
-     (<HTMLInputElement>document.getElementById("machinery")).disabled = true;
-     (<HTMLInputElement>document.getElementById("completeorder")).disabled = false;
+    //this.orderIems.find(item => item.id == order.id).nextStatus = ;
+return
+  }
+  if(order.currentStatus=='Machinery' && order.nextStatus=='Finishing'){
+    order.currentStatus='Order Processed'
+    order.nextStatus='';
+    this.changeBackend(order.id,order.currentStatus,pos)
+  //  this.orderItems.splice(pos,1)
+  //  this.changeBackend(order.id)
+return
+    //this.orderIems.find(item => item.id == order.id).nextStatus = ;
+  }
+  if(order.currentStatus=='Order Processed' && order.nextStatus==''){
+  //  order.currentStatus='Order Processed'
+  //  this.orderItems.splice(pos,1)
 
-    //document.getElementById("machinery").disabled = true;
-   // move3();
-   var circle = new ProgressBar.Circle('#container',{trailWidth: 4,strokeWidth: 10});
-   circle.set(0.75);
-   //circle.animate(0.75,{svgStyle:null});
-   circle.setText("Machinery Phase Done");
+    //order.nextStatus='';
 
-   }
-   if(count==4){
-     (<HTMLInputElement>document.getElementById("container")).innerHTML="";
 
-     (<HTMLInputElement>document.getElementById("completeorder")).disabled = true;
-    //document.getElementById("machinery").disabled = true;
-    //move4();
-   var circle = new ProgressBar.Circle('#container',{trailWidth: 4,strokeWidth: 10});
-   circle.set(1);
+    //this.orderIems.find(item => item.id == order.id).nextStatus = ;
+return
+  }
+}
 
-    //circle.animate(1.00,{svgStyle:null});
-    circle.setText("Order Completed");
-    count=0;
-   }
+changeBackend(ordernumber,newstatus,pos){
+  const  orderchange= {
+    orderId : ordernumber,
+    statusToBeUpdated : newstatus
+  };
+
+
+  this.f(orderchange).subscribe(data=>{
+    if (data.success){
+      const cost = 0;
+      console.log(data.success)
+      //this.orderItems.splice(pos,1)
+      if(newstatus=='Order Processed')
+      this.orderItems.splice(pos,1)
+
+
+
+    }
+  })
+
+//  console.log(orderId)
+}
+f(orderchange){
+
+
+  let headers = new Headers();
+  headers.append('Content-Type','application/json');
+  return this.http.post('http://localhost:3001/agents/updateStatus',orderchange,{headers:headers})
+    .map(res=>res.json());
+}
+
+
+
+
 
 }
-status1() {
- //var count=0;
+  class OrderItem {
+    constructor(public catalog: String,
+                public clothName: String,
+                public statusForCustomer: String,
+                public cost: String,  public id:String,public length:String,public statusForAgent:String,public nextStatus:String,public currentStatus:String) {
+    }
 
- count=count+1;
- if(count==1){
-  (<HTMLInputElement>document.getElementById("supplier")).disabled = true;
-  var circle = new ProgressBar.Circle('#container1',{trailWidth: 4,strokeWidth: 10});
-  (<HTMLInputElement>document.getElementById("dye")).disabled = false;
-
-  //move1(circle);
-  circle.animate(0.25);
-  //circle.animate(1);
- circle.setText("Supplier Phase Done");
- }
- if(count==2){
-   //circle.destroy();
-   (<HTMLInputElement>document.getElementById("container1")).innerHTML="";
-
-   (<HTMLInputElement>document.getElementById("dye")).disabled = true;
-   (<HTMLInputElement>document.getElementById("machinery")).disabled = false;
-
-  //document.getElementById("dye").disabled = true;
-  //move2();
-  var circle = new ProgressBar.Circle('#container1',{trailWidth: 4,strokeWidth: 10});
- //circle.animate(0.50,{from: { color: '#eee' },
-//to: { color: '#000' }});
-   circle.set(0.5);
-  circle.setText("Dying Phase Done");
-
- }
- if(count==3){
-   (<HTMLInputElement>document.getElementById("container1")).innerHTML="";
-
-   (<HTMLInputElement>document.getElementById("machinery")).disabled = true;
-   (<HTMLInputElement>document.getElementById("completeorder")).disabled = false;
-
-  //document.getElementById("machinery").disabled = true;
- // move3();
- var circle = new ProgressBar.Circle('#container1',{trailWidth: 4,strokeWidth: 10});
- circle.set(0.75);
- //circle.animate(0.75,{svgStyle:null});
- circle.setText("Machinery Phase Done");
-
- }
- if(count==4){
-   (<HTMLInputElement>document.getElementById("container1")).innerHTML="";
-
-   (<HTMLInputElement>document.getElementById("completeorder")).disabled = true;
-  //document.getElementById("machinery").disabled = true;
-  //move4();
- var circle = new ProgressBar.Circle('#container1',{trailWidth: 4,strokeWidth: 10});
- circle.set(1);
-
-  //circle.animate(1.00,{svgStyle:null});
-  circle.setText("Order Completed");
-
- }
-
-}
 
 }
