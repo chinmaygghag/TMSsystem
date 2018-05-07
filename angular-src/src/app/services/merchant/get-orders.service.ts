@@ -28,7 +28,10 @@ export class GetOrdersService {
 
 
   acceptDeclineOrder(item){
-
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/agents/orderforagents',item/*,{headers:headers}*/)
+      .map(res=>res.json());
   }
 
 
