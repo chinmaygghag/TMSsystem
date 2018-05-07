@@ -57,6 +57,7 @@ app.use('/cart',cart);
 
 app.use(express.static(path.join(__dirname,'./dist')));
 
+
 app.get('/',function (req,res) {
     res.send("Invalid Endpoint")
 });
