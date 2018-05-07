@@ -16,6 +16,7 @@ mongoose.connection.on('connected',function () {
 const app = express();
 
 
+
 app.use(function(req, res, next) { //allow cross origin requests
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
