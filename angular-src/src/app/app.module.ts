@@ -57,6 +57,8 @@ import{ RedirectLoginComponent } from "./redirect-login/redirect-login.component
 import {OrderComponent} from "./user-component/order/order.component";
 import { SaveStateService } from "./services/miscService/save-state.service";
 import {PastorderComponent} from "./user-component/pastorder/pastorder.component";
+import { UserProfileComponent} from "./user-component/user-profile/user-profile.component";
+
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -78,6 +80,7 @@ const appRoutes: Routes = [
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
   {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
   // {path: 'user/home/viewcatalog/cart/checkout', component: CheckoutComponent},
+  {path: 'user/home/profile', component: UserProfileComponent},
   {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
@@ -130,7 +133,8 @@ const appRoutes: Routes = [
     RedirectLoginComponent,
     OrderComponent,
     PastorderComponent,
-    ApproveCatalogComponent
+    ApproveCatalogComponent,
+    UserProfileComponent
 
   ],
 
