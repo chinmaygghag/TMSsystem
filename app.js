@@ -39,7 +39,7 @@ const port = 3001; //process.env.PORT
 // CORS Middleware
 app.use(cors());
 
-
+app.use(express.static(path.join(__dirname,'angular-src/dist/')));
 app.use('/merchants',merchants);
 app.use('/agents',agents);
 app.use('/endUsers',endUsers);
@@ -50,9 +50,6 @@ app.use('/cart',cart);
 // app.use(passport.session());
 
 // require('./config/passport')(passport);
-
-
-app.use(express.static(path.join(__dirname,'angular-src/dist/')));
 
 
 app.get('/',function (req,res) {
