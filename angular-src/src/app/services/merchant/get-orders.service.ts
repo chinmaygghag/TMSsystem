@@ -12,7 +12,12 @@ export class GetOrdersService {
     return this.http.get('http://localhost:3001/merchants/orderReceivedForMerchant'/*,{headers:headers}*/)
       .map(res=>res.json());
   }
-
+  getAllOrdersForMerchant(){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('http://localhost:3001/merchants/allordersForMerchant'/*,{headers:headers}*/)
+      .map(res=>res.json());
+  }
 
   getOrdersForAgent(getOrderparam){
     let headers = new Headers();

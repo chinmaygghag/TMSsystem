@@ -18,6 +18,7 @@ export class MerchantServicesService {
   changeAgentApprovalStatus(agent){
     let headers = new Headers();
     headers.append('Content-type','application-json');
+    console.log(agent);
     return this.http.post('http://localhost:3001/merchants/changeAgentStatus',agent/*,{headers:headers}*/)
       .map(res=>res.json());
   }
