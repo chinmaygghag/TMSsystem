@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GetOrdersService} from "../../services/merchant/get-orders.service";
 import {Router} from "@angular/router";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-received-orders',
@@ -10,46 +11,35 @@ import {Router} from "@angular/router";
 export class ReceivedOrdersComponent implements OnInit {
 
   orders = [];
+  agentName: String;
+  status: String;
 
-  constructor(private router:Router,
-              private getAllOrders:GetOrdersService) { }
+  constructor(private router: Router,
+              private getAllOrders: GetOrdersService,
+              private saveUserSession: SaveUserDataService) {
+  }
 
   ngOnInit() {
+    if (this.saveUserSession.agentName != null) {
+      console.log(this.saveUserSession.agentName);
+      const orderParam = {
+        "agentName": this.saveUserSession.agentName,
+        "status": "Received"
+      };
 
-
-
-
-
-
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "50$",
-      "50 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "100$",
-      "100 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "75$",
-      "60 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "150$",
-      "120 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "200$",
-      "250 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "400$",
-      "450 inches"))
-    this.orders.push(new Orders("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqSp7ZnUCN0XP9Rr-twN6FKvMe4yyGFDdJtH-Bp-8TXomkDDDP",
-      "Silk",
-      "500$",
-      "650 inches"))
-
+      this.getAllOrders.getOrdersForAgent(orderParam).subscribe(data => {
+        data.order.forEach(i => {
+          const imageUrl = "../" + i.catalogImage;
+          console.log(imageUrl);
+          console.log(i._id);
+          if (i._id != undefined)
+            this.orders.push(new Orders(i.catalogImage, i.clothName, i.cost, i.length)
+            );
+        });
+      });
+    }else{
+      this.router.navigate(['/agent/login']);
+    }
   }
 
 }
