@@ -22,7 +22,4 @@ export class UserauthserviceService {
     return this.http.post('http://localhost:3001/endUsers/authenticate',user,{headers:headers})
       .map(res=>res.json());
   }
-
-
-
 }

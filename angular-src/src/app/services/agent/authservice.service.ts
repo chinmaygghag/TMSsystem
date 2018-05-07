@@ -16,8 +16,8 @@ export class AuthserviceService {
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3001/agents/register',agent,{headers:headers})
       .map(res=>res.json());
-
   }
+
   loginAgent(agent){
     let headers = new Headers();
     headers.append('Content-Type','application/json');

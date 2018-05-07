@@ -13,4 +13,13 @@ export class GetOrdersService {
       .map(res=>res.json());
   }
 
+
+  getOrdersForAgent(getOrderparam){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/agents/orderforagents',getOrderparam/*,{headers:headers}*/)
+      .map(res=>res.json());
+  }
+
+
 }

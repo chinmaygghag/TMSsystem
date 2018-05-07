@@ -42,7 +42,7 @@ export class AgentLoginComponent implements OnInit {
     this.authService.loginAgent(agent).subscribe(data => {
       if (data.success) {
         console.log("Login Successful!");
-        this.saveUserSession.username = agent.username;
+        this.saveUserSession.agentName = agent.username;
         this.router.navigate(['/agent/home']);
       }else{
         this._flashMessagesService.show('Agent Not Registered Yet!', { cssClass: 'alert-success', timeout: 1000 });

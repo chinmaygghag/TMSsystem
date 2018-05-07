@@ -102,10 +102,6 @@ module.exports.updateOrderStatusForMerchant = function (orderId, statusToBeUpdat
 };
 
 module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,callback) {
-    // order.findOneAndUpdate({_id : orderId},{statusForAgent: statusToBeUpdated},{new: true},function (err,order) {
-    //     callback(order);
-    // })
-
     order.findOne({_id : orderId}, function (err,order) {
         order.statusForAgent =  statusToBeUpdated;
         order.save(callback)

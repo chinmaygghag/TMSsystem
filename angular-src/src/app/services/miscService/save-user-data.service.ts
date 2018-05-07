@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 export class SaveUserDataService {
 
   username: String;
+  agentName: String;
+  merchant: String;
 
   constructor() { }
 
