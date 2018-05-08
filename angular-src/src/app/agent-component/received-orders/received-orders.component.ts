@@ -29,8 +29,9 @@ export class ReceivedOrdersComponent implements OnInit {
         "status": "Received"
       };
 
-      this.getAllOrders.getOrdersForAgent(orderParam).subscribe(data => {
+      this.getAllOrders.getOrdersForAgentWaiting(orderParam).subscribe(data => {
         data.order.forEach(i => {
+          console.log(i);
           const imageUrl = "../" + i.catalogImage;
           if (i._id != undefined)
             this.orders.push(new Orders(i._id,imageUrl, i.clothName, i.cost, i.length)
@@ -80,7 +81,7 @@ export class ReceivedOrdersComponent implements OnInit {
 class Orders{
   constructor(private id: String,
               private imageUrl:String,
-              private desc: String,
+              private clothName: String,
               private cost: String,
               private length: String){
 

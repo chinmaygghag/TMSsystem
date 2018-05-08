@@ -73,7 +73,7 @@ currentStatus:String;
                 this.currentStatus = 'Order Processed'
                 this.nextStatus = ''
               }
-              this.orderItems.push(new OrderItem(i.catalog, i.clothName, i.statusForCustomer, i.cost, i._id, i.length, i.statusForAgent, i.statusForMerchant));
+              this.orderItems.push(new OrderItem(i.catalogImage,i.catalog, i.clothName, i.statusForCustomer, i.cost, i._id, i.length, i.statusForAgent, i.statusForMerchant));
             }
           );
         }
@@ -89,7 +89,8 @@ currentStatus:String;
 }
 
 class OrderItem {
-  constructor(public catalog: String,
+  constructor(public imageUrl:String,
+    public catalog: String,
               public clothName: String,
               public statusForCustomer: String,
               public cost: String,  public id:String,public length:String,public statusForAgent:String,public statusForMerchant:String) {

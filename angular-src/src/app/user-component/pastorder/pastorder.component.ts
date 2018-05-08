@@ -27,8 +27,9 @@ export class PastorderComponent implements OnInit {
       };
       this.placeOrder.getPastOrders(username).subscribe(data=>{
         if (data.success) {
-          if(data.pastOrder != null && data.pastOrder.length > 0 ){
-            data.pastOrder.forEach(i => {
+          console.log(data.orders);
+          if(data.orders != null && data.orders.length > 0 ){
+            data.orders.forEach(i => {
             console.log(i);
             if(i != undefined){
             this.pastOrder.push(new Order(i.catalogImage,i.clothType,i.length,i.catalog,i.cost));

@@ -77,10 +77,10 @@
 
 
     <div class="header-menu"  style="height:30px">
-      <div class="col-sm-8">
+      <div class="col-sm-7">
         <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
 
         <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD" [routerLink] = "['/agent/login']" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">Logout
       </div>
@@ -98,7 +98,7 @@
        <!--for each product, this row will iterate-->
        <div class="row"  *ngFor="let order of orderItems; let i=index">
           <div class="col-sm-3">
-            <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
+            <img src="{{order.imageUrl}}" height="170px" width="170px">
           </div>
           <div class="col-sm-2">
               <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>

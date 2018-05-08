@@ -71,13 +71,13 @@ module.exports.getOrderFromOrderID = function (orderId,callback) {
 };
 
 module.exports.getOrderHistoryForUser = function (username, callback) {
-  const query = ({'username': username, 'statusForCustomer':'delivered'});
+  const query = ({'username': username, 'statusForCustomer':'Delivered'});
   order.find(query,callback);
 };
 
 module.exports.getActiveOrderForUser = function(username,callback){
   const query = ({"username" : username , $or:[
-          {'statusForCustomer':"ready"}, {'statusForCustomer':"placed"} , {'statusForCustomer':"processed"}
+          {'statusForCustomer':"ready"}, {'statusForCustomer':"placed"} ,{'statusForCustomer':"Delivered"}
       ]});
   order.find(query,callback);
 };
@@ -113,6 +113,13 @@ module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,c
         order.statusForAgent =  statusToBeUpdated;
         order.save(callback)}
     })
+};
+
+
+
+module.exports.getWaitingOrdersforAgents = function(username,callback){
+  const query = ({'agentName':username, 'statusForAgent':'Received'})
+    order.find(query,callback);
 };
 
 module.exports.getOrderForAgent = function (username,callback) {
@@ -181,7 +188,7 @@ module.exports.acceptDeclineOrder = function (orderId,status,callback) {
 
 
 module.exports.getProcessedOrdersForAgent = function (username,callback) {
-    const query = ({'agentName': username, 'statusForAgent':"Order Processed"});
+    const query = ({'agentName': username, 'statusForAgent':"Payment Received"});
     order.find(query,callback);
 };
 
@@ -189,15 +196,15 @@ module.exports.getProcessedOrdersForAgent = function (username,callback) {
 
 module.exports.getAllOrdersForMerchant = function (callback) {
     const query = ({ $or:[
-            {'statusForMerchant':"received"}, {'statusForMerchant':"Assigned"} ,{'statusForMerchant':"Processed"}, {'statusForMerchant':"Delivered"}]});
+            {'statusForMerchant':"received"}, {'statusForMerchant':"Assigned"} ,{'statusForMerchant':"Processed"}, {'statusForMerchant':"Delivered To Customer"}]});
     order.find(query,callback);
 };
 
 module.exports.updateFinalOrderStatusForAgent = function (orderId,statusToBeUpdated,statusMerchant,statusCustomer,callback) {
     order.findOne({'_id' : orderId}, function (err,order) {
         order.statusForAgent =  statusToBeUpdated;
-        order.statusForMerchant='Delivered'
-        order.statusForCustomer='ready'
+        order.statusForMerchant='Delivered To Customer'
+        order.statusForCustomer='Delivered'
         order.save(callback)
     })
 };

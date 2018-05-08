@@ -64,7 +64,7 @@ export class CheckoutComponent implements OnInit {
     this.placeOrder.placeOrders(placeOrder).subscribe(data=>{
       if(data.success){
         this._flashMessagesService.show('Order Placed Successfully', {cssClass: 'alert-success', timeout: 3000});
-        this.router.navigate(['/user/home/viewcatalog']);
+        // this.router.navigate(['/user/home/viewcatalog']);
       }else{
         console.log("Here in error of place order");
       }

@@ -80,7 +80,7 @@ currentStatus:String;
               this.currentStatus='Payment Received'
               this.nextStatus=''
             }
-            this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,i.statusForAgent,this.nextStatus,this.currentStatus));
+            this.orderItems.push(new OrderItem(i.catalogImage,i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,i.statusForAgent,this.nextStatus,this.currentStatus));
           }
         );
       }
@@ -222,7 +222,8 @@ f(orderchange){
 
 }
   class OrderItem {
-    constructor(public catalog: String,
+    constructor(public imageUrl: String,
+                public catalog: String,
                 public clothName: String,
                 public statusForCustomer: String,
                 public cost: String,  public id:String,public length:String,public statusForAgent:String,public nextStatus:String,public currentStatus:String) {

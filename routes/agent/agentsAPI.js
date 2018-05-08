@@ -87,10 +87,36 @@ router.post('/authenticate', function (req, res, next) {
 });
 
 
+router.post('/orderforagentsWaiting',function (req,res,next) {
+    const agentName = req.body.agentName;
+    const status = req.body.status;
+    console.log("Agent Name :"+agentName);
+    order.getWaitingOrdersforAgents(agentName,function (err,order) {
+        if (err){
+            res.json(
+                {
+                    success : false,
+                    msg: err
+                }
+            )
+        }  else{
+            res.json(
+                {
+                    success : true,
+                    order : order
+                }
+            )
+        }
+    });
+});
+
+
+
+
 router.post('/orderforagents',function (req,res,next) {
    const agentName = req.body.agentName;
    const status = req.body.status;
-
+    console.log("Agent Name :"+agentName);
     order.getOrderForAgent(agentName,status,function (err,order) {
        if (err){
            res.json(

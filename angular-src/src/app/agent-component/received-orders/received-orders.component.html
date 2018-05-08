@@ -80,10 +80,10 @@
 
 
   <div class="header-menu"  style="height:30px">
-    <div class="col-sm-8">
+    <div class="col-sm-7">
       <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
 
       <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD" [routerLink] = "['/agent/login']" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">Logout
     </div>
@@ -124,14 +124,14 @@
       </label>
       <div class="row" *ngFor="let item of orders" style="margin-top: 30px">
         <div class="col-md-2"  style="width: 50%; overflow: hidden;">
-          <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS90_aPFimWEigdHYDyL3UDg4HEx45bApLXC2PXX4J2Fe_ppNN6" alt="Card image cap"  height="200"
+          <img class="card-img-top" src="{{item.imageUrl}}" alt="Card image cap"  height="200"
                width="200"  >
         </div>
         <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px" align="center">
           <h5 style="color: deepskyblue">Type of Cloth :
           </h5>
           <div class="row" style="text-align: center; margin-left: 40px; " align="center">
-            <strong><h4>{{item.desc}}</h4></strong>
+            <strong><h4>Silk</h4></strong>
           </div>
         </div>
         <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; text-align: center" align="center">

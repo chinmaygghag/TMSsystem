@@ -55,7 +55,7 @@ id:string;
             console.log(i);
             // console.log(typeof i.totalCost);
             // console.log(typeof this.totalCost);
-            this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,this.image));
+            this.orderItems.push(new OrderItem(i.catalogImage,i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,this.image));
           }
         );
         }else{
@@ -180,7 +180,8 @@ if(document.getElementById(""+pos).innerHTML==""){
 }
 
 class OrderItem {
-  constructor(public catalog: String,
+  constructor(public imageUrl:String,
+    public catalog: String,
               public clothName: String,
               public statusForCustomer: String,
               public cost: String,  public id:String,public length:String,
