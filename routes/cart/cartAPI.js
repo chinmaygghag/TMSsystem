@@ -49,6 +49,7 @@ router.post('/getCartItem',function (req,res) {
 
 
 router.post('/deleteCartItem',function (req,res) {
+    const id = req.body._id;
    cartAPI.deleteCartItem(id,function (err,callback) {
        if (err){
            res.json({success : false, msg : 'Could Not be removed'});
