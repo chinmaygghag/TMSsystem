@@ -77,7 +77,7 @@ const appRoutes: Routes = [
   {path: 'user/cross',component: CrossComponent},
   {path: 'user/registration', component: UserRegisterComponent },
   {path: 'user/login', component: UserLoginComponent },
-  {path: 'agent/profile', component: AgentProfileComponent},
+  {path: 'agent/home/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
   {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
   // {path: 'user/home/viewcatalog/cart',component:CartComponent},

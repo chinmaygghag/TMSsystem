@@ -19,9 +19,9 @@ export class AgentProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    if(this.userDataService.username != null){
+    if(this.userDataService.agentName != null){
       const username = {
-        username : this.userDataService.username
+        username : this.userDataService.agentName
       };
       this.agentService.getAgent(username).subscribe(data=>{
         if (data.success) {

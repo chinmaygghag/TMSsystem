@@ -24,6 +24,8 @@ export class AgentLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.saveUserSession.agentName ="";
+
   }
 
   onLoginSubmit() {
