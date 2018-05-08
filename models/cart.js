@@ -38,6 +38,7 @@ module.exports.addToCart = function (cartItem,callback) {
     cartItem.save(callback);
 };
 
+
 module.exports.getCartItems = function (username,callback) {
     const query = {username : username, activeStatus: true};
     cart.find(query,callback);
@@ -47,8 +48,11 @@ module.exports.getCartItems = function (username,callback) {
 module.exports.deleteCartItem = function (id,callback) {
     console.log(id);
     cart.findOne({_id : id}, function (err,cart) {
-      cart.activeStatus =  false;
-      console.log(cart);
-      cart.save(callback);
+        if(err) throw err;
+        else {
+            cart.activeStatus = false;
+            console.log(cart);
+            cart.save(callback);
+        }
   })
 };

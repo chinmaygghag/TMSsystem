@@ -42,9 +42,7 @@ const agentSchema = mongoose.Schema({
     ],
     orders : {
         acceptOrders : Number,
-        declineOrders : Number,
-        receivedOrders : Number,
-        deliveredOrders: Number
+        declineOrders : Number
     },
     score :{
       type: Number
@@ -87,6 +85,7 @@ module.exports.comparePassword = function (candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
         console.log(err);
         if (err) throw err;
+        else
         callback(null, isMatch);
     });
 };
@@ -121,6 +120,8 @@ module.exports.getActiveAgents = function (callback) {
 
 module.exports.changeStatusForAgent = function (username,changeStatus,callback) {
      agent.findOneAndUpdate({name:username},{activeStatus: changeStatus},{new: true},function (err,agent) {
+         if(err) throw err;
+         else
          callback(agent);
      });
 };
@@ -131,9 +132,35 @@ module.exports.getAllOrders = function (username,callback) {
   agent.find(query,['orders'],callback);
 };
 
+module.exports.findAgentApproved = function(agentName,callback){
 
-module.exports.assignOrders = function (username,orderId,callback) {
-    username.update({username: username},{
-        $push : {orders : orderId}
-    },callback);
+    agent.findOne({name: agentName},function (err,agent) {
+        if(err) {
+            console.log("agent accept orders is not updated 2")
+        }
+        else {
+
+            agent.orders.acceptOrders = agent.orders.acceptOrders + 1;
+            agent.score = agent.score + 2;
+            agent.save(callback);
+            console.log(agent.score);
+
+        }
+    });
 };
+
+module.exports.findAgentDeclined = function(agentName,callback){
+
+    agent.findOne({name:agentName},function (err,agent) {
+        if(err) {
+            console.log("agent accept orders is not updated 2")
+        }
+        else {
+            agent.orders.declineOrders = agent.orders.declineOrders + 1;
+            agent.score = agent.score - 2;
+            agent.save();
+            console.log(agent.score);
+        }
+    });
+};
+

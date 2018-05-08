@@ -13,6 +13,7 @@ export class AgentHistogramComponent implements OnInit {
   declineOrds = [];
   receivedOrds = [];
   deliveredOrds = [];
+  scoreAgent = [];
   acceptOrdsData = null;
   declineOrdsData = null;
   receivedOrdsData = null;
@@ -40,6 +41,7 @@ export class AgentHistogramComponent implements OnInit {
             this.declineOrds.push(String(i.orders.declineOrders));
             this.receivedOrds.push(String(i.orders.receivedOrders));
             this.deliveredOrds.push(String(i.orders.deliveredOrders));
+            this.scoreAgent.push(String(i.score));
           });
 
           let receivedOrdsData = JSON.stringify(this.receivedOrds);
@@ -66,20 +68,20 @@ export class AgentHistogramComponent implements OnInit {
 
           datad[0] = this.acceptOrdsData;
           datad[1] = this.declineOrdsData;
-          datad[2] = this.receivedOrdsData;
-          datad[3] = this.deliveredOrdsData;
+          datad[2] = this.scoreAgent;
+          //datad[3] = this.deliveredOrdsData;
 
           let barChartData:any[] = [
-            {data: [], label: 'Orders Received'},
+            //{data: [], label: 'Orders Received'},
             {data: [], label: 'Orders accepted'},
             {data: [], label: 'Orders Declined' },
-            {data: [], label: 'Orders Delivered'}
+            {data: [], label: 'Score'}
           ];
 
           this.barChartData[0]['data'] = datad[0];
           this.barChartData[1]['data'] = datad[1];
           this.barChartData[2]['data'] = datad[2];
-          this.barChartData[3]['data'] = datad[3];
+          //this.barChartData[3]['data'] = datad[3];
           /*this.barChartData.forEach((data,index)=>{
 
             this.barChartData[index]  = Object.assign({},this.barChartData[index],{
@@ -120,10 +122,10 @@ export class AgentHistogramComponent implements OnInit {
   */
 
   public barChartData:any[] = [
-    {data: this.receivedOrdsData, label: 'Orders Received'},
+    //{data: this.receivedOrdsData, label: 'Orders Received'},
     {data: this.acceptOrdsData, label: 'Orders accepted'},
     {data: this.declineOrdsData, label: 'Orders Declined' },
-    {data: this.deliveredOrdsData, label: 'Orders Delivered'}
+    {data: this.scoreAgent, label: 'Score'}
   ];
 
   public barChartColors:Array<any> = [
