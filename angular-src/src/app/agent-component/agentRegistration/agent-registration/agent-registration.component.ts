@@ -17,6 +17,7 @@ export class AgentRegistrationComponent implements OnInit {
   address: String;
   registration_number: Number;
   username: String;
+
   password: String;
 
   constructor(private validateService:AgentvalidationService,
