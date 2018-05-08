@@ -123,6 +123,15 @@ router.post('/assignAgents',function (req,res,next) {
 
 });
 
+router.get('/allordersForMerchant',function (req,res,next) {
+    order.getAllOrdersForMerchant(function (err,orders) {
+        if (err) throw err;
+        res.json({
+            success: true,
+            orders: orders
+        })
+    })
+});
 
 
 module.exports = router;

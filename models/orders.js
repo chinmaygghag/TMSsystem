@@ -108,8 +108,9 @@ module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,c
     })
 };
 
-module.exports.getOrderForAgent = function (agentName,status,callback) {
-    const query = ({agentName: agentName, statusForAgent: status});
+module.exports.getOrderForAgent = function (username,callback) {
+    const query = ({'agentName':username, $or:[
+            {'statusForAgent':"Approved"}, {'statusForAgent':"Machinery"} ,{'statusForAgent':"supplier"}, {'statusForAgent':"Dye"}]});
     order.find(query,callback);
 };
 
@@ -133,7 +134,7 @@ module.exports.getOrderForMerchant = function (status,callback) {
     order.find(query,callback);
 };
 
-module.exports.acceptDeclineOrder = function (orderId,status) {
+module.exports.acceptDeclineOrder = function (orderId,status,callback) {
     if (status === "Accept"){
         order.findOne({_id:orderId},function(err,order){
             order.statusForAgent = "Approved";
@@ -148,4 +149,17 @@ module.exports.acceptDeclineOrder = function (orderId,status) {
             order.save(callback);
         })
     }
+};
+
+module.exports.getProcessedOrdersForAgent = function (username,callback) {
+    const query = ({'agentName': username, 'statusForAgent':"Order Processed"});
+    order.find(query,callback);
+};
+
+
+
+module.exports.getAllOrdersForMerchant = function (callback) {
+    const query = ({ $or:[
+            {'statusForMerchant':"received"}, {'statusForMerchant':"Assigned"} ,{'statusForMerchant':"Processed"}, {'statusForMerchant':"Delivered"}]});
+    order.find(query,callback);
 };
