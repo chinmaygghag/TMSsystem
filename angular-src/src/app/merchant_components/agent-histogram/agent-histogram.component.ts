@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MerchantServicesService} from "../../services/merchant/merchant-services.service";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-agent-histogram',
@@ -25,16 +26,18 @@ export class AgentHistogramComponent implements OnInit {
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
   constructor( private router:Router,
-               private getActiveAgents: MerchantServicesService) {}
+               private getActiveAgents: MerchantServicesService,
+               private userDataService : SaveUserDataService) {}
 
 
   ngOnInit() {
+    if(this.userDataService.merchant != null){
     this.getActiveAgents.getActiveAgents().subscribe(
       data => {
         if (data.success) {
           console.log(data);
-          data.agent.forEach(i=>{
-            if(i.name != undefined)
+          data.agent.forEach(i => {
+            if (i.name != undefined)
               console.log(i.name);
             this.agents.push(String(i.name));
             this.acceptOrds.push(String(i.orders.acceptOrders));
@@ -71,10 +74,10 @@ export class AgentHistogramComponent implements OnInit {
           datad[2] = this.scoreAgent;
           //datad[3] = this.deliveredOrdsData;
 
-          let barChartData:any[] = [
+          let barChartData: any[] = [
             //{data: [], label: 'Orders Received'},
             {data: [], label: 'Orders accepted'},
-            {data: [], label: 'Orders Declined' },
+            {data: [], label: 'Orders Declined'},
             {data: [], label: 'Score'}
           ];
 
@@ -105,6 +108,9 @@ export class AgentHistogramComponent implements OnInit {
           //this.barChartData = clone;
         }
       });
+  }else{
+      this.router.navigate(['/merchant/login']);
+    }
   }
   public barChartOptions:any = {
     scaleShowVerticalLines: false,

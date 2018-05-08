@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {CreatCatalogServiceService} from "../../services/catalogService/creat-catalog-service.service";
 import {Observable} from "rxjs/Observable";
 import {Http,Headers} from "@angular/http";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-create-catalog',
@@ -25,9 +26,15 @@ export class CreateCatalogComponent implements OnInit {
   constructor(private createcatalog: CreatCatalogServiceService,
               private router: Router,
               private _flashMessagesService: FlashMessagesService,
-              private http: Http) { }
+              private http: Http,
+              private userDataService: SaveUserDataService) { }
 
   ngOnInit() {
+    if (this.userDataService.merchant != null){
+
+    } else{
+      this.router.navigate(['/merchant/login']);
+    }
   }
 
   onCreateCatalogSubmit(){

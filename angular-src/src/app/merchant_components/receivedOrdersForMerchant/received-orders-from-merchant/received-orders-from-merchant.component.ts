@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {GetOrdersService} from "../../../services/merchant/get-orders.service";
 import {MerchantServicesService} from "../../../services/merchant/merchant-services.service";
+import {SaveUserDataService} from "../../../services/miscService/save-user-data.service";
 
 
 
@@ -18,50 +19,55 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   constructor(private router:Router,
               private getAllOrders:GetOrdersService,
-              private getActiveAgents: MerchantServicesService) { }
+              private getActiveAgents: MerchantServicesService,
+              private userDataService: SaveUserDataService) { }
 
   ngOnInit() {
-    this.getAllOrders.getOrdersForMerchant().subscribe(
-      data => {
-        if (data.success) {
 
-        data.orders.forEach(i=>{
-            const imageUrl = "../"+i.catalogImage;
-            console.log(imageUrl);
-            console.log(i._id);
-            console.log(i);
-            if(i._id != undefined)
-            this.orders.push(new Orders(
+    if (this.userDataService.merchant != null) {
 
-                i._id,
-                imageUrl,
-                i.catalog,
-                i.cost,
-                i.clothName,
-                i.length,
-                i.username,
-                i.address
-              )
-            );
-          });
-        }
-      });
 
-    this.getActiveAgents.getActiveAgents().subscribe(
-      data => {
-        if (data.success) {
-          console.log(data);
-          data.agent.forEach(i=>{
-            if(i.name != undefined){
-              console.log(i.name);
-            }
-            this.agents.push(i.name);
-          });
-        }
-      });
+      this.getAllOrders.getOrdersForMerchant().subscribe(
+        data => {
+          if (data.success) {
 
+            data.orders.forEach(i => {
+              const imageUrl = "../" + i.catalogImage;
+              console.log(imageUrl);
+              console.log(i._id);
+              console.log(i);
+              if (i._id != undefined)
+                this.orders.push(new Orders(
+                  i._id,
+                  imageUrl,
+                  i.catalog,
+                  i.cost,
+                  i.clothName,
+                  i.length,
+                  i.username,
+                  i.address
+                  )
+                );
+            });
+          }
+        });
+
+      this.getActiveAgents.getActiveAgents().subscribe(
+        data => {
+          if (data.success) {
+            console.log(data);
+            data.agent.forEach(i => {
+              if (i.name != undefined) {
+                console.log(i.name);
+              }
+              this.agents.push(i.name);
+            });
+          }
+        });
+    } else {
+      this.router.navigate(['/merchant/login']);
+    }
   }
-
   changeAgent(val:any,i){
     this.agentSelection[i] = val;
   }
@@ -83,9 +89,6 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
       }
     })
  }
-
-
-
 }
 
 class Orders{

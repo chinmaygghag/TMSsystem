@@ -34,8 +34,6 @@ currentStatus:String;
 
   ngOnInit() {
 
-
-    console.log('init')
     if(this.userDataService.agentName != null){
     const username = {
       username : this.userDataService.agentName
@@ -89,7 +87,9 @@ currentStatus:String;
       }
     })
     }
-
+else {
+      this.router.navigate(['/user/login']);
+    }
 
   }
 

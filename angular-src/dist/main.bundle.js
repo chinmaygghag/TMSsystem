@@ -1,35 +1,5 @@
 webpackJsonp([1,5],{
 
-/***/ 14:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaveUserDataService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SaveUserDataService = /** @class */ (function () {
-    function SaveUserDataService() {
-    }
-    SaveUserDataService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [])
-    ], SaveUserDataService);
-    return SaveUserDataService;
-}());
-
-//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/save-user-data.service.js.map
-
-/***/ }),
-
 /***/ 152:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -135,8 +105,8 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentProcessComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -166,14 +136,6 @@ var AgentProcessComponent = /** @class */ (function () {
     }
     AgentProcessComponent.prototype.ngOnInit = function () {
         var _this = this;
-        /*    if(count==0){
-              (<HTMLInputElement>document.getElementById("dye")).disabled = true;
-                (<HTMLInputElement>document.getElementById("machinery")).disabled = true;
-                (<HTMLInputElement>document.getElementById("completeorder")).disabled = true;
-        
-        
-        
-            }*/
         console.log('init');
         if (this.userDataService.agentName != null) {
             var username = {
@@ -222,6 +184,9 @@ var AgentProcessComponent = /** @class */ (function () {
                     });
                 }
             });
+        }
+        else {
+            this.router.navigate(['/agent/login']);
         }
         //
     };
@@ -356,8 +321,8 @@ var OrderItem = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -476,10 +441,10 @@ var AgentHomeComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -552,7 +517,7 @@ var AgentLoginComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentRegistrationComponent; });
@@ -636,8 +601,8 @@ var AgentRegistrationComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletedOrdersComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -665,7 +630,6 @@ var CompletedOrdersComponent = /** @class */ (function () {
     }
     CompletedOrdersComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('init');
         if (this.userDataService.agentName != null) {
             var username = {
                 username: this.userDataService.agentName
@@ -714,6 +678,9 @@ var CompletedOrdersComponent = /** @class */ (function () {
                 }
             });
         }
+        else {
+            this.router.navigate(['/user/login']);
+        }
     };
     CompletedOrdersComponent.prototype.getProcessedOrders = function (username) {
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
@@ -755,8 +722,8 @@ var OrderItem = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_get_orders_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceivedOrdersComponent; });
@@ -905,7 +872,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_component_navbar_navbar_component__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__merchant_components_login_login_component__ = __webpack_require__(420);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__merchant_components_home_home_component__ = __webpack_require__(419);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__dashboard_component_main_main_component__ = __webpack_require__(413);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__merchant_components_approve_catalog_approve_catalog_component__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_merchant_merchant_auth_service_service__ = __webpack_require__(152);
@@ -935,7 +902,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__merchant_components_create_catalog_create_catalog_component__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__agent_component_received_orders_received_orders_component__ = __webpack_require__(408);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__merchant_components_receivedOrdersForMerchant_received_orders_from_merchant_received_orders_from_merchant_component__ = __webpack_require__(422);
@@ -959,7 +926,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__user_component_user_profile_user_profile_component__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__agent_component_completed_orders_completed_orders_component__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__merchant_components_merchant_order_track_merchant_order_track_component__ = __webpack_require__(421);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__angular_common__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__angular_common__ = __webpack_require__(12);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1194,10 +1161,10 @@ var FooterComponentComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cart_cart_service_service__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GuestUserViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1410,8 +1377,9 @@ var NavbarComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentHistogramComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1425,10 +1393,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AgentHistogramComponent = /** @class */ (function () {
-    function AgentHistogramComponent(router, getActiveAgents) {
+    function AgentHistogramComponent(router, getActiveAgents, userDataService) {
         this.router = router;
         this.getActiveAgents = getActiveAgents;
+        this.userDataService = userDataService;
         this.agents = [];
         this.acceptOrds = [];
         this.declineOrds = [];
@@ -1492,71 +1462,76 @@ var AgentHistogramComponent = /** @class */ (function () {
     }
     AgentHistogramComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getActiveAgents.getActiveAgents().subscribe(function (data) {
-            if (data.success) {
-                console.log(data);
-                data.agent.forEach(function (i) {
-                    if (i.name != undefined)
-                        console.log(i.name);
-                    _this.agents.push(String(i.name));
-                    _this.acceptOrds.push(String(i.orders.acceptOrders));
-                    _this.declineOrds.push(String(i.orders.declineOrders));
-                    _this.receivedOrds.push(String(i.orders.receivedOrders));
-                    _this.deliveredOrds.push(String(i.orders.deliveredOrders));
-                    _this.scoreAgent.push(String(i.score));
-                });
-                var receivedOrdsData = JSON.stringify(_this.receivedOrds);
-                var acceptOrdsData = JSON.stringify(_this.acceptOrds);
-                var declineOrdsData = JSON.stringify(_this.declineOrds);
-                var deliveredOrdsData = JSON.stringify(_this.deliveredOrds);
-                var demoAgent = JSON.stringify(_this.agents);
-                _this.receivedOrdsData = JSON.parse(receivedOrdsData);
-                _this.acceptOrdsData = JSON.parse(acceptOrdsData);
-                _this.declineOrdsData = JSON.parse(declineOrdsData);
-                _this.deliveredOrdsData = JSON.parse(deliveredOrdsData);
-                _this.demoAgents = JSON.parse(demoAgent);
-                console.log(_this.demoAgents);
-                console.log(_this.acceptOrdsData);
-                console.log(_this.declineOrdsData);
-                console.log(_this.receivedOrdsData);
-                console.log(_this.deliveredOrdsData);
-                var datad = [];
-                var barChartLabels = _this.demoAgents;
-                _this.barChartLabels = barChartLabels;
-                datad[0] = _this.acceptOrdsData;
-                datad[1] = _this.declineOrdsData;
-                datad[2] = _this.scoreAgent;
-                //datad[3] = this.deliveredOrdsData;
-                var barChartData = [
-                    //{data: [], label: 'Orders Received'},
-                    { data: [], label: 'Orders accepted' },
-                    { data: [], label: 'Orders Declined' },
-                    { data: [], label: 'Score' }
-                ];
-                _this.barChartData[0]['data'] = datad[0];
-                _this.barChartData[1]['data'] = datad[1];
-                _this.barChartData[2]['data'] = datad[2];
-                //this.barChartData[3]['data'] = datad[3];
-                /*this.barChartData.forEach((data,index)=>{
-      
-                  this.barChartData[index]  = Object.assign({},this.barChartData[index],{
-                    data: [this.barChartData[index].data,datad[index]]
-                  })
-                })
-      */
-                //let clone = JSON.parse(JSON.stringify(barChartData));
-                //          this.barChartLabels = [this.barChartLabels, barChartLabels];
-                //clone[0].data = datad;
-                //console.log("++++++++" + clone[1].data);
-                //clone[0][0].data = datad[0];
-                //clone[0][1].data = datad[1];
-                //clone[0][2].data = datad[2];
-                //clone[0][3].data = datad[3];
-                //this.barChartData = barChartData;
-                //console.log(clone[0]);
-                //this.barChartData = clone;
-            }
-        });
+        if (this.userDataService.merchant != null) {
+            this.getActiveAgents.getActiveAgents().subscribe(function (data) {
+                if (data.success) {
+                    console.log(data);
+                    data.agent.forEach(function (i) {
+                        if (i.name != undefined)
+                            console.log(i.name);
+                        _this.agents.push(String(i.name));
+                        _this.acceptOrds.push(String(i.orders.acceptOrders));
+                        _this.declineOrds.push(String(i.orders.declineOrders));
+                        _this.receivedOrds.push(String(i.orders.receivedOrders));
+                        _this.deliveredOrds.push(String(i.orders.deliveredOrders));
+                        _this.scoreAgent.push(String(i.score));
+                    });
+                    var receivedOrdsData = JSON.stringify(_this.receivedOrds);
+                    var acceptOrdsData = JSON.stringify(_this.acceptOrds);
+                    var declineOrdsData = JSON.stringify(_this.declineOrds);
+                    var deliveredOrdsData = JSON.stringify(_this.deliveredOrds);
+                    var demoAgent = JSON.stringify(_this.agents);
+                    _this.receivedOrdsData = JSON.parse(receivedOrdsData);
+                    _this.acceptOrdsData = JSON.parse(acceptOrdsData);
+                    _this.declineOrdsData = JSON.parse(declineOrdsData);
+                    _this.deliveredOrdsData = JSON.parse(deliveredOrdsData);
+                    _this.demoAgents = JSON.parse(demoAgent);
+                    console.log(_this.demoAgents);
+                    console.log(_this.acceptOrdsData);
+                    console.log(_this.declineOrdsData);
+                    console.log(_this.receivedOrdsData);
+                    console.log(_this.deliveredOrdsData);
+                    var datad = [];
+                    var barChartLabels = _this.demoAgents;
+                    _this.barChartLabels = barChartLabels;
+                    datad[0] = _this.acceptOrdsData;
+                    datad[1] = _this.declineOrdsData;
+                    datad[2] = _this.scoreAgent;
+                    //datad[3] = this.deliveredOrdsData;
+                    var barChartData = [
+                        //{data: [], label: 'Orders Received'},
+                        { data: [], label: 'Orders accepted' },
+                        { data: [], label: 'Orders Declined' },
+                        { data: [], label: 'Score' }
+                    ];
+                    _this.barChartData[0]['data'] = datad[0];
+                    _this.barChartData[1]['data'] = datad[1];
+                    _this.barChartData[2]['data'] = datad[2];
+                    //this.barChartData[3]['data'] = datad[3];
+                    /*this.barChartData.forEach((data,index)=>{
+          
+                      this.barChartData[index]  = Object.assign({},this.barChartData[index],{
+                        data: [this.barChartData[index].data,datad[index]]
+                      })
+                    })
+          */
+                    //let clone = JSON.parse(JSON.stringify(barChartData));
+                    //          this.barChartLabels = [this.barChartLabels, barChartLabels];
+                    //clone[0].data = datad;
+                    //console.log("++++++++" + clone[1].data);
+                    //clone[0][0].data = datad[0];
+                    //clone[0][1].data = datad[1];
+                    //clone[0][2].data = datad[2];
+                    //clone[0][3].data = datad[3];
+                    //this.barChartData = barChartData;
+                    //console.log(clone[0]);
+                    //this.barChartData = clone;
+                }
+            });
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     // events
     AgentHistogramComponent.prototype.chartClicked = function (e) {
@@ -1571,10 +1546,10 @@ var AgentHistogramComponent = /** @class */ (function () {
             template: __webpack_require__(734),
             styles: [__webpack_require__(695)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _c || Object])
     ], AgentHistogramComponent);
     return AgentHistogramComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/agent-histogram.component.js.map
@@ -1589,6 +1564,8 @@ var AgentHistogramComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentapprovalComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1602,23 +1579,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AgentapprovalComponent = /** @class */ (function () {
-    function AgentapprovalComponent(merchantService, _flashMessagesService) {
+    function AgentapprovalComponent(merchantService, _flashMessagesService, userDataService, router) {
         this.merchantService = merchantService;
         this._flashMessagesService = _flashMessagesService;
+        this.userDataService = userDataService;
+        this.router = router;
         this.agentsList = [];
     }
     AgentapprovalComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.merchantService.getAgentsWaitingForApproval().subscribe(function (data) {
-            if (data.success) {
-                data.agents.forEach(function (i) {
-                    if (i.name != undefined)
-                        // console.log(i.name);
-                        _this.agentsList.push(i.name, i.agency_name, i.registration_number);
-                });
-            }
-        });
+        if (this.userDataService.merchant != null) {
+            this.merchantService.getAgentsWaitingForApproval().subscribe(function (data) {
+                if (data.success) {
+                    data.agents.forEach(function (i) {
+                        if (i.name != undefined)
+                            // console.log(i.name);
+                            _this.agentsList.push(i.name, i.agency_name, i.registration_number);
+                    });
+                }
+            });
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     AgentapprovalComponent.prototype.deleteItem = function (item) {
         var _this = this;
@@ -1653,10 +1639,10 @@ var AgentapprovalComponent = /** @class */ (function () {
             template: __webpack_require__(735),
             styles: [__webpack_require__(696)],
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object])
     ], AgentapprovalComponent);
     return AgentapprovalComponent;
-    var _a, _b;
+    var _a, _b, _c, _d;
 }());
 
 var AgentApprovalModel = /** @class */ (function () {
@@ -1684,7 +1670,8 @@ var AgentApprovalModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApproveCatalogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1699,27 +1686,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ApproveCatalogComponent = /** @class */ (function () {
-    function ApproveCatalogComponent(merchantService, _flashMessagesService, router) {
+    function ApproveCatalogComponent(merchantService, _flashMessagesService, router, userDataService) {
         this.merchantService = merchantService;
         this._flashMessagesService = _flashMessagesService;
         this.router = router;
+        this.userDataService = userDataService;
         this.catalogList = [];
         this.cost = [];
     }
     ApproveCatalogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.merchantService.getCatalogWaitingList().subscribe(function (data) {
-            console.log(data.success);
-            if (data.success) {
-                data.catalogs.forEach(function (i) {
-                    console.log(i);
-                    var imageUrl = "../../../assets/" + i.imageURL;
-                    _this.catalogList.push(new Catalog(i._id, imageUrl, i.title, i.desc));
-                });
-                console.log(_this.catalogList);
-            }
-        });
+        if (this.userDataService.merchant != null) {
+            this.merchantService.getCatalogWaitingList().subscribe(function (data) {
+                console.log(data.success);
+                if (data.success) {
+                    data.catalogs.forEach(function (i) {
+                        console.log(i);
+                        var imageUrl = "../../../assets/" + i.imageURL;
+                        _this.catalogList.push(new Catalog(i._id, imageUrl, i.title, i.desc));
+                    });
+                    console.log(_this.catalogList);
+                }
+            });
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     ApproveCatalogComponent.prototype.approveCatalog = function (catalog, index) {
         var _this = this;
@@ -1755,10 +1749,10 @@ var ApproveCatalogComponent = /** @class */ (function () {
             template: __webpack_require__(736),
             styles: [__webpack_require__(697)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _d || Object])
     ], ApproveCatalogComponent);
     return ApproveCatalogComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
 var Catalog = /** @class */ (function () {
@@ -1781,9 +1775,10 @@ var Catalog = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateCatalogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1799,15 +1794,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CreateCatalogComponent = /** @class */ (function () {
-    function CreateCatalogComponent(createcatalog, router, _flashMessagesService, http) {
+    function CreateCatalogComponent(createcatalog, router, _flashMessagesService, http, userDataService) {
         this.createcatalog = createcatalog;
         this.router = router;
         this._flashMessagesService = _flashMessagesService;
         this.http = http;
+        this.userDataService = userDataService;
         this.multiple = false;
     }
     CreateCatalogComponent.prototype.ngOnInit = function () {
+        if (this.userDataService.merchant != null) {
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     CreateCatalogComponent.prototype.onCreateCatalogSubmit = function () {
         var _this = this;
@@ -1866,10 +1868,10 @@ var CreateCatalogComponent = /** @class */ (function () {
             template: __webpack_require__(737),
             styles: [__webpack_require__(698)]
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__["a" /* CreatCatalogServiceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__["a" /* CreatCatalogServiceService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Http */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__["a" /* CreatCatalogServiceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__["a" /* CreatCatalogServiceService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Http */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _f || Object])
     ], CreateCatalogComponent);
     return CreateCatalogComponent;
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/create-catalog.component.js.map
@@ -1919,8 +1921,8 @@ var HomeComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_validateservice_service__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_auth_service_service__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1977,8 +1979,9 @@ var LoginComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_merchant_get_orders_service__ = __webpack_require__(73);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MerchantOrderTrackComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1992,10 +1995,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MerchantOrderTrackComponent = /** @class */ (function () {
-    function MerchantOrderTrackComponent(router, getAllOrders) {
+    function MerchantOrderTrackComponent(router, getAllOrders, userDataService) {
         this.router = router;
         this.getAllOrders = getAllOrders;
+        this.userDataService = userDataService;
         this.orders = ['a', 'b', 'c', 'd'];
         this.orderItems = [];
         this.cartItems = [];
@@ -2003,48 +2008,53 @@ var MerchantOrderTrackComponent = /** @class */ (function () {
     }
     MerchantOrderTrackComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getAllOrders.getAllOrdersForMerchant().subscribe(function (data) {
-            if (data.success) {
-                var cost = 0;
-                console.log(data.success);
-                data.orders.forEach(function (i) {
-                    //  const image =  "../" + i.catalogImage;
-                    //  this.totalCost += parseInt(i.totalCost) ;
-                    _this.id = i._id;
-                    _this.description = i.catalog;
-                    _this.totalCost = i.cost;
-                    _this.status = i.statusForCustomer;
-                    _this.clothName = i.clothName;
-                    _this.length = i.length;
-                    _this.statusForAgent = i.statusForAgent;
-                    _this.statusForMerchant = i.statusForMerchant;
-                    console.log(i._id);
-                    console.log(typeof i.totalCost);
-                    console.log(typeof _this.totalCost);
-                    if (i.statusForAgent == 'received') {
-                        _this.currentStatus = 'received';
-                        _this.nextStatus = 'supplier';
-                    }
-                    if (i.statusForAgent == 'supplier') {
-                        _this.currentStatus = 'supplier';
-                        _this.nextStatus = 'Dye';
-                    }
-                    if (i.statusForAgent == 'Dye') {
-                        _this.currentStatus = 'Dye';
-                        _this.nextStatus = 'Machinery';
-                    }
-                    if (i.statusForAgent == 'Machinery') {
-                        _this.currentStatus = 'Machinery';
-                        _this.nextStatus = 'Finishing';
-                    }
-                    if (i.statusForAgent == 'Order Processed') {
-                        _this.currentStatus = 'Order Processed';
-                        _this.nextStatus = '';
-                    }
-                    _this.orderItems.push(new OrderItem(i.catalog, i.clothName, i.statusForCustomer, i.cost, i._id, i.length, i.statusForAgent, i.statusForMerchant));
-                });
-            }
-        });
+        if (this.userDataService.merchant != null) {
+            this.getAllOrders.getAllOrdersForMerchant().subscribe(function (data) {
+                if (data.success) {
+                    var cost = 0;
+                    console.log(data.success);
+                    data.orders.forEach(function (i) {
+                        //  const image =  "../" + i.catalogImage;
+                        //  this.totalCost += parseInt(i.totalCost) ;
+                        _this.id = i._id;
+                        _this.description = i.catalog;
+                        _this.totalCost = i.cost;
+                        _this.status = i.statusForCustomer;
+                        _this.clothName = i.clothName;
+                        _this.length = i.length;
+                        _this.statusForAgent = i.statusForAgent;
+                        _this.statusForMerchant = i.statusForMerchant;
+                        console.log(i._id);
+                        console.log(typeof i.totalCost);
+                        console.log(typeof _this.totalCost);
+                        if (i.statusForAgent == 'received') {
+                            _this.currentStatus = 'received';
+                            _this.nextStatus = 'supplier';
+                        }
+                        if (i.statusForAgent == 'supplier') {
+                            _this.currentStatus = 'supplier';
+                            _this.nextStatus = 'Dye';
+                        }
+                        if (i.statusForAgent == 'Dye') {
+                            _this.currentStatus = 'Dye';
+                            _this.nextStatus = 'Machinery';
+                        }
+                        if (i.statusForAgent == 'Machinery') {
+                            _this.currentStatus = 'Machinery';
+                            _this.nextStatus = 'Finishing';
+                        }
+                        if (i.statusForAgent == 'Order Processed') {
+                            _this.currentStatus = 'Order Processed';
+                            _this.nextStatus = '';
+                        }
+                        _this.orderItems.push(new OrderItem(i.catalog, i.clothName, i.statusForCustomer, i.cost, i._id, i.length, i.statusForAgent, i.statusForMerchant));
+                    });
+                }
+            });
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     MerchantOrderTrackComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2052,10 +2062,10 @@ var MerchantOrderTrackComponent = /** @class */ (function () {
             template: __webpack_require__(740),
             styles: [__webpack_require__(701)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _c || Object])
     ], MerchantOrderTrackComponent);
     return MerchantOrderTrackComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 var OrderItem = /** @class */ (function () {
@@ -2080,9 +2090,10 @@ var OrderItem = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceivedOrdersFromMerchantComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2097,40 +2108,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
-    function ReceivedOrdersFromMerchantComponent(router, getAllOrders, getActiveAgents) {
+    function ReceivedOrdersFromMerchantComponent(router, getAllOrders, getActiveAgents, userDataService) {
         this.router = router;
         this.getAllOrders = getAllOrders;
         this.getActiveAgents = getActiveAgents;
+        this.userDataService = userDataService;
         this.orders = [];
         this.agents = [];
         this.agentSelection = [];
     }
     ReceivedOrdersFromMerchantComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getAllOrders.getOrdersForMerchant().subscribe(function (data) {
-            if (data.success) {
-                data.orders.forEach(function (i) {
-                    var imageUrl = "../" + i.catalogImage;
-                    console.log(imageUrl);
-                    console.log(i._id);
-                    console.log(i);
-                    if (i._id != undefined)
-                        _this.orders.push(new Orders(i._id, imageUrl, i.catalog, i.cost, i.clothName, i.length, i.username, i.address));
-                });
-            }
-        });
-        this.getActiveAgents.getActiveAgents().subscribe(function (data) {
-            if (data.success) {
-                console.log(data);
-                data.agent.forEach(function (i) {
-                    if (i.name != undefined) {
-                        console.log(i.name);
-                    }
-                    _this.agents.push(i.name);
-                });
-            }
-        });
+        if (this.userDataService.merchant != null) {
+            this.getAllOrders.getOrdersForMerchant().subscribe(function (data) {
+                if (data.success) {
+                    data.orders.forEach(function (i) {
+                        var imageUrl = "../" + i.catalogImage;
+                        console.log(imageUrl);
+                        console.log(i._id);
+                        console.log(i);
+                        if (i._id != undefined)
+                            _this.orders.push(new Orders(i._id, imageUrl, i.catalog, i.cost, i.clothName, i.length, i.username, i.address));
+                    });
+                }
+            });
+            this.getActiveAgents.getActiveAgents().subscribe(function (data) {
+                if (data.success) {
+                    console.log(data);
+                    data.agent.forEach(function (i) {
+                        if (i.name != undefined) {
+                            console.log(i.name);
+                        }
+                        _this.agents.push(i.name);
+                    });
+                }
+            });
+        }
+        else {
+            this.router.navigate(['/merchant/login']);
+        }
     };
     ReceivedOrdersFromMerchantComponent.prototype.changeAgent = function (val, i) {
         this.agentSelection[i] = val;
@@ -2159,10 +2177,10 @@ var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
             template: __webpack_require__(741),
             styles: [__webpack_require__(702)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _d || Object])
     ], ReceivedOrdersFromMerchantComponent);
     return ReceivedOrdersFromMerchantComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
 var Orders = /** @class */ (function () {
@@ -2283,8 +2301,8 @@ var SaveStateService = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cart_cart_service_service__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
@@ -2426,12 +2444,12 @@ var CrossComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomizeCatalogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2570,8 +2588,8 @@ var HorizontalComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2748,9 +2766,9 @@ var OrderItem = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_placeorders_place_order_service__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PastorderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2867,8 +2885,8 @@ var PlainComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_cart_cart_service_service__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
@@ -2977,10 +2995,10 @@ var CartItem = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_image_slider__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserHomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3090,10 +3108,10 @@ var Catalog = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_user_validate_service__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3167,8 +3185,8 @@ var UserLoginComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3247,7 +3265,7 @@ var User = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_user_validate_service__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRegisterComponent; });
@@ -3367,10 +3385,10 @@ var VerticalComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cart_cart_service_service__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewCatalogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3411,6 +3429,7 @@ var ViewCatalogComponent = /** @class */ (function () {
         else {
             this.show = false;
         }
+        this.clothtypes.push(new clothTypes(0, "Select a cloth type", "$", 0));
         this.clothtypes.push(new clothTypes(0, "SILK", "$", 25));
         this.clothtypes.push(new clothTypes(1, "COTTON", "$", 15));
         this.clothtypes.push(new clothTypes(2, "LINEN", "$", 10));
@@ -3443,29 +3462,39 @@ var ViewCatalogComponent = /** @class */ (function () {
     };
     ViewCatalogComponent.prototype.addToCart = function (catalog, index, clothType) {
         var _this = this;
-        console.log(this.cloth_length[index]);
-        this.unitLength = catalog.unitLengthCost;
-        var clothCost = Number(clothType);
-        console.log("ClothCost " + clothCost);
-        console.log("UnitLength + ClothCost  " + Number(this.unitLength) + Number(clothCost));
-        var totalCost = Number(this.cloth_length[index]) * (Number(this.unitLength) + Number(clothCost));
-        console.log("Total Cost : " + totalCost);
-        var cartItem = {
-            username: this.userDataService.username,
-            catalogName: catalog.title,
-            lengthEntered: this.cloth_length[index],
-            catalogImage: catalog.imageURL,
-            clothName: "Silk",
-            totalCost: totalCost
-        };
-        this.cartService.addToCart(cartItem).subscribe(function (data) {
-            if (data.success) {
-                _this._flashMessagesService.show('Item Added to Cart!', { cssClass: 'alert-success', timeout: 3000 });
+        if (this.cloth_length[index] != null && this.cloth_length[index] > 0) {
+            if (this.clothType != "Select a cloth type") {
+                console.log(this.cloth_length[index]);
+                this.unitLength = catalog.unitLengthCost;
+                var clothCost = Number(clothType);
+                console.log("ClothCost " + clothCost);
+                console.log("UnitLength + ClothCost  " + Number(this.unitLength) + Number(clothCost));
+                var totalCost = Number(this.cloth_length[index]) * (Number(this.unitLength) + Number(clothCost));
+                console.log("Total Cost : " + totalCost);
+                var cartItem = {
+                    username: this.userDataService.username,
+                    catalogName: catalog.title,
+                    lengthEntered: this.cloth_length[index],
+                    catalogImage: catalog.imageURL,
+                    clothName: clothType,
+                    totalCost: totalCost
+                };
+                this.cartService.addToCart(cartItem).subscribe(function (data) {
+                    if (data.success) {
+                        _this._flashMessagesService.show('Item Added to Cart!', { cssClass: 'alert-success', timeout: 3000 });
+                    }
+                    else {
+                        console.log(data);
+                    }
+                });
             }
             else {
-                console.log(data);
+                this._flashMessagesService.show('Select a cloth type', { cssClass: 'alert-success', timeout: 3000 });
             }
-        });
+        }
+        else {
+            this._flashMessagesService.show('Add a valid length', { cssClass: 'alert-success', timeout: 3000 });
+        }
     };
     ViewCatalogComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -4741,6 +4770,36 @@ module.exports = "<div class=\"jumbotron\">\n  <div class=\"row\" style=\"text-a
 
 module.exports = __webpack_require__(388);
 
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SaveUserDataService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SaveUserDataService = /** @class */ (function () {
+    function SaveUserDataService() {
+    }
+    SaveUserDataService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], SaveUserDataService);
+    return SaveUserDataService;
+}());
+
+//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/save-user-data.service.js.map
 
 /***/ }),
 

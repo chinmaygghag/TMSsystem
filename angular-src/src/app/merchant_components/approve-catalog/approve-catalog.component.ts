@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MerchantServicesService} from "../../services/merchant/merchant-services.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
 
 @Component({
   selector: 'app-approve-catalog',
@@ -18,26 +19,31 @@ export class ApproveCatalogComponent implements OnInit {
 
   constructor(private merchantService: MerchantServicesService,
               private _flashMessagesService: FlashMessagesService,
-              private router: Router) {
+              private router: Router,
+              private userDataService: SaveUserDataService) {
 
   }
 
   ngOnInit() {
-    this.merchantService.getCatalogWaitingList().subscribe(data=>
-    {
-      console.log(data.success);
-      if(data.success){
-        data.catalogs.forEach(
-          i=>{
-            console.log(i);
-            const imageUrl = "../../../assets/"+i.imageURL;
-            this.catalogList.push(new Catalog(i._id,imageUrl,i.title,i.desc));
-          });
-        console.log(this.catalogList);
-      }
-    });
-  }
+    if (this.userDataService.merchant != null) {
+      this.merchantService.getCatalogWaitingList().subscribe(data => {
+        console.log(data.success);
+        if (data.success) {
+          data.catalogs.forEach(
+            i => {
+              console.log(i);
+              const imageUrl = "../../../assets/" + i.imageURL;
+              this.catalogList.push(new Catalog(i._id, imageUrl, i.title, i.desc));
+            });
+          console.log(this.catalogList);
+        }
+      });
 
+
+    } else {
+      this.router.navigate(['/merchant/login']);
+    }
+  }
 
   approveCatalog(catalog,index){
 
@@ -56,7 +62,7 @@ export class ApproveCatalogComponent implements OnInit {
       }
     )
   }
-  
+
   declineCatalog(catalog,index){
     const catalogObj = {
       id: catalog.id

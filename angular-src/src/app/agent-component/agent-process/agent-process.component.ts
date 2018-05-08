@@ -30,14 +30,7 @@ currentStatus:String;
     constructor(private router: Router,private http: Http,private userDataService: SaveUserDataService) { }
 
   ngOnInit() {
-/*    if(count==0){
-      (<HTMLInputElement>document.getElementById("dye")).disabled = true;
-        (<HTMLInputElement>document.getElementById("machinery")).disabled = true;
-        (<HTMLInputElement>document.getElementById("completeorder")).disabled = true;
 
-
-
-    }*/
     console.log('init');
     if(this.userDataService.agentName != null){
     const username = {
@@ -92,6 +85,8 @@ currentStatus:String;
         );
       }
     })
+    }else{
+      this.router.navigate(['/agent/login']);
     }
 
 

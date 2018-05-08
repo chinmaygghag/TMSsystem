@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MerchantServicesService} from "../../services/merchant/merchant-services.service";
 import { FlashMessagesService } from 'angular2-flash-messages';
+import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-agentapproval',
@@ -16,11 +18,14 @@ export class AgentapprovalComponent implements OnInit {
   changeStatus: String;
 
   constructor(private merchantService: MerchantServicesService,
-              private _flashMessagesService: FlashMessagesService){
+              private _flashMessagesService: FlashMessagesService,
+              private userDataService: SaveUserDataService,
+              private router: Router){
 
   }
 
   ngOnInit() {
+    if(this.userDataService.merchant != null){
     this.merchantService.getAgentsWaitingForApproval().subscribe(
       data => {
         if (data.success) {
@@ -31,6 +36,9 @@ export class AgentapprovalComponent implements OnInit {
           });
         }
       });
+    }else{
+      this.router.navigate(['/merchant/login']);
+    }
   }
 
 
