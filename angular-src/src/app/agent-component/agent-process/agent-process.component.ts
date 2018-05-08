@@ -76,8 +76,8 @@ currentStatus:String;
               this.currentStatus='Machinery'
               this.nextStatus='Finishing'
             }
-            if(i.statusForAgent=='Order Processed'){
-              this.currentStatus='Order Processed'
+            if(i.statusForAgent=='Payment Received'){
+              this.currentStatus='Payment Received'
               this.nextStatus=''
             }
             this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,i.statusForAgent,this.nextStatus,this.currentStatus));
@@ -132,7 +132,7 @@ return
 return
   }
   if(order.currentStatus=='Machinery' && order.nextStatus=='Finishing'){
-    order.currentStatus='Order Processed'
+    order.currentStatus='Payment Received'
     order.nextStatus='';
     this.changeFinalBackend(order.id,order.currentStatus,pos)
 
@@ -165,7 +165,7 @@ changeBackend(ordernumber,newstatus,pos){
       const cost = 0;
       console.log(data.success)
       //this.orderItems.splice(pos,1)
-      if(newstatus=='Order Processed')
+      if(newstatus=='Payment Received')
       this.orderItems.splice(pos,1)
 
 
@@ -197,7 +197,7 @@ f(orderchange){
         const cost = 0;
         console.log(data.success)
         //this.orderItems.splice(pos,1)
-        if(newstatus=='Order Processed')
+        if(newstatus=='Payment Received')
           this.orderItems.splice(pos,1)
 
 

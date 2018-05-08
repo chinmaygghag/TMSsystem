@@ -156,15 +156,15 @@ if(document.getElementById(""+pos).innerHTML==""){
   bar.setText(status)
   }
   if(status=='processed'){
-  bar.animate(0.66)
+  bar.animate(0.33)
   bar.setText(status)
   }
-  if(status=='Shipped'){
-  bar.animate(0.66)
+  if(status=='Delivered'){
+  bar.animate(1)
   bar.setText(status)
   }
   if(status=='ready'){
-  bar.animate(1)
+  bar.animate(0.66)
   bar.setText(status)
   }
 
