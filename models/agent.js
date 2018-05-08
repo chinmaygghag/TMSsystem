@@ -45,6 +45,9 @@ const agentSchema = mongoose.Schema({
         declineOrders : Number,
         receivedOrders : Number,
         deliveredOrders: Number
+    },
+    score :{
+      type: Number
     }
 
 });

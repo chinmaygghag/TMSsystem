@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const agents = require('./agent');
+
 
 
 
@@ -56,7 +58,7 @@ const orderSchema = mongoose.Schema({
 
 
 const order = module.exports = mongoose.model('Order', orderSchema );
-
+const agent = mongoose.connect(agents);
 
 module.exports.insertOrders = function (orderDetails,callback) {
   orderDetails.save(orderDetails,callback);
@@ -118,7 +120,7 @@ module.exports.assignAgents = function (orderId,agentName,callback) {
     order.findOne({_id : orderId}, function (err,order) {
         order.agentName =  agentName;
         order.statusForAgent = "Received";
-        order.statusForMerchant = "Assigned";
+        order.statusForMerchant = "Received";
         order.statusForCustomer = "processed";
         order.save(callback)
     })
@@ -135,21 +137,55 @@ module.exports.getOrderForMerchant = function (status,callback) {
 };
 
 module.exports.acceptDeclineOrder = function (orderId,status,callback) {
-    if (status === "Accept"){
-        order.findOne({_id:orderId},function(err,order){
-            order.statusForAgent = "Approved";
-            order.save(callback);
-        })
-    }else if(status === "Decline"){
-        order.findOne({_id:orderId},function (err,order) {
-            order.agentName =  "";
-            order.statusForAgent = "Received";
-            order.statusForMerchant = "Assigned";
-            order.statusForCustomer = "processed";
+    if (status === "Accept") {
+        order.findOne({_id: orderId}, function (err, order) {
+            if(err) {
+                console.log("agent accept orders is not updated 1")
+            }else{
+                agent.findOne({name:order.agentName},function (err,agent) {
+                    if(err) {
+                        console.log("agent accept orders is not updated 2")
+                    }
+                    else {
+                        order.statusForAgent = "Approved";
+                        agent.orders.acceptOrders = agent.orders.acceptOrders + 1;
+                        agent.score = agent.score + 0.6;
+                        console.log(agent.score);
+
+                    }
+                });
+            }
+
             order.save(callback);
         })
     }
-};
+    else if(status === "Decline"){
+        order.findOne({_id: orderId}, function (err, order) {
+            if(err) {
+                console.log("agent decline orders is not updated 1")
+            }else{
+                agent.findOne({name:order.agentName},function (err,agent) {
+                    if(err) {
+                        console.log("agent accept orders is not updated 2")
+                    }
+                    else {
+                        agent.orders.declineOrders = agent.orders.declineOrders + 1;
+                        agent.score = agent.score - 0.6;
+                        console.log(agent.score);
+                    }
+                });
+            }
+            order.statusForAgent="";
+            order.statusForMerchant = "Received";
+            order.statusForCustomer = "processed";
+            order.save(callback);
+
+        })
+
+
+        }
+    };
+
 
 module.exports.getProcessedOrdersForAgent = function (username,callback) {
     const query = ({'agentName': username, 'statusForAgent':"Order Processed"});
