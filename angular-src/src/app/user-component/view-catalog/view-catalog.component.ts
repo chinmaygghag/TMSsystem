@@ -23,7 +23,7 @@ export class ViewCatalogComponent implements OnInit {
   // to place order
   catalogname: String;
   finalcost: number;
-  cloth_length : any=[];
+  cloth_length: any = [];
   unitLength: number;
 
   cost = [];
@@ -35,58 +35,60 @@ export class ViewCatalogComponent implements OnInit {
   show: Boolean = false;
 
 
-  constructor(private catalogService:GetCatalogsService,
+  constructor(private catalogService: GetCatalogsService,
               private _flashMessagesService: FlashMessagesService,
               private userDataService: SaveUserDataService,
               private placeOrderService: PlaceOrderService,
-              private cartService : CartServiceService,
+              private cartService: CartServiceService,
               private router: Router) {
 
   }
 
   ngOnInit() {
-    if (this.userDataService.username != null){
+    if (this.userDataService.username != null) {
       this.show = true;
-    } else{
+    } else {
       this.show = false;
     }
+    this.clothtypes.push(new clothTypes(0,"Select a cloth type",
+      "$",0));
 
-    this.clothtypes.push(new clothTypes(0,"SILK",
-      "$",25));
-    this.clothtypes.push(new clothTypes(1,"COTTON",
-      "$",15));
-    this.clothtypes.push(new clothTypes(2,"LINEN",
-      "$",10));
-    this.clothtypes.push(new clothTypes(3,"WOOL",
-      "$",18));
-    this.clothtypes.push(new clothTypes(4,"SYNTHETIC FIBERS",
-      "$",20));
-    this.clothtypes.push(new clothTypes(5,"RAYON",
-      "$",15));
+    this.clothtypes.push(new clothTypes(0, "SILK",
+      "$", 25));
+    this.clothtypes.push(new clothTypes(1, "COTTON",
+      "$", 15));
+    this.clothtypes.push(new clothTypes(2, "LINEN",
+      "$", 10));
+    this.clothtypes.push(new clothTypes(3, "WOOL",
+      "$", 18));
+    this.clothtypes.push(new clothTypes(4, "SYNTHETIC FIBERS",
+      "$", 20));
+    this.clothtypes.push(new clothTypes(5, "RAYON",
+      "$", 15));
 
     //if(this.userDataService.username != null){
     this.userObject = this.userDataService.username;
-    this.catalogService.getCatalog().subscribe(data=>
-    {
+    this.catalogService.getCatalog().subscribe(data => {
       console.log(data.success);
-      if(data.success){
+      if (data.success) {
         data.catalogs.forEach(
-          i=>{
-            const imageUrl = "../../../assets/"+i.imageURL;
-            this.catalogList.push(new Catalog(imageUrl,i.title,i.desc,i.unitLengthCost));
+          i => {
+            const imageUrl = "../../../assets/" + i.imageURL;
+            this.catalogList.push(new Catalog(imageUrl, i.title, i.desc, i.unitLengthCost));
           });
         console.log(this.catalogList);
       }
     });
     //}else{
     //  this.router.navigate(['/user/login']);
-    }
+  }
+
   //}
 
 
-  updatePrice(val:any,j){
+  updatePrice(val: any, j) {
     for (let i = 0; i < this.clothtypes.length; i++) {
-      if (this.clothtypes[i].cloth == val){
+      if (this.clothtypes[i].cloth == val) {
         console.log(this.clothtypes[i]);
         this.cost[j] = this.clothtypes[i].cost;
       }
@@ -94,34 +96,40 @@ export class ViewCatalogComponent implements OnInit {
   }
 
 
-  addToCart(catalog,index,clothType){
-    console.log(this.cloth_length[index]);
-    this.unitLength = catalog.unitLengthCost;
-    const clothCost = Number(clothType);
-    console.log("ClothCost "+clothCost);
-    console.log("UnitLength + ClothCost  " +Number(this.unitLength)+Number(clothCost));
-    const totalCost = Number(this.cloth_length[index])*(Number(this.unitLength)+Number(clothCost));
+  addToCart(catalog, index, clothType) {
+    if (this.cloth_length[index] != null && this.cloth_length[index] > 0) {
+      if(this.clothType != "Select a cloth type"){
+      console.log(this.cloth_length[index]);
+      this.unitLength = catalog.unitLengthCost;
+      const clothCost = Number(clothType);
+      console.log("ClothCost " + clothCost);
+      console.log("UnitLength + ClothCost  " + Number(this.unitLength) + Number(clothCost));
+      const totalCost = Number(this.cloth_length[index]) * (Number(this.unitLength) + Number(clothCost));
 
-    console.log("Total Cost : "+totalCost);
+      console.log("Total Cost : " + totalCost);
 
-    const cartItem = {
-      username : this.userDataService.username,
-      catalogName : catalog.title,
-      lengthEntered: this.cloth_length[index],
-      catalogImage: catalog.imageURL,
-      clothName: "Silk",
-      totalCost : totalCost
-    };
-    this.cartService.addToCart(cartItem).subscribe(data=>{
-      if (data.success){
-        this._flashMessagesService.show('Item Added to Cart!', { cssClass: 'alert-success', timeout: 3000 });
+      const cartItem = {
+        username: this.userDataService.username,
+        catalogName: catalog.title,
+        lengthEntered: this.cloth_length[index],
+        catalogImage: catalog.imageURL,
+        clothName: clothType,
+        totalCost: totalCost
+      };
+      this.cartService.addToCart(cartItem).subscribe(data => {
+        if (data.success) {
+          this._flashMessagesService.show('Item Added to Cart!', {cssClass: 'alert-success', timeout: 3000});
+        } else {
+          console.log(data);
+        }
+      })
       }else{
-        console.log(data);
+        this._flashMessagesService.show('Select a cloth type', { cssClass: 'alert-success', timeout: 3000 });
       }
-    })
-
+    } else {
+      this._flashMessagesService.show('Add a valid length', { cssClass: 'alert-success', timeout: 3000 });
+    }
   }
-
 }
 
 class Catalog {
