@@ -44,7 +44,7 @@
         </li>
         <h3 class="menu-title">Order Console</h3><!-- /.menu-title -->
         <li class="menu-item-has-children dropdown">
-          <a [routerLink]="['user/home/viewcatalog']"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
+          <a [routerLink]="['/guest/viewcatalog']"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
           <ul class="sub-menu children dropdown-menu">
             <!-- <li><i class="fa fa-share-square-o"></i><a href="#">Silk Fabric</a></li>
              <li><i class="fa fa-share-square-o"></i><a href="#">Cotton Fabric</a></li>
@@ -264,7 +264,7 @@
       <div class="container" >
         <div class="row" style="height:15px;color: #444;font-size: 20px;">
           The most trending Designs
-          <a style="color:grey;margin-left:10px;" [routerLink] = "['/merchant/login']">View All</a>
+          <a style="color:grey;margin-left:10px;" [routerLink] = "['guest/viewcatalog']">View All</a>
         </div>
       </div>
       <div class="row">

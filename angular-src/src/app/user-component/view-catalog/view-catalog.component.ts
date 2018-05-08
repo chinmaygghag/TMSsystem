@@ -32,6 +32,7 @@ export class ViewCatalogComponent implements OnInit {
   selectedItem: Object = {};
 
   clothType: String;
+  show: Boolean = false;
 
 
   constructor(private catalogService:GetCatalogsService,
@@ -44,7 +45,11 @@ export class ViewCatalogComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if (this.userDataService.username != null){
+      this.show = true;
+    } else{
+      this.show = false;
+    }
 
     this.clothtypes.push(new clothTypes(0,"SILK",
       "$",25));
@@ -59,7 +64,7 @@ export class ViewCatalogComponent implements OnInit {
     this.clothtypes.push(new clothTypes(5,"RAYON",
       "$",15));
 
-    if(this.userDataService.username != null){
+    //if(this.userDataService.username != null){
     this.userObject = this.userDataService.username;
     this.catalogService.getCatalog().subscribe(data=>
     {
@@ -73,10 +78,10 @@ export class ViewCatalogComponent implements OnInit {
         console.log(this.catalogList);
       }
     });
-    }else{
-      this.router.navigate(['/user/login']);
+    //}else{
+    //  this.router.navigate(['/user/login']);
     }
-  }
+  //}
 
 
   updatePrice(val:any,j){

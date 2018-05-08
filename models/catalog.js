@@ -77,6 +77,12 @@ module.exports.approveStatusForCatalog = function (catalogName,cost,callback) {
 };
 
 
+module.exports.getTopCatalog = function (callback) {
+    const query = ({status: "approved"});
+    catalog.find(query,callback).limit(5);
+};
+
+
 
 module.exports.getCatalogElement = function (catalogName,callback) {
     const query = {title : catalogName};

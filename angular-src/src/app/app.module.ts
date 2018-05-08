@@ -82,6 +82,8 @@ const appRoutes: Routes = [
   {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
   // {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
+  {path: 'guest/viewcatalog',component: ViewCatalogComponent},
+
   {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
   {path: 'agent/home/process', component: AgentProcessComponent},
   {path: 'agent/home', component: AgentHomeComponent},

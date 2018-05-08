@@ -60,6 +60,22 @@ router.get('/getCatalogElements',function (req,res) {
 });
 
 
+router.get('/getTopCatalog',function (req,res) {
+
+    catalogAPI.getTopCatalog(function (err,catalogs) {
+        if (err) throw err;
+        else
+            res.json(
+                {
+                    success: true,
+                    catalogs: catalogs
+                }
+            )
+    });
+
+});
+
+
 
 
 

@@ -15,7 +15,13 @@ export class GetCatalogsService {
   }
 
 
+  getTopCatalog(){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('http://localhost:3001/create/getTopCatalog',{headers:headers})
+      .map(res=>res.json());
 
+  }
 
 
 }

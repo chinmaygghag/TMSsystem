@@ -24,6 +24,7 @@
 </head>
 <body background = "http://www.dzdesign.pl/wp-content/uploads/2017/05/anthology4.1.jpg" style="height:400px;width:100%">
 
+
 <!-- Left Panel -->
 
 <aside id="left-panel" class="left-panel">
@@ -90,12 +91,22 @@
 
 <!-- Left Panel -->
 
-
 <!-- Right Panel -->
 
 <div id="right-panel" class="right-panel">
 
-
+  <!-- Header-->
+  <header id="header" class="header">
+    <div class="header-menu"  style="height:30px;margin-top:20px">
+      <div class="col-sm-8">
+        <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
+      </div>
+      <div class="col-sm-4">
+        <a  class="toggle"  [routerLink] = "['RedirectLoginComponent']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">
+        </a></div>
+    </div>
+  </header>
 
   <div class="content mt-3">
 
@@ -105,8 +116,8 @@
         <div class="col-md-9">
         </div>
         <div class="col-md-3">
-          <a class="btn btn-primary" [routerLink] = "['/user/home/cart']" style="margin-right: 5px" >
-            View Cart
+          <a class="btn btn-primary" [routerLink] = "['/user/home/viewcatalog/cart']" style="margin-right: 5px" >
+            Checkout
           </a>
         </div>
       </div>
