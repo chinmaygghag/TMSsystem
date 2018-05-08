@@ -38,7 +38,6 @@ module.exports.addToCart = function (cartItem,callback) {
     cartItem.save(callback);
 };
 
-
 module.exports.getCartItems = function (username,callback) {
     const query = {username : username, activeStatus: true};
     cart.find(query,callback);

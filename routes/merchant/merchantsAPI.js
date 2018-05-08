@@ -29,9 +29,9 @@ router.get('/getWaitingCatalog', function(req,res,next){
     })
 });
 
-router.get('/declineCatalog',function(req,res,next){
-    const catalogName = req.body.title;
-    catalog.declineStatusForCatalog(catalogName,function(isSuccess,err){
+router.post('/declineCatalog',function(req,res,next){
+    const id = req.body.id;
+    catalog.declineStatusForCatalog(id,function(isSuccess,err){
         if(err) throw err;
         else if(isSuccess){
             res.json({
@@ -43,10 +43,10 @@ router.get('/declineCatalog',function(req,res,next){
 });
 
 
-router.get('/approveCatalog',function(req,res,next){
-    const catalogName = req.body.title;
+router.post('/approveCatalog',function(req,res,next){
+    const id = req.body.id;
     const cost = req.body.unitLengthCost;
-    catalog.approveStatusForCatalog(catalogName,cost,function(isSuccess,err){
+    catalog.approveStatusForCatalog(id,cost,function(isSuccess,err){
         if(err) throw err;
         else if(isSuccess){
             res.json({

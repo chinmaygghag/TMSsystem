@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class ApproveCatalogComponent implements OnInit {
 
   catalogList = [];
-  cost : any [];
+  cost = [];
 
   title : String;
   changeStatus: String;
@@ -29,8 +29,9 @@ export class ApproveCatalogComponent implements OnInit {
       if(data.success){
         data.catalogs.forEach(
           i=>{
+            console.log(i);
             const imageUrl = "../../../assets/"+i.imageURL;
-            this.catalogList.push(new Catalog(imageUrl,i.title,i.desc));
+            this.catalogList.push(new Catalog(i._id,imageUrl,i.title,i.desc));
           });
         console.log(this.catalogList);
       }
@@ -41,14 +42,15 @@ export class ApproveCatalogComponent implements OnInit {
   approveCatalog(catalog,index){
 
     const catalogObj = {
-      title: catalog.title,
+      id: catalog.id,
       unitLengthCost: this.cost[index]
     };
-
+    console.log(catalogObj);
     this.merchantService.approveWaitinglistCatalog(catalogObj).subscribe(
       data =>{
         if(data.success){
           this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this.cost[index]=0
           this.catalogList.splice(index,1)
         }
       }
@@ -56,29 +58,24 @@ export class ApproveCatalogComponent implements OnInit {
   }
   declineCatalog(catalog,index){
     const catalogObj = {
-      title: catalog.title
+      id: catalog.id
     }
     this.merchantService.declineWaitinglistCatalog(catalogObj).subscribe(
       data =>{
         if(data.success){
           this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this.cost[index]=0
           this.catalogList.splice(index,1)
         }
       }
     )
-
-
   }
-
-
-
-
-
 }
 
 
 class Catalog {
-  constructor(public imageURL: String,
+  constructor(public id: String,
+              public imageURL: String,
               public title: String,
               public desc: String) {
   }
