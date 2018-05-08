@@ -10,7 +10,7 @@ export class CreatCatalogServiceService {
     let headers = new Headers();
     console.log(create);
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/create/catalogElement',create,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/create/catalogElement',create,{headers:headers})
       .map(res=>res.json());
 
   }

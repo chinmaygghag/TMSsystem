@@ -58,7 +58,7 @@ export class CustomizeCatalogComponent implements OnInit {
       const formData: FormData = new FormData();
       formData.append('file', file, file.name);
       const headers = new Headers();
-      this.http.post('http://localhost:3001/create/upload', formData, {headers: headers})
+      this.http.post('https://textilemanagementsystem.herokuapp.com/create/upload', formData, {headers: headers})
         .map(res => res.json())
         // .catch(error => Observable.throw(error))
         .subscribe(data => {

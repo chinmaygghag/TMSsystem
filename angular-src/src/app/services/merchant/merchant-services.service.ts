@@ -10,7 +10,7 @@ export class MerchantServicesService {
     let headers = new Headers();
     headers.append('Content-type','application-json');
 
-    return this.http.get("http://localhost:3001/merchants/getAgents")
+    return this.http.get("https://textilemanagementsystem.herokuapp.com/merchants/getAgents")
       .map((res) => res.json());
   }
 
@@ -19,34 +19,34 @@ export class MerchantServicesService {
     let headers = new Headers();
     headers.append('Content-type','application-json');
     console.log(agent);
-    return this.http.post('http://localhost:3001/merchants/changeAgentStatus',agent/*,{headers:headers}*/)
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/merchants/changeAgentStatus',agent/*,{headers:headers}*/)
       .map(res=>res.json());
   }
 
   getActiveAgents(){
     let headers = new Headers();
     headers.append('Content-type','application-json');
-    return this.http.get("http://localhost:3001/merchants/getActiveAgents")
+    return this.http.get("https://textilemanagementsystem.herokuapp.com/merchants/getActiveAgents")
       .map((res) => res.json());
   }
 
   assignAgent(order){
     let headers = new Headers();
     headers.append('Content-type','application-json');
-    return this.http.post("http://localhost:3001/merchants/assignAgents",order).
+    return this.http.post("https://textilemanagementsystem.herokuapp.com/merchants/assignAgents",order).
       map(res=>res.json());
   }
   getCatalogWaitingList(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3001/merchants/getWaitingCatalog',{headers:headers})
+    return this.http.get('https://textilemanagementsystem.herokuapp.com/merchants/getWaitingCatalog',{headers:headers})
       .map(res=>res.json());
 
   }
   declineWaitinglistCatalog(catalog){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/merchants/declineCatalog',catalog/*,{headers:headers}*/)
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/merchants/declineCatalog',catalog/*,{headers:headers}*/)
       .map(res=>res.json());
 
   }
@@ -54,7 +54,7 @@ export class MerchantServicesService {
   approveWaitinglistCatalog(catalog){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/merchants/approveCatalog',catalog/*,{headers:headers}*/)
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/merchants/approveCatalog',catalog/*,{headers:headers}*/)
       .map(res=>res.json());
 
   }

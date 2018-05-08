@@ -14,21 +14,21 @@ export class AuthserviceService {
     let headers = new Headers();
     console.log(agent);
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/register',agent,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/register',agent,{headers:headers})
       .map(res=>res.json());
   }
 
   loginAgent(agent){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/authenticate',agent,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/authenticate',agent,{headers:headers})
       .map(res=>res.json());
   }
 
   getAgent(username){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/get_agent-profile',username,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/get_agent-profile',username,{headers:headers})
       .map(res=>res.json());
   }
 

@@ -98,7 +98,7 @@ currentStatus:String;
     console.log("functions")
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/get_agent_orders',username,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/get_agent_orders',username,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -214,7 +214,7 @@ f(orderchange){
 
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/updateFinalStatus',orderFinalchange,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/updateFinalStatus',orderFinalchange,{headers:headers})
       .map(res=>res.json());
   }
 

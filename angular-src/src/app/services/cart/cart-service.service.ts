@@ -9,7 +9,7 @@ export class CartServiceService {
   addToCart(cart){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/cart/addToCart',cart,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com//cart/addToCart',cart,{headers:headers})
       .map(res=>res.json());
 
   }
@@ -18,7 +18,7 @@ export class CartServiceService {
   getCartElement(username){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/cart/getCartItem',username,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/cart/getCartItem',username,{headers:headers})
       .map(res=>res.json());
   }
 
@@ -27,7 +27,7 @@ export class CartServiceService {
     console.log(id);
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/cart/deleteCartItem',id,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/cart/deleteCartItem',id,{headers:headers})
       .map(res=>res.json());
   }
 

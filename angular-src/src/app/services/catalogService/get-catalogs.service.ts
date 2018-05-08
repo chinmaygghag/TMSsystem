@@ -9,7 +9,7 @@ export class GetCatalogsService {
   getCatalog(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3001/create/getCatalogElements',{headers:headers})
+    return this.http.get('https://textilemanagementsystem.herokuapp.com/create/getCatalogElements',{headers:headers})
       .map(res=>res.json());
 
   }
@@ -18,7 +18,7 @@ export class GetCatalogsService {
   getTopCatalog(){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.get('http://localhost:3001/create/getTopCatalog',{headers:headers})
+    return this.http.get('https://textilemanagementsystem.herokuapp.com/create/getTopCatalog',{headers:headers})
       .map(res=>res.json());
 
   }

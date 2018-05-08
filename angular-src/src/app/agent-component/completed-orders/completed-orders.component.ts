@@ -97,7 +97,7 @@ else {
   getProcessedOrders(username){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/agents/getProcessedOrders',username,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/getProcessedOrders',username,{headers:headers})
       .map(res=>res.json());
   }
 
