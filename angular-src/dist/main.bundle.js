@@ -358,7 +358,7 @@ var OrderItem = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_agent_authservice_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -475,7 +475,7 @@ var AgentHomeComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
@@ -551,7 +551,7 @@ var AgentLoginComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
@@ -915,9 +915,9 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__agent_component_agentLogin_agent_login_agent_login_component__ = __webpack_require__(405);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__agent_component_agentRegistration_agent_registration_agent_registration_component__ = __webpack_require__(406);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__agent_component_agentHome_agent_home_agent_home_component__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_agent_authservice_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_agent_agentvalidation_service__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_merchant_merchant_services_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__user_component_cross_cross_component__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__user_component_horizontal_horizontal_component__ = __webpack_require__(429);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__user_component_plain_plain_component__ = __webpack_require__(432);
@@ -934,9 +934,9 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_bootstrap__ = __webpack_require__(664);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__merchant_components_create_catalog_create_catalog_component__ = __webpack_require__(418);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_catalogService_get_catalogs_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_placeorders_place_order_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__agent_component_received_orders_received_orders_component__ = __webpack_require__(408);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__merchant_components_receivedOrdersForMerchant_received_orders_from_merchant_received_orders_from_merchant_component__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_merchant_get_orders_service__ = __webpack_require__(73);
@@ -959,6 +959,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__user_component_user_profile_user_profile_component__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__agent_component_completed_orders_completed_orders_component__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__merchant_components_merchant_order_track_merchant_order_track_component__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_61__angular_common__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -966,6 +967,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1136,6 +1138,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_42__services_merchant_get_orders_service__["a" /* GetOrdersService */],
                 __WEBPACK_IMPORTED_MODULE_46__services_cart_cart_service_service__["a" /* CartServiceService */],
                 __WEBPACK_IMPORTED_MODULE_56__services_miscService_save_state_service__["a" /* SaveStateService */],
+                { provide: __WEBPACK_IMPORTED_MODULE_61__angular_common__["LocationStrategy"], useClass: __WEBPACK_IMPORTED_MODULE_61__angular_common__["HashLocationStrategy"] },
                 __WEBPACK_IMPORTED_MODULE_21__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
@@ -1190,9 +1193,9 @@ var FooterComponentComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cart_cart_service_service__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GuestUserViewComponent; });
@@ -1290,6 +1293,7 @@ var clothTypes = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(151);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular_image_slider__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1304,20 +1308,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MainComponent = /** @class */ (function () {
-    function MainComponent(BrowserAnimationsModule, SliderModule, BrowserModule) {
+    function MainComponent(BrowserAnimationsModule, SliderModule, BrowserModule, catalogService) {
         this.BrowserAnimationsModule = BrowserAnimationsModule;
         this.SliderModule = SliderModule;
         this.BrowserModule = BrowserModule;
+        this.catalogService = catalogService;
+        //public imagesUrl;
+        this.imagesUrl = [];
+        this.catalogList = [];
+        this.cloth_length = [];
+        this.cost = [];
+        this.clothtypes = [];
+        this.selectedItem = {};
     }
     MainComponent.prototype.ngOnInit = function () {
-        this.imagesUrl = [
-            'https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg',
-            'https://img.etsystatic.com/il/10e9ce/797187829/il_570xN.797187829_cjpy.jpg?version=0',
-            'https://static.contrado.com/resources/images/2015-4/18010/fabric-printing-services-19013_l.jpg',
-            'https://img.etsystatic.com/il/544a69/884357753/il_fullxfull.884357753_2r9p.jpg?version=0',
-            'https://pixel.nymag.com/imgs/thecut/slideshows/2016/06/india-fasntastique/india-fantastique-07.nocrop.w530.h670.jpg'
-        ];
+        /*this.imagesUrl = [
+          'https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg',
+          'https://img.etsystatic.com/il/10e9ce/797187829/il_570xN.797187829_cjpy.jpg?version=0',
+          'https://static.contrado.com/resources/images/2015-4/18010/fabric-printing-services-19013_l.jpg',
+          'https://img.etsystatic.com/il/544a69/884357753/il_fullxfull.884357753_2r9p.jpg?version=0',
+          'https://pixel.nymag.com/imgs/thecut/slideshows/2016/06/india-fasntastique/india-fantastique-07.nocrop.w530.h670.jpg'
+        ]*/
+        var _this = this;
+        this.catalogService.getTopCatalog().subscribe(function (data) {
+            console.log(data.success);
+            if (data.success) {
+                data.catalogs.forEach(function (i) {
+                    var imageUrl = "../../../assets/" + i.imageURL;
+                    _this.imagesUrl.push(imageUrl);
+                    _this.catalogList.push(new Catalog(imageUrl, i.title, i.desc, i.unitLengthCost));
+                });
+                console.log(_this.catalogList);
+            }
+        });
     };
     MainComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1325,12 +1350,21 @@ var MainComponent = /** @class */ (function () {
             template: __webpack_require__(732),
             styles: [__webpack_require__(693)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular_image_slider__["a" /* SliderModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular_image_slider__["a" /* SliderModule */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular_image_slider__["a" /* SliderModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular_image_slider__["a" /* SliderModule */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_catalogService_get_catalogs_service__["a" /* GetCatalogsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_catalogService_get_catalogs_service__["a" /* GetCatalogsService */]) === "function" && _d || Object])
     ], MainComponent);
     return MainComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
+var Catalog = /** @class */ (function () {
+    function Catalog(imageURL, title, desc, unitLengthCost) {
+        this.imageURL = imageURL;
+        this.title = title;
+        this.desc = desc;
+        this.unitLengthCost = unitLengthCost;
+    }
+    return Catalog;
+}());
 //# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/main.component.js.map
 
 /***/ }),
@@ -1377,7 +1411,7 @@ var NavbarComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentHistogramComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1552,7 +1586,7 @@ var AgentHistogramComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentapprovalComponent; });
@@ -1647,7 +1681,7 @@ var AgentApprovalModel = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(8);
@@ -2048,7 +2082,7 @@ var OrderItem = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceivedOrdersFromMerchantComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2254,7 +2288,7 @@ var SaveStateService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cart_cart_service_service__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_placeorders_place_order_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckoutComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2715,7 +2749,7 @@ var OrderItem = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_placeorders_place_order_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PastorderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2945,7 +2979,7 @@ var CartItem = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_image_slider__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_get_catalogs_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(14);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserHomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3332,9 +3366,9 @@ var VerticalComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_cart_cart_service_service__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewCatalogComponent; });
@@ -3593,6 +3627,52 @@ var CartServiceService = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetCatalogsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var GetCatalogsService = /** @class */ (function () {
+    function GetCatalogsService(http) {
+        this.http = http;
+    }
+    GetCatalogsService.prototype.getCatalog = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3001/create/getCatalogElements', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    GetCatalogsService.prototype.getTopCatalog = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3001/create/getTopCatalog', { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    GetCatalogsService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+    ], GetCatalogsService);
+    return GetCatalogsService;
+    var _a;
+}());
+
+//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/get-catalogs.service.js.map
+
+/***/ }),
+
+/***/ 60:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MerchantServicesService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3664,7 +3744,7 @@ var MerchantServicesService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 60:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4172,62 +4252,6 @@ module.exports = ""
 
 /***/ }),
 
-/***/ 71:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(139);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthserviceService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AuthserviceService = /** @class */ (function () {
-    function AuthserviceService(http) {
-        this.http = http;
-    }
-    AuthserviceService.prototype.registerAgent = function (agent) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        console.log(agent);
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/agents/register', agent, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthserviceService.prototype.loginAgent = function (agent) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/agents/authenticate', agent, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthserviceService.prototype.getAgent = function (username) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/agents/get_agent-profile', username, { headers: headers })
-            .map(function (res) { return res.json(); });
-    };
-    AuthserviceService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
-    ], AuthserviceService);
-    return AuthserviceService;
-    var _a;
-}());
-
-//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/authservice.service.js.map
-
-/***/ }),
-
 /***/ 710:
 /***/ (function(module, exports) {
 
@@ -4297,7 +4321,9 @@ module.exports = "/** {*/\n  /*-moz-box-sizing: border-box;*/\n  /*-webkit-box-s
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetCatalogsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthserviceService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4309,31 +4335,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var GetCatalogsService = /** @class */ (function () {
-    function GetCatalogsService(http) {
+
+var AuthserviceService = /** @class */ (function () {
+    function AuthserviceService(http) {
         this.http = http;
     }
-    GetCatalogsService.prototype.getCatalog = function () {
+    AuthserviceService.prototype.registerAgent = function (agent) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        console.log(agent);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3001/create/getCatalogElements', { headers: headers })
+        return this.http.post('http://localhost:3001/agents/register', agent, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    GetCatalogsService.prototype.getTopCatalog = function () {
+    AuthserviceService.prototype.loginAgent = function (agent) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3001/create/getTopCatalog', { headers: headers })
+        return this.http.post('http://localhost:3001/agents/authenticate', agent, { headers: headers })
             .map(function (res) { return res.json(); });
     };
-    GetCatalogsService = __decorate([
+    AuthserviceService.prototype.getAgent = function (username) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3001/agents/get_agent-profile', username, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    AuthserviceService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
-    ], GetCatalogsService);
-    return GetCatalogsService;
+    ], AuthserviceService);
+    return AuthserviceService;
     var _a;
 }());
 
-//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/get-catalogs.service.js.map
+//# sourceMappingURL=/Users/chinmayghag/WebstormProjects/TMSsystem/angular-src/src/authservice.service.js.map
 
 /***/ }),
 

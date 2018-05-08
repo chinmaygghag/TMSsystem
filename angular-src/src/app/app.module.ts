@@ -60,6 +60,7 @@ import {PastorderComponent} from "./user-component/pastorder/pastorder.component
 import { UserProfileComponent} from "./user-component/user-profile/user-profile.component";
 import { CompletedOrdersComponent} from "./agent-component/completed-orders/completed-orders.component";
 import {MerchantOrderTrackComponent} from "./merchant_components/merchant-order-track/merchant-order-track.component";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
@@ -151,7 +152,7 @@ const appRoutes: Routes = [
     HttpModule,
     SliderModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes,{ useHash: true }),
+    RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
     BsDropdownModule.forRoot(),
     ChartsModule
@@ -171,6 +172,7 @@ const appRoutes: Routes = [
     GetOrdersService,
     CartServiceService,
     SaveStateService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     MerchantServicesService],
   bootstrap: [AppComponent]
 })
