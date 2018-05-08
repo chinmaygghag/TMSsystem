@@ -45,6 +45,9 @@ const agentSchema = mongoose.Schema({
         declineOrders : Number,
         receivedOrders : Number,
         deliveredOrders: Number
+    },
+    score :{
+      type: Number
     }
 
 });
@@ -128,9 +131,3 @@ module.exports.getAllOrders = function (username,callback) {
   agent.find(query,['orders'],callback);
 };
 
-
-module.exports.assignOrders = function (username,orderId,callback) {
-    username.update({username: username},{
-        $push : {orders : orderId}
-    },callback);
-};

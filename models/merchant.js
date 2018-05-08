@@ -19,21 +19,5 @@ const merchantSchema = mongoose.Schema(
 
 const Merchant = module.exports = mongoose.model('Merchant',merchantSchema);
 
-module.exports.updateRankings = function (agent) {
-    const orderAccept = agent.acceptOrders;
-    const orderDecline = agent.declineOrders;
-    const receivedOrders = agent.receivedOrders;
-    const deliveredOrders = agent.deliveredOrders;
-    const orderStatus = deliveredOrders/receivedOrders;
-    if(orderStatus > 0.7 ){
-        const weight = orderAccept*0.6 + orderDecline*(-0.7) + orderStatus*0.6
-    }else{
-        const weight = orderAccept*0.6 + orderDecline*(-0.7) + orderStatus*0.3
-    }
 
-    const username = agent.username;
-    Agent.findOne({})
-
-
-};
 
