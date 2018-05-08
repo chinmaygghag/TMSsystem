@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
               ) { }
 
   ngOnInit() {
+
+    this.saveUserSession.merchant = "";
   }
 
   onLoginSubmit(){
