@@ -11,14 +11,11 @@ import {AuthserviceService} from "../../services/agent/authservice.service";
 export class AgentProfileComponent implements OnInit {
 
   agent  =  {};
-
-
   constructor(private userDataService: SaveUserDataService,
               private router: Router,
               private agentService: AuthserviceService) { }
 
   ngOnInit() {
-
     if(this.userDataService.agentName != null){
       const username = {
         username : this.userDataService.agentName
@@ -32,12 +29,9 @@ export class AgentProfileComponent implements OnInit {
               "email" : data.agent_obj.email,
               "address" : data.agent_obj.address,
               "registration_number" : data.agent_obj.registration_number,
-
             };
             // if(i._id != undefined)
         }
-
-
       })
     }else{
       this.router.navigate(['/user/login']);
