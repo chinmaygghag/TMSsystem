@@ -80,7 +80,7 @@ const appRoutes: Routes = [
   {path: 'agent/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
   {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
-  {path: 'user/home/viewcatalog/cart',component:CartComponent},
+  // {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
   {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
   {path: 'agent/home/process', component: AgentProcessComponent},

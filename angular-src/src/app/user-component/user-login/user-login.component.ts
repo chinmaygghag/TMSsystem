@@ -24,6 +24,8 @@ export class UserLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.userDataService.username ="";
   }
 
   onSubmitUserLogin(){

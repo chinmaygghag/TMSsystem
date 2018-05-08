@@ -25,7 +25,6 @@
 <body background = "http://www.dzdesign.pl/wp-content/uploads/2017/05/anthology4.1.jpg" style="height:400px;width:100%">
 
 
-
 <!-- Left Panel -->
 
 <aside id="left-panel" class="left-panel">
@@ -46,15 +45,15 @@
         </li>
         <h3 class="menu-title">Order Console</h3><!-- /.menu-title -->
         <li class="menu-item-has-children dropdown">
-          <a [routerLink] = "['/user/home/viewcatalog']"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
-       <!--   <ul class="sub-menu children dropdown-menu">
-            <li><i class="fa fa-share-square-o"></i><a href="#">Silk Fabric</a></li>
+          <a [routerLink]="['/user/home/viewcatalog']"> <i class="menu-icon fa fa-laptop"></i>View Catalog</a>
+          <ul class="sub-menu children dropdown-menu">
+            <!--<li><i class="fa fa-share-square-o"></i><a href="#">Silk Fabric</a></li>
             <li><i class="fa fa-share-square-o"></i><a href="#">Cotton Fabric</a></li>
             <li><i class="fa fa-share-square-o"></i><a href="#">Velvet Fabric</a></li>
-            <li><i class="fa fa-share-square-o"></i><a href="#">Polyster Fabric</a></li>
-          </ul>-->
+            <li><i class="fa fa-share-square-o"></i><a href="#">Polyster Fabric</a></li>-->
+          </ul>
         <li class="menu-item-has-children dropdown">
-        <a [routerLink] ="['/user/home/cart']"> <i class="menu-icon fa fa-th"></i>Cart</a>
+          <a [routerLink] ="['/user/home/cart']"> <i class="menu-icon fa fa-th"></i>Cart</a>
           <!--<ul class="sub-menu children dropdown-menu">
               <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
               <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
@@ -67,14 +66,23 @@
             <li><i class="menu-icon fa fa-th"></i><a [routerLink]="['/user/home/pastorder']">Past orders</a></li>
           </ul>
         </li>
-    <!--    <li class="menu-item-has-children dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Track Orders</a>
+        <li class="menu-item-has-children dropdown">
+          <a [routerLink] ="['/user/home/profile']"> <i class="menu-icon fa fa-th"></i>User Profile</a>
 
         </li>
         <li class="menu-item-has-children dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Order History</a>
+          <a [routerLink] ="['/user/login']"> <i class="menu-icon fa fa-th"></i>Logout</a>
 
-        </li>-->
+        </li>
+
+        <!-- <li class="menu-item-has-children dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Track Orders</a>
+
+         </li>-->
+        <!--   <li class="menu-item-has-children dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Edit Profile</a>
+
+           </li>-->
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -82,6 +90,7 @@
 </aside><!-- /#left-panel -->
 
 <!-- Left Panel -->
+
 
 <!-- Right Panel -->
 
