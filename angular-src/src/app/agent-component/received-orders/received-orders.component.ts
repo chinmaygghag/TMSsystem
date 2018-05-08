@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GetOrdersService} from "../../services/merchant/get-orders.service";
 import {Router} from "@angular/router";
 import {SaveUserDataService} from "../../services/miscService/save-user-data.service";
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-received-orders',
@@ -16,7 +17,8 @@ export class ReceivedOrdersComponent implements OnInit {
 
   constructor(private router: Router,
               private getAllOrders: GetOrdersService,
-              private saveUserSession: SaveUserDataService) {
+              private saveUserSession: SaveUserDataService,
+              private _flashMessagesService: FlashMessagesService) {
   }
 
   ngOnInit() {
@@ -42,13 +44,16 @@ export class ReceivedOrdersComponent implements OnInit {
 
 
   acceptOrder(item){
+    const index: number = this.orders.indexOf(item);
     const itemToBeAccepted = {
-      orderId : item.orderId,
+      orderId : item.id,
       status: "Accept"
     };
+    console.log(itemToBeAccepted);
     this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
       if (data.success){
-
+        this.orders.splice(index,1)
+        this._flashMessagesService.show('Order Approved', { cssClass: 'alert-success', timeout: 1000 });
       }else{
 
       }
@@ -56,19 +61,20 @@ export class ReceivedOrdersComponent implements OnInit {
   }
 
   declineOrder(item){
+    const index: number = this.orders.indexOf(item);
     const itemToBeAccepted = {
-      orderId : item.orderId,
+      orderId : item.id,
       status: "Decline"
     };
     this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
       if (data.success){
-
+        this.orders.splice(index,1)
+        this._flashMessagesService.show('Order Declined', { cssClass: 'alert-success', timeout: 1000 });
       } else{
 
       }
     })
   }
-
 }
 
 class Orders{

@@ -22,4 +22,11 @@ export class UserauthserviceService {
     return this.http.post('http://localhost:3001/endUsers/authenticate',user,{headers:headers})
       .map(res=>res.json());
   }
+
+  getUser(username){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/endUsers/get_user-profile',username,{headers:headers})
+      .map(res=>res.json());
+  }
 }

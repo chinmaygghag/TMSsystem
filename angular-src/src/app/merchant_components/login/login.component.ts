@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     };
 
     if(this.authService.checkMerchantLogin(merchant)){
-      this.saveUserSession.username = this.username;
+      this.saveUserSession.merchant = this.username;
       this.router.navigate(['/merchant/home']);
     }
   }

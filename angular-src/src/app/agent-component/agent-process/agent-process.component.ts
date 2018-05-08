@@ -42,6 +42,7 @@ currentStatus:String;
     if(this.userDataService.username != null){
     const username = {
       username : this.userDataService.username
+
     };
     console.log(this.userDataService.username)
 
@@ -177,17 +178,11 @@ changeBackend(ordernumber,newstatus,pos){
 //  console.log(orderId)
 }
 f(orderchange){
-
-
   let headers = new Headers();
   headers.append('Content-Type','application/json');
   return this.http.post('http://localhost:3001/agents/updateStatus',orderchange,{headers:headers})
     .map(res=>res.json());
 }
-
-
-
-
 
 }
   class OrderItem {
