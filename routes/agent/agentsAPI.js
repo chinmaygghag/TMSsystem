@@ -198,4 +198,28 @@ router.post('/get_agent_orders',function (req,res,next) {
 
 
 
+router.post('/updateFinalStatus',function (req,res,next) {
+    const orderId = req.body.orderId;
+    const statusToBeUpdated=req.body.statusToBeUpdated
+    const statusMerchant=req.body.statusMerchant;
+    const statusCustomer=req.body.statusCustomer;
+    console.log(statusToBeUpdated)
+    //const status=req.body.status;
+    //console.log(username);
+    order.updateFinalOrderStatusForAgent(orderId,statusToBeUpdated,statusMerchant,statusCustomer,function (err,callback) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    //orders: order
+                }
+            )
+        }
+    });
+});
+
+
+
+
 module.exports = router; //export the router to connect and show the page

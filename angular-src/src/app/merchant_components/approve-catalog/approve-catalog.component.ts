@@ -56,6 +56,7 @@ export class ApproveCatalogComponent implements OnInit {
       }
     )
   }
+  
   declineCatalog(catalog,index){
     const catalogObj = {
       id: catalog.id

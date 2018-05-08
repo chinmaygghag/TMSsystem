@@ -193,3 +193,11 @@ module.exports.getAllOrdersForMerchant = function (callback) {
     order.find(query,callback);
 };
 
+module.exports.updateFinalOrderStatusForAgent = function (orderId,statusToBeUpdated,statusMerchant,statusCustomer,callback) {
+    order.findOne({'_id' : orderId}, function (err,order) {
+        order.statusForAgent =  statusToBeUpdated;
+        order.statusForMerchant='Delivered'
+        order.statusForCustomer='ready'
+        order.save(callback)
+    })
+};

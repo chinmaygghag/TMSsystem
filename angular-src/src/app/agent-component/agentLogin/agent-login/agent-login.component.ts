@@ -13,7 +13,7 @@ import {SaveUserDataService} from "../../../services/miscService/save-user-data.
 })
 export class AgentLoginComponent implements OnInit {
 
-  username: String;
+  username: string;
   password: String;
 
   constructor(private validateService: AgentvalidationService,
@@ -30,7 +30,7 @@ export class AgentLoginComponent implements OnInit {
 
   onLoginSubmit() {
     const agent = {
-      username: this.username,
+      username: this.username.toLowerCase(),
       password: this.password
     };
 
@@ -44,7 +44,7 @@ export class AgentLoginComponent implements OnInit {
     this.authService.loginAgent(agent).subscribe(data => {
       if (data.success) {
         console.log("Login Successful!");
-        this.saveUserSession.agentName = agent.username;
+        this.saveUserSession.agentName = agent.username.toLowerCase();
         this.router.navigate(['/agent/home']);
       }else{
         this._flashMessagesService.show('Agent Not Registered Yet!', { cssClass: 'alert-success', timeout: 1000 });

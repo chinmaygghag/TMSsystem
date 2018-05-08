@@ -38,19 +38,19 @@ currentStatus:String;
 
 
     }*/
-    console.log('init')
+    console.log('init');
     if(this.userDataService.agentName != null){
     const username = {
       username : this.userDataService.agentName
 
     };
-    console.log(this.userDataService.agentName)
+    console.log(this.userDataService.agentName);
 
     this.getAgentReceivedOrders(username).subscribe(data=>{
       if (data.success){
         const cost = 0;
-        console.log(data.success)
-        console.log(data.orders)
+        console.log(data.success);
+        console.log(data.orders);
         data.orders.forEach(
 
           i=>{
@@ -139,8 +139,9 @@ return
   if(order.currentStatus=='Machinery' && order.nextStatus=='Finishing'){
     order.currentStatus='Order Processed'
     order.nextStatus='';
-    this.changeBackend(order.id,order.currentStatus,pos)
-  //  this.orderItems.splice(pos,1)
+    this.changeFinalBackend(order.id,order.currentStatus,pos)
+
+    //  this.orderItems.splice(pos,1)
   //  this.changeBackend(order.id)
 return
     //this.orderIems.find(item => item.id == order.id).nextStatus = ;
@@ -185,6 +186,44 @@ f(orderchange){
   return this.http.post('http://localhost:3001/agents/updateStatus',orderchange,{headers:headers})
     .map(res=>res.json());
 }
+
+
+  changeFinalBackend(ordernumber,newstatus,pos){
+    const  orderFinalchange= {
+      orderId : ordernumber,
+      statusToBeUpdated : newstatus,
+      statusMerchant:'Delivered',
+      statusCustomer:'ready'
+    };
+
+
+    this.final(orderFinalchange).subscribe(data=>{
+      if (data.success){
+        const cost = 0;
+        console.log(data.success)
+        //this.orderItems.splice(pos,1)
+        if(newstatus=='Order Processed')
+          this.orderItems.splice(pos,1)
+
+
+
+      }
+    })
+
+//  console.log(orderId)
+  }
+
+
+  final(orderFinalchange){
+
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/agents/updateFinalStatus',orderFinalchange,{headers:headers})
+      .map(res=>res.json());
+  }
+
+
 
 }
   class OrderItem {

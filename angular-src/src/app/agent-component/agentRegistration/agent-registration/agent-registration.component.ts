@@ -32,10 +32,10 @@ export class AgentRegistrationComponent implements OnInit {
     const agent = {
       agency_name:this.agency_name,
       email:this.email,
-      name: this.name,
+      name: this.name.toLowerCase(),
       address: this.address,
       registration_number: this.registration_number,
-      username: this.username,
+      username: this.username.toLowerCase(),
       password: this.password,
     };
 
