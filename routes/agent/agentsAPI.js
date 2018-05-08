@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const   router = express.Router();
 const agent_obj = require('../../models/agent');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
@@ -23,14 +23,13 @@ router.post('/register', function (req, res, next) {
         registration_number: req.body.registration_number,
         username: req.body.username,
         password: req.body.password,
-        activeStatus: "2",
+        activeStatus: "1",
         orders : {
             acceptOrders : 0,
             declineOrders : 0,
-            receivedOrders : 0,
-            deliveredOrders: 0
+
         },
-        score : 10
+        score : 0
     });
 
     agent_obj.addAgent(newAgent, function (err, agent) {

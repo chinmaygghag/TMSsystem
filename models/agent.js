@@ -42,9 +42,7 @@ const agentSchema = mongoose.Schema({
     ],
     orders : {
         acceptOrders : Number,
-        declineOrders : Number,
-        receivedOrders : Number,
-        deliveredOrders: Number
+        declineOrders : Number
     },
     score :{
       type: Number
@@ -129,5 +127,37 @@ module.exports.changeStatusForAgent = function (username,changeStatus,callback) 
 module.exports.getAllOrders = function (username,callback) {
   const query = ({'name': username});
   agent.find(query,['orders'],callback);
+};
+
+module.exports.findAgentApproved = function(agentName,callback){
+
+    agent.findOne({name: agentName},function (err,agent) {
+        if(err) {
+            console.log("agent accept orders is not updated 2")
+        }
+        else {
+
+            agent.orders.acceptOrders = agent.orders.acceptOrders + 1;
+            agent.score = agent.score + 2;
+            agent.save(callback);
+            console.log(agent.score);
+
+        }
+    });
+};
+
+module.exports.findAgentDeclined = function(agentName,callback){
+
+    agent.findOne({name:agentName},function (err,agent) {
+        if(err) {
+            console.log("agent accept orders is not updated 2")
+        }
+        else {
+            agent.orders.declineOrders = agent.orders.declineOrders + 1;
+            agent.score = agent.score - 2;
+            agent.save();
+            console.log(agent.score);
+        }
+    });
 };
 
