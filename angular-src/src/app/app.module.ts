@@ -151,7 +151,7 @@ const appRoutes: Routes = [
     HttpModule,
     SliderModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,{ useHash: true }),
     FlashMessagesModule.forRoot(),
     BsDropdownModule.forRoot(),
     ChartsModule
