@@ -58,7 +58,7 @@ const orderSchema = mongoose.Schema({
 
 
 const order = module.exports = mongoose.model('Order', orderSchema );
-const agent = mongoose.connect(agents);
+
 
 module.exports.insertOrders = function (orderDetails,callback) {
   orderDetails.save(orderDetails,callback);

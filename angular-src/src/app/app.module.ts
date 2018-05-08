@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import {GuestUserViewComponent} from "./dashboard_component/guest-user-view/guest-user-view.component";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './dashboard_component/navbar/navbar.component';
 import { LoginComponent } from './merchant_components/login/login.component';
@@ -80,9 +80,9 @@ const appRoutes: Routes = [
   {path: 'agent/home/profile', component: AgentProfileComponent},
   {path: 'merchant/createcatalog',component: CreateCatalogComponent},
   {path: 'merchant/home/approvecatalog', component:ApproveCatalogComponent},
-  // {path: 'user/home/viewcatalog/cart',component:CartComponent},
+  {path: 'user/home/viewcatalog/cart',component:CartComponent},
   {path: 'user/home/viewcatalog',component: ViewCatalogComponent},
-  {path: 'guest/viewcatalog',component: ViewCatalogComponent},
+  {path: 'guest/viewcatalog',component: GuestUserViewComponent},
 
   {path: 'agent/home/receivedOrders', component: ReceivedOrdersComponent},
   {path: 'agent/home/process', component: AgentProcessComponent},
@@ -98,6 +98,7 @@ const appRoutes: Routes = [
   {path: 'user/home/profile',component : UserProfileComponent},
   {path: 'merchant/home/merchantOrderTrack', component: MerchantOrderTrackComponent},
   {path: 'agent/home/completedOrders', component: CompletedOrdersComponent}
+
 ];
 
 @NgModule({
@@ -140,7 +141,8 @@ const appRoutes: Routes = [
     PastorderComponent,
     UserProfileComponent,
     CompletedOrdersComponent,
-    MerchantOrderTrackComponent
+    MerchantOrderTrackComponent,
+    GuestUserViewComponent
   ],
 
   imports: [
