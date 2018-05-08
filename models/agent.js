@@ -85,6 +85,7 @@ module.exports.comparePassword = function (candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
         console.log(err);
         if (err) throw err;
+        else
         callback(null, isMatch);
     });
 };
@@ -119,6 +120,8 @@ module.exports.getActiveAgents = function (callback) {
 
 module.exports.changeStatusForAgent = function (username,changeStatus,callback) {
      agent.findOneAndUpdate({name:username},{activeStatus: changeStatus},{new: true},function (err,agent) {
+         if(err) throw err;
+         else
          callback(agent);
      });
 };

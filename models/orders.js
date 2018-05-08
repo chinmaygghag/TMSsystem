@@ -99,15 +99,19 @@ module.exports.updateOrderStatusForMerchant = function (orderId, statusToBeUpdat
     // })
 
     order.findOne({_id : orderId}, function (err,order) {
+        if(err) throw err;
+        else{
         order.statusForMerchant =  statusToBeUpdated;
-        order.save(callback)
+        order.save(callback)}
     })
 };
 
 module.exports.updateOrderStatusForAgent = function (orderId,statusToBeUpdated,callback) {
     order.findOne({_id : orderId}, function (err,order) {
+        if(err) throw err;
+        else{
         order.statusForAgent =  statusToBeUpdated;
-        order.save(callback)
+        order.save(callback)}
     })
 };
 
@@ -119,11 +123,13 @@ module.exports.getOrderForAgent = function (username,callback) {
 
 module.exports.assignAgents = function (orderId,agentName,callback) {
     order.findOne({_id : orderId}, function (err,order) {
+        if(err) throw err;
+        else{
         order.agentName =  agentName;
         order.statusForAgent = "Received";
         order.statusForMerchant = "Received";
         order.statusForCustomer = "processed";
-        order.save(callback)
+        order.save(callback)}
     })
 };
 

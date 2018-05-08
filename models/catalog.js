@@ -49,6 +49,8 @@ module.exports.addCatalogElement = function (catalogElement,callback) {
 
 module.exports.declineStatusForCatalog = function (catalogName,callback) {
     catalog.findOne({title : catalogName},function (err,catalog) {
+        if(err) throw err;
+        else{
         console.log(catalog);
         catalog.status = "declined";
         console.log(catalog.status);
@@ -58,21 +60,25 @@ module.exports.declineStatusForCatalog = function (catalogName,callback) {
                 callback(true);
             }
         })
+        }
     })
 };
 
 module.exports.approveStatusForCatalog = function (catalogName,cost,callback) {
     catalog.findOne({title : catalogName},function (err,catalog) {
-        console.log(catalog);
-        catalog.status = "approved";
-        catalog.unitLengthCost = cost;
-        console.log(catalog.status);
-        catalog.save(function (err) {
-            if(err) throw err;
-            else{
-                callback(true);
-            }
-        })
+        if(err) throw err;
+        else {
+            console.log(catalog);
+            catalog.status = "approved";
+            catalog.unitLengthCost = cost;
+            console.log(catalog.status);
+            catalog.save(function (err) {
+                if (err) throw err;
+                else {
+                    callback(true);
+                }
+            })
+        }
     })
 };
 
