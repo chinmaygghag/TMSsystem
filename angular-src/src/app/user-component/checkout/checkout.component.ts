@@ -18,7 +18,6 @@ export class CheckoutComponent implements OnInit {
   address2: string;
   cartItems = [];
   name: string;
-
   constructor(private saveUserData: SaveUserDataService,
               private router: Router,
               private cartService : CartServiceService,
@@ -30,7 +29,7 @@ export class CheckoutComponent implements OnInit {
       if (this.saveUserData.username != null){
         const username = {
           "username" : this.saveUserData.username
-        }
+        };
         this.cartService.getCartElement(username).subscribe(data=>{
           if (data.success){
             console.log(data);
@@ -64,7 +63,8 @@ export class CheckoutComponent implements OnInit {
     };
     this.placeOrder.placeOrders(placeOrder).subscribe(data=>{
       if(data.success){
-        console.log("Placed Order");
+        this._flashMessagesService.show('Order Placed Successfully', {cssClass: 'alert-success', timeout: 3000});
+        this.router.navigate(['/user/home/viewcatalog']);
       }else{
         console.log("Here in error of place order");
       }

@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {GetOrdersService} from "../../../services/merchant/get-orders.service";
 import {MerchantServicesService} from "../../../services/merchant/merchant-services.service";
 import {SaveUserDataService} from "../../../services/miscService/save-user-data.service";
+import {FlashMessagesService} from "angular2-flash-messages";
 
 
 
@@ -20,7 +21,8 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
   constructor(private router:Router,
               private getAllOrders:GetOrdersService,
               private getActiveAgents: MerchantServicesService,
-              private userDataService: SaveUserDataService) { }
+              private userDataService: SaveUserDataService,
+              private _flashMessagesService: FlashMessagesService,) { }
 
   ngOnInit() {
 
@@ -55,12 +57,11 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
       this.getActiveAgents.getActiveAgents().subscribe(
         data => {
           if (data.success) {
-            console.log(data);
+            this.agents.push("Select an Agent");
             data.agent.forEach(i => {
               if (i.name != undefined) {
-                console.log(i.name);
+                this.agents.push(i.name);
               }
-              this.agents.push(i.name);
             });
           }
         });
@@ -74,6 +75,7 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
 
   assignAgent(orderId,agentName){
+    if(agentName != "Select an Agent"){
     const index: number = this.orders.indexOf(orderId);
     console.log(index);
     const orderParam = {
@@ -88,6 +90,9 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
         console.log("Could Not Assign Order");
       }
     })
+    }else{
+      this._flashMessagesService.show('Please Select an Agent', {cssClass: 'alert-success', timeout: 3000});
+    }
  }
 }
 

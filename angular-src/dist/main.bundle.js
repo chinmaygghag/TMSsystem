@@ -107,7 +107,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentProcessComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -442,7 +442,7 @@ var AgentHomeComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentLoginComponent; });
@@ -518,7 +518,7 @@ var AgentLoginComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_agent_agentvalidation_service__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_agent_authservice_service__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentRegistrationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -603,7 +603,7 @@ var AgentRegistrationComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompletedOrdersComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -724,7 +724,7 @@ var OrderItem = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_get_orders_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceivedOrdersComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -866,7 +866,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_component_guest_user_view_guest_user_view_component__ = __webpack_require__(412);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(409);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_component_navbar_navbar_component__ = __webpack_require__(414);
@@ -895,7 +895,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_users_user_validate_service__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__agent_component_agent_profile_agent_profile_component__ = __webpack_require__(403);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__user_component_view_catalog_view_catalog_component__ = __webpack_require__(439);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_bootstrap__ = __webpack_require__(664);
@@ -1158,7 +1158,7 @@ var FooterComponentComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
@@ -1562,7 +1562,7 @@ var AgentHistogramComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(7);
@@ -1668,7 +1668,7 @@ var AgentApprovalModel = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_merchant_merchant_services_service__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
@@ -1773,11 +1773,11 @@ var Catalog = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateCatalogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2094,6 +2094,8 @@ var OrderItem = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReceivedOrdersFromMerchantComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2109,12 +2111,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
-    function ReceivedOrdersFromMerchantComponent(router, getAllOrders, getActiveAgents, userDataService) {
+    function ReceivedOrdersFromMerchantComponent(router, getAllOrders, getActiveAgents, userDataService, _flashMessagesService) {
         this.router = router;
         this.getAllOrders = getAllOrders;
         this.getActiveAgents = getActiveAgents;
         this.userDataService = userDataService;
+        this._flashMessagesService = _flashMessagesService;
         this.orders = [];
         this.agents = [];
         this.agentSelection = [];
@@ -2136,12 +2140,11 @@ var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
             });
             this.getActiveAgents.getActiveAgents().subscribe(function (data) {
                 if (data.success) {
-                    console.log(data);
+                    _this.agents.push("Select an Agent");
                     data.agent.forEach(function (i) {
                         if (i.name != undefined) {
-                            console.log(i.name);
+                            _this.agents.push(i.name);
                         }
-                        _this.agents.push(i.name);
                     });
                 }
             });
@@ -2155,21 +2158,26 @@ var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
     };
     ReceivedOrdersFromMerchantComponent.prototype.assignAgent = function (orderId, agentName) {
         var _this = this;
-        var index = this.orders.indexOf(orderId);
-        console.log(index);
-        var orderParam = {
-            id: orderId,
-            agentName: agentName
-        };
-        this.getActiveAgents.assignAgent(orderParam).subscribe(function (data) {
-            if (data.success) {
-                console.log("Order Assigned to agent");
-                _this.orders.splice(index, 1);
-            }
-            else {
-                console.log("Could Not Assign Order");
-            }
-        });
+        if (agentName != "Select an Agent") {
+            var index_1 = this.orders.indexOf(orderId);
+            console.log(index_1);
+            var orderParam = {
+                id: orderId,
+                agentName: agentName
+            };
+            this.getActiveAgents.assignAgent(orderParam).subscribe(function (data) {
+                if (data.success) {
+                    console.log("Order Assigned to agent");
+                    _this.orders.splice(index_1, 1);
+                }
+                else {
+                    console.log("Could Not Assign Order");
+                }
+            });
+        }
+        else {
+            this._flashMessagesService.show('Please Select an Agent', { cssClass: 'alert-success', timeout: 3000 });
+        }
     };
     ReceivedOrdersFromMerchantComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -2177,10 +2185,10 @@ var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
             template: __webpack_require__(741),
             styles: [__webpack_require__(702)]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_merchant_get_orders_service__["a" /* GetOrdersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_merchant_merchant_services_service__["a" /* MerchantServicesService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_miscService_save_user_data_service__["a" /* SaveUserDataService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"]) === "function" && _e || Object])
     ], ReceivedOrdersFromMerchantComponent);
     return ReceivedOrdersFromMerchantComponent;
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
 }());
 
 var Orders = /** @class */ (function () {
@@ -2304,7 +2312,7 @@ var SaveStateService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cart_cart_service_service__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_placeorders_place_order_service__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckoutComponent; });
@@ -2360,6 +2368,7 @@ var CheckoutComponent = /** @class */ (function () {
         }
     };
     CheckoutComponent.prototype.checkout = function () {
+        var _this = this;
         var address = this.address1 + " " + this.address2;
         var placeOrder = {
             "username": this.saveUserData.username,
@@ -2368,7 +2377,8 @@ var CheckoutComponent = /** @class */ (function () {
         };
         this.placeOrder.placeOrders(placeOrder).subscribe(function (data) {
             if (data.success) {
-                console.log("Placed Order");
+                _this._flashMessagesService.show('Order Placed Successfully', { cssClass: 'alert-success', timeout: 3000 });
+                _this.router.navigate(['/user/home/viewcatalog']);
             }
             else {
                 console.log("Here in error of place order");
@@ -2445,9 +2455,9 @@ var CrossComponent = /** @class */ (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_miscService_save_user_data_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_catalogService_creat_catalog_service_service__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomizeCatalogComponent; });
@@ -2590,7 +2600,7 @@ var HorizontalComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2887,7 +2897,7 @@ var PlainComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_cart_cart_service_service__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3109,7 +3119,7 @@ var Catalog = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_user_validate_service__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_miscService_save_user_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLoginComponent; });
@@ -3266,7 +3276,7 @@ var User = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_userauthservice_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_user_validate_service__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3382,7 +3392,7 @@ var VerticalComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_catalogService_get_catalogs_service__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_miscService_save_user_data_service__ = __webpack_require__(9);
@@ -3602,7 +3612,7 @@ var environment = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartServiceService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3655,7 +3665,7 @@ var CartServiceService = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetCatalogsService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3701,7 +3711,7 @@ var GetCatalogsService = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MerchantServicesService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3778,7 +3788,7 @@ var MerchantServicesService = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaceOrderService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4349,7 +4359,7 @@ module.exports = "/** {*/\n  /*-moz-box-sizing: border-box;*/\n  /*-webkit-box-s
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthserviceService; });
@@ -4461,7 +4471,7 @@ module.exports = "<div>\n  <flash-messages></flash-messages>\n  <router-outlet><
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetOrdersService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4589,7 +4599,7 @@ module.exports = "\n<!doctype html>\n<!--[if lt IE 7]>      <html class=\"no-js 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserauthserviceService; });
@@ -4663,7 +4673,7 @@ module.exports = "<!doctype html>\n<!--[if lt IE 7]>      <html class=\"no-js lt
 /***/ 743:
 /***/ (function(module, exports) {
 
-module.exports = "<!doctype html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"\"> <!--<![endif]-->\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>TMS</title>\n  <meta name=\"description\" content=\"TMS\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"assets/css/normalize.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/font-awesome.min.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/themify-icons.css\">\n  <!-- <link rel=\"stylesheet\" href=\"assets/css/bootstrap-select.less\"> -->\n  <link rel=\"stylesheet\" href=\"assets/scss/style.css\">\n  <link href=\"assets/css/lib/vector-map/jqvmap.min.css\" rel=\"stylesheet\">\n\n  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>\n\n  <!-- <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js\"></script> -->\n\n</head>\n<body background = \"http://www.dzdesign.pl/wp-content/uploads/2017/05/anthology4.1.jpg\" style=\"height:400px;width:100%\">\n\n\n<!-- Left Panel -->\n\n<aside id=\"left-panel\" class=\"left-panel\">\n  <nav class=\"navbar navbar-expand-sm navbar-default\">\n\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#main-menu\" aria-controls=\"main-menu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand\" href=\"./\">TMS</a>\n      <a class=\"navbar-brand hidden\" href=\"./\"><img src=\"images/logo2.png\" alt=\"Logo\"></a>\n    </div>\n\n    <div id=\"main-menu\" class=\"main-menu collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\">\n          <a [routerLink]=\"['/user/home']\" > <i class=\"menu-icon fa fa-dashboard\"></i>User Dashboard </a>\n        </li>\n        <h3 class=\"menu-title\">Order Console</h3><!-- /.menu-title -->\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink]=\"['/user/home/viewcatalog']\"> <i class=\"menu-icon fa fa-laptop\"></i>View Catalog</a>\n          <ul class=\"sub-menu children dropdown-menu\">\n            <!--<li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Silk Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Cotton Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Velvet Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Polyster Fabric</a></li>-->\n          </ul>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/home/cart']\"> <i class=\"menu-icon fa fa-th\"></i>Cart</a>\n          <!--<ul class=\"sub-menu children dropdown-menu\">\n              <li><i class=\"menu-icon fa fa-th\"></i><a href=\"forms-basic.html\">Basic Form</a></li>\n              <li><i class=\"menu-icon fa fa-th\"></i><a href=\"forms-advanced.html\">Advanced Form</a></li>\n          </ul>-->\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Orders</a>\n          <ul class=\"sub-menu children dropdown-menu\">\n            <li><i class=\"menu-icon fa fa-th\"></i><a [routerLink]=\"['/user/home/order']\">Active orders</a></li>\n            <li><i class=\"menu-icon fa fa-th\"></i><a [routerLink]=\"['/user/home/pastorder']\">Past orders</a></li>\n          </ul>\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/home/profile']\"> <i class=\"menu-icon fa fa-th\"></i>User Profile</a>\n\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/login']\"> <i class=\"menu-icon fa fa-th\"></i>Logout</a>\n\n        </li>\n\n        <!-- <li class=\"menu-item-has-children dropdown\">\n           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Track Orders</a>\n\n         </li>-->\n        <!--   <li class=\"menu-item-has-children dropdown\">\n             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Edit Profile</a>\n\n           </li>-->\n\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </nav>\n</aside><!-- /#left-panel -->\n\n<!-- Left Panel -->\n\n\n<!-- Right Panel -->\n\n<div id=\"right-panel\" class=\"right-panel\">\n\n  <!-- Header-->\n  <header id=\"header\" class=\"header\">\n\n\n\n    <div class=\"header-menu\"  style=\"height:30px\">\n      <div class=\"col-sm-8\">\n        <h2 style=\"color:#2C333B;font-family:Century Gothic;\">TEXTILE MANAGEMENT SYSTEM</h2>\n      </div>\n      <div class=\"col-sm-4\">\n\n        <img  src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD\" [routerLink] = \"['/user/login']\" style=\"margin-left:200px\" alt=\"User Avatar\" height=\"40px\" width=\"40px\">Logout\n      </div>\n\n\n\n    </div>\n  </header>\n\n  <div class=\"content mt-3\">\n\n    <div class=\"col-sm-12\">\n\n      <div class=\"jumbotron\">\n        <div class=\"row\" style=\"margin-bottom:10px\">\n\n          <div class=\"col-md-6\" align=\"right\">\n            <h3 align=\"right\">\n              Total Amount :\n            </h3>\n          </div>\n\n\n          <div class=\"col-md-6\" align=\"right\">\n            <h3 align=\"left\">\n              $ <!-- {{catalog.desc}}-->\n            </h3>\n          </div>\n\n\n\n        </div>\n        <div class=\"jumbotron\">\n\n\n\n          <div class=\"row\" >\n            <div class=\"col-md-12\" style=\"margin-bottom:20px;margin-left:170px;color:#2C333B;font-family:Century Gothic;font-size: 25px; font-weight:bold\">\n              Enter Shipping Details :\n            </div>\n          </div>\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Name :\n          </div>\n          <div class=\"row\" style=\" margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            <div>\n              <input name=\"name\" [(ngModel)]=\"name\" type=\"text\" id=\"name\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Shipping Address Line 1:\n          </div>\n          <div class=\"row\" style=\"margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px; \">\n            <div>\n              <input name=\"address1\" [(ngModel)]=\"address1\" type=\"text\" id=\"address1\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Shipping Address Line 2:\n          </div>\n          <div class=\"row\" style=\"margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px; \">\n            <div>\n              <input name=\"address2\" [(ngModel)]=\"address2\" type=\"text\" id=\"address2\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\"></div>\n          <div class=\"row\">\n            <div class=\"col\">\n              <a class=\"btn .btn-primary\" (click)=\"checkout()\"  style=\"margin-left:200px;background-color: #BAD26E;font-size: 20px\">Place Order</a>\n            </div>\n            <div class=\"col\">\n              <a class=\"btn .btn-primary\" [routerLink] =\"['../']\" style=\"margin-left:25px;background-color: #ff6666;font-size: 20px\">Back to cart</a>\n            </div>\n\n          </div>\n\n        </div>\n      </div>\n\n\n    </div>\n\n\n\n    <!--/.col-->\n\n\n    <!--/.col-->\n\n\n    <!--/.col-->\n\n\n\n  </div> <!-- .content -->\n</div><!-- /#right-panel -->\n\n<!-- Right Panel -->\n\n<script src=\"assets/js/vendor/jquery-2.1.4.min.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js\"></script>\n<script src=\"assets/js/plugins.js\"></script>\n<script src=\"assets/js/main.js\"></script>\n\n\n\n\n\n<script>\n  ( function ( $ ) {\n    \"use strict\";\n\n    jQuery( '#vmap' ).vectorMap( {\n      map: 'world_en',\n      backgroundColor: null,\n      color: '#ffffff',\n      hoverOpacity: 0.7,\n      selectedColor: '#1de9b6',\n      enableZoom: true,\n      showTooltip: true,\n      values: sample_data,\n      scaleColors: [ '#1de9b6', '#03a9f5' ],\n      normalizeFunction: 'polynomial'\n    } );\n  } )( jQuery );\n</script>\n\n</body>\n</html>\n"
+module.exports = "<!doctype html>\n<!--[if lt IE 7]>      <html class=\"no-js lt-ie9 lt-ie8 lt-ie7\" lang=\"\"> <![endif]-->\n<!--[if IE 7]>         <html class=\"no-js lt-ie9 lt-ie8\" lang=\"\"> <![endif]-->\n<!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"\"> <!--<![endif]-->\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>TMS</title>\n  <meta name=\"description\" content=\"TMS\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"assets/css/normalize.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/font-awesome.min.css\">\n  <link rel=\"stylesheet\" href=\"assets/css/themify-icons.css\">\n  <!-- <link rel=\"stylesheet\" href=\"assets/css/bootstrap-select.less\"> -->\n  <link rel=\"stylesheet\" href=\"assets/scss/style.css\">\n  <link href=\"assets/css/lib/vector-map/jqvmap.min.css\" rel=\"stylesheet\">\n\n  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>\n\n  <!-- <script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js\"></script> -->\n\n</head>\n<body background = \"http://www.dzdesign.pl/wp-content/uploads/2017/05/anthology4.1.jpg\" style=\"height:400px;width:100%\">\n\n\n<!-- Left Panel -->\n\n<aside id=\"left-panel\" class=\"left-panel\">\n  <nav class=\"navbar navbar-expand-sm navbar-default\">\n\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#main-menu\" aria-controls=\"main-menu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a class=\"navbar-brand\" href=\"./\">TMS</a>\n      <a class=\"navbar-brand hidden\" href=\"./\"><img src=\"images/logo2.png\" alt=\"Logo\"></a>\n    </div>\n\n    <div id=\"main-menu\" class=\"main-menu collapse navbar-collapse\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\">\n          <a [routerLink]=\"['/user/home']\" > <i class=\"menu-icon fa fa-dashboard\"></i>User Dashboard </a>\n        </li>\n        <h3 class=\"menu-title\">Order Console</h3><!-- /.menu-title -->\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink]=\"['/user/home/viewcatalog']\"> <i class=\"menu-icon fa fa-laptop\"></i>View Catalog</a>\n          <ul class=\"sub-menu children dropdown-menu\">\n            <!--<li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Silk Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Cotton Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Velvet Fabric</a></li>\n            <li><i class=\"fa fa-share-square-o\"></i><a href=\"#\">Polyster Fabric</a></li>-->\n          </ul>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/home/cart']\"> <i class=\"menu-icon fa fa-th\"></i>Cart</a>\n          <!--<ul class=\"sub-menu children dropdown-menu\">\n              <li><i class=\"menu-icon fa fa-th\"></i><a href=\"forms-basic.html\">Basic Form</a></li>\n              <li><i class=\"menu-icon fa fa-th\"></i><a href=\"forms-advanced.html\">Advanced Form</a></li>\n          </ul>-->\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Orders</a>\n          <ul class=\"sub-menu children dropdown-menu\">\n            <li><i class=\"menu-icon fa fa-th\"></i><a [routerLink]=\"['/user/home/order']\">Active orders</a></li>\n            <li><i class=\"menu-icon fa fa-th\"></i><a [routerLink]=\"['/user/home/pastorder']\">Past orders</a></li>\n          </ul>\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/home/profile']\"> <i class=\"menu-icon fa fa-th\"></i>User Profile</a>\n\n        </li>\n        <li class=\"menu-item-has-children dropdown\">\n          <a [routerLink] =\"['/user/login']\"> <i class=\"menu-icon fa fa-th\"></i>Logout</a>\n\n        </li>\n\n        <!-- <li class=\"menu-item-has-children dropdown\">\n           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Track Orders</a>\n\n         </li>-->\n        <!--   <li class=\"menu-item-has-children dropdown\">\n             <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"menu-icon fa fa-th\"></i>Edit Profile</a>\n\n           </li>-->\n\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </nav>\n</aside><!-- /#left-panel -->\n\n<!-- Left Panel -->\n\n\n<!-- Right Panel -->\n\n<div id=\"right-panel\" class=\"right-panel\">\n\n  <!-- Header-->\n  <header id=\"header\" class=\"header\">\n\n\n\n    <div class=\"header-menu\"  style=\"height:30px\">\n      <div class=\"col-sm-8\">\n        <h2 style=\"color:#2C333B;font-family:Century Gothic;\">TEXTILE MANAGEMENT SYSTEM</h2>\n      </div>\n      <div class=\"col-sm-4\">\n\n        <img  src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD\" [routerLink] = \"['/user/login']\" style=\"margin-left:200px\" alt=\"User Avatar\" height=\"40px\" width=\"40px\">Logout\n      </div>\n\n\n\n    </div>\n  </header>\n\n  <div class=\"content mt-3\">\n\n    <div class=\"col-sm-12\">\n\n      <div class=\"jumbotron\">\n        <div class=\"row\" style=\"margin-bottom:10px\">\n\n\n          <div class=\"col-md-6\" align=\"right\">\n            <h3 align=\"left\">\n              $ <!-- {{catalog.desc}}-->\n            </h3>\n          </div>\n\n\n\n        </div>\n        <div class=\"jumbotron\">\n\n\n\n          <div class=\"row\" >\n            <div class=\"col-md-12\" style=\"margin-bottom:20px;margin-left:170px;color:#2C333B;font-family:Century Gothic;font-size: 25px; font-weight:bold\">\n              Enter Shipping Details :\n            </div>\n          </div>\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Name :\n          </div>\n          <div class=\"row\" style=\" margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            <div>\n              <input name=\"name\" [(ngModel)]=\"name\" type=\"text\" id=\"name\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Shipping Address Line 1:\n          </div>\n          <div class=\"row\" style=\"margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px; \">\n            <div>\n              <input name=\"address1\" [(ngModel)]=\"address1\" type=\"text\" id=\"address1\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\" style=\"margin-left:150px;color:#2C333B;font-family:Century Gothic;font-size: 14px\">\n            Shipping Address Line 2:\n          </div>\n          <div class=\"row\" style=\"margin-left:200px;color:#2C333B;font-family:Century Gothic;font-size: 14px; \">\n            <div>\n              <input name=\"address2\" [(ngModel)]=\"address2\" type=\"text\" id=\"address2\" style=\"width:200%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;\" value=\"\" maxlength=\"100\" />\n            </div>\n          </div>\n\n          <div class=\"row\"></div>\n          <div class=\"row\">\n            <div class=\"col\">\n              <a class=\"btn .btn-primary\" (click)=\"checkout()\"  style=\"margin-left:200px;background-color: #BAD26E;font-size: 20px\">Place Order</a>\n            </div>\n            <div class=\"col\">\n              <a class=\"btn .btn-primary\" [routerLink] =\"['../']\" style=\"margin-left:25px;background-color: #ff6666;font-size: 20px\">Back to cart</a>\n            </div>\n\n          </div>\n\n        </div>\n      </div>\n\n\n    </div>\n\n\n\n    <!--/.col-->\n\n\n    <!--/.col-->\n\n\n    <!--/.col-->\n\n\n\n  </div> <!-- .content -->\n</div><!-- /#right-panel -->\n\n<!-- Right Panel -->\n\n<script src=\"assets/js/vendor/jquery-2.1.4.min.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js\"></script>\n<script src=\"assets/js/plugins.js\"></script>\n<script src=\"assets/js/main.js\"></script>\n\n\n\n\n\n<script>\n  ( function ( $ ) {\n    \"use strict\";\n\n    jQuery( '#vmap' ).vectorMap( {\n      map: 'world_en',\n      backgroundColor: null,\n      color: '#ffffff',\n      hoverOpacity: 0.7,\n      selectedColor: '#1de9b6',\n      enableZoom: true,\n      showTooltip: true,\n      values: sample_data,\n      scaleColors: [ '#1de9b6', '#03a9f5' ],\n      normalizeFunction: 'polynomial'\n    } );\n  } )( jQuery );\n</script>\n\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -4865,7 +4875,7 @@ var AgentvalidationService = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(19);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreatCatalogServiceService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
