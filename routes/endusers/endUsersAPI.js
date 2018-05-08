@@ -136,7 +136,20 @@ router.post('/get_order_history',function (req,res,next) {
     });
 });
 
-
+router.post('/get_user-profile',function (req,res,next) {
+    const username = req.body.username;
+    User.getUserByUserName(username,function (err,user) {
+        if (err) throw err;
+        else{
+            res.json(
+                {
+                    success: true,
+                    User: user
+                }
+            )
+        }
+    });
+});
 
 
 

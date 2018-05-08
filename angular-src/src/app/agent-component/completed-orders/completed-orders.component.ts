@@ -36,11 +36,11 @@ currentStatus:String;
 
 
     console.log('init')
-    if(this.userDataService.username != null){
+    if(this.userDataService.agentName != null){
     const username = {
-      username : this.userDataService.username
+      username : this.userDataService.agentName
     };
-    console.log(this.userDataService.username)
+    console.log(this.userDataService.agentName)
 
     this.getProcessedOrders(username).subscribe(data=>{
       if (data.success){

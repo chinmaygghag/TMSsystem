@@ -39,17 +39,18 @@ currentStatus:String;
 
     }*/
     console.log('init')
-    if(this.userDataService.username != null){
+    if(this.userDataService.agentName != null){
     const username = {
-      username : this.userDataService.username
+      username : this.userDataService.agentName
 
     };
-    console.log(this.userDataService.username)
+    console.log(this.userDataService.agentName)
 
     this.getAgentReceivedOrders(username).subscribe(data=>{
       if (data.success){
         const cost = 0;
         console.log(data.success)
+        console.log(data.orders)
         data.orders.forEach(
 
           i=>{
@@ -66,8 +67,8 @@ currentStatus:String;
             console.log(i._id);
             console.log(typeof i.totalCost);
             console.log(typeof this.totalCost);
-            if(i.statusForAgent=='received'){
-              this.currentStatus='received'
+            if(i.statusForAgent=='Approved'){
+              this.currentStatus='Approved'
               this.nextStatus='supplier'
             }
             if(i.statusForAgent=='supplier'){
@@ -99,6 +100,7 @@ currentStatus:String;
   }
 
   getAgentReceivedOrders(username){
+    console.log("functions")
     let headers = new Headers();
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3001/agents/get_agent_orders',username,{headers:headers})
@@ -109,7 +111,7 @@ update(order,stat,pos){
   console.log(order.currentStatus)
   console.log(order.nextStatus)
 
-  if(order.currentStatus=='received' && order.nextStatus=='supplier'){
+  if(order.currentStatus=='Approved' && order.nextStatus=='supplier'){
     order.currentStatus=order.nextStatus
     order.nextStatus='Dye';
     this.changeBackend(order.id,order.currentStatus,pos)
