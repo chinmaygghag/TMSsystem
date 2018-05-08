@@ -67,6 +67,7 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
 
   assignAgent(orderId,agentName){
     const index: number = this.orders.indexOf(orderId);
+    console.log(index);
     const orderParam = {
       id: orderId,
       agentName: agentName

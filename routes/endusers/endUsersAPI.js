@@ -70,6 +70,8 @@ router.post('/authenticate', function (req, res, next) {
 router.post('/place_order',function (req,res) {
     console.log(req.body.orders);
     const orders = req.body.orders;
+    const address = req.body.address;
+    const username = req.body.username;
     for (var i = 0; i < orders.length; i++) {
         const cartId = orders[i].cartId;
         let order = new Order(
@@ -79,8 +81,8 @@ router.post('/place_order',function (req,res) {
                 clothName: orders[i].clothName,
                 length: orders[i].length,
                 catalogImage: orders[i].catalogImage,
-                address: orders[i].address,
-                username: orders[i].username,
+                address: address,
+                username: username,
                 statusForCustomer: "placed",
                 statusForMerchant: "received",
                 statusForAgent: "Nothing"

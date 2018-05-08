@@ -28,7 +28,27 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
       if (this.saveUserData.username != null){
-
+        const username = {
+          "username" : this.saveUserData.username
+        }
+        this.cartService.getCartElement(username).subscribe(data=>{
+          if (data.success){
+            console.log(data);
+            data.cartItems.forEach(
+              i=>{
+                const order = {
+                  "cartId": i._id,
+                  "catalog": i.catalogName,
+                  "catalogImage" : i.catalogImage,
+                  "cost" : i.totalCost,
+                  "length": i.lengthEntered,
+                  "clothName": i.clothName,
+                };
+                this.cartItems.push(order);
+              }
+            );
+          }
+        });
 
       } else {
         this.router.navigate(['/user/login']);
@@ -37,35 +57,11 @@ export class CheckoutComponent implements OnInit {
 
   checkout(){
     const address = this.address1 + " " + this.address2;
-
-    const username = {
-      username : this.saveUserData.username
-    };
-    this.cartService.getCartElement(username).subscribe(data=>{
-      if (data.success){
-        data.cartItems.forEach(
-
-          i=>{
-            const order = {
-              "cartId": i._id,
-              "catalog": i.catalogName,
-              "username" : this.saveUserData.username,
-              "address" : address,
-              "catalogImage" : i.catalogImage,
-              "cost" : i.totalCost,
-              "length": i.lengthEntered,
-              "clothName": i.clothName,
-            };
-            this.cartItems.push(order);
-          }
-        );
-      }
-    });
     const placeOrder = {
       "username" : this.saveUserData.username,
+      "address" : address,
       "orders" : this.cartItems
     };
-    console.log("After Order is created"+placeOrder);
     this.placeOrder.placeOrders(placeOrder).subscribe(data=>{
       if(data.success){
         console.log("Placed Order");
@@ -74,8 +70,6 @@ export class CheckoutComponent implements OnInit {
       }
     });
   }
-
-
 }
 class CartItem {
   constructor(public cartId: String,
