@@ -102,10 +102,10 @@
 
 
     <div class="header-menu"  style="height:30px">
-      <div class="col-sm-8">
+      <div class="col-sm-7">
         <h2 style="color:#2C333B;font-family:Century Gothic;">TEXTILE MANAGEMENT SYSTEM</h2>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
 
         <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS92cEAi9vXbp211QnBMZiljGa1e19VL-tFCHJvubUSGK1T1FUD" [routerLink] = "['/user/login']" style="margin-left:200px" alt="User Avatar" height="40px" width="40px">Logout
       </div>
@@ -131,7 +131,7 @@
         <div class="row" *ngFor="let item of pastOrder">
             <div class="col-sm-3">
                 <!--<img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">-->
-              {{item.catalogImage}}
+              <img src="{{item.catalogImage}}">
               </div>
               <div class="col-sm-2">
                   <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.catalog}} </p>
@@ -145,9 +145,9 @@
                     <div class="col-sm-1" >
                         <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">{{item.cost}}</p>  <!--dynamically needs to be populated-->
                       </div>
-                      <div class="col-sm-2">
-                          <a class="btn .btn-primary" style="margin-top:40px;height:50px;width:100%;background-color: #FFBF00;font-size: 16px">Reorder</a>
-                        </div>
+                      <!--<div class="col-sm-2">-->
+                          <!--<a class="btn .btn-primary" style="margin-top:40px;height:50px;width:100%;background-color: #FFBF00;font-size: 16px">Reorder</a>-->
+                        <!--</div>-->
 
           </div>
       </div>

@@ -26,6 +26,15 @@ export class GetOrdersService {
       .map(res=>res.json());
   }
 
+  getOrdersForAgentWaiting(getOrderparam){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3001/agents/orderforagentsWaiting',getOrderparam/*,{headers:headers}*/)
+      .map(res=>res.json());
+  }
+
+
+
 
   acceptDeclineOrder(item){
     let headers = new Headers();
