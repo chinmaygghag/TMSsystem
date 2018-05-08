@@ -29,8 +29,10 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
             const imageUrl = "../"+i.catalogImage;
             console.log(imageUrl);
             console.log(i._id);
+            console.log(i);
             if(i._id != undefined)
             this.orders.push(new Orders(
+
                 i._id,
                 imageUrl,
                 i.catalog,
