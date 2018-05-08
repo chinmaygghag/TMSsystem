@@ -19,6 +19,7 @@ export class OrderComponent implements OnInit {
   totalCost: number = 0;
 description:string;
 length:string;
+image:string
 
 x:string;
 status:string;
@@ -48,12 +49,13 @@ id:string;
             this.status=i.statusForCustomer;
             this.clothName=i.clothName;
             this.length=i.length;
+            this.image =  "../" + i.catalogImage;
 
 
-            console.log(i._id);
-            console.log(typeof i.totalCost);
-            console.log(typeof this.totalCost);
-            this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length));
+            console.log(i);
+            // console.log(typeof i.totalCost);
+            // console.log(typeof this.totalCost);
+            this.orderItems.push(new OrderItem(i.catalog,i.clothName,i.statusForCustomer,i.cost,i._id,i.length,this.image));
           }
         );
         }else{
@@ -181,7 +183,8 @@ class OrderItem {
   constructor(public catalog: String,
               public clothName: String,
               public statusForCustomer: String,
-              public cost: String,  public id:String,public length:String) {
+              public cost: String,  public id:String,public length:String,
+              public image: String) {
   }
 
 

@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class ApproveCatalogComponent implements OnInit {
 
   catalogList = [];
+  cost : any [];
 
   title : String;
   changeStatus: String;
@@ -37,12 +38,12 @@ export class ApproveCatalogComponent implements OnInit {
   }
 
 
-  approveCatalog(catalog,index,costPerUnitL){
+  approveCatalog(catalog,index){
 
     const catalogObj = {
       title: catalog.title,
-      unitLengthCost: costPerUnitL
-    }
+      unitLengthCost: this.cost[index]
+    };
 
     this.merchantService.approveWaitinglistCatalog(catalogObj).subscribe(
       data =>{

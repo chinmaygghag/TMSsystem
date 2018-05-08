@@ -36,6 +36,7 @@ export class CreateCatalogComponent implements OnInit {
       unitLengthCost: this.unitLengthCost,
       desc: this.desc,
       title: this.title,
+      status: "approved"
     };
     console.log("This is in TS "+create);
     this.createcatalog.uploadimage(create).subscribe(data=>{

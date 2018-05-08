@@ -125,7 +125,7 @@
        <!--for each product, this row will iterate-->
        <div class="row"  *ngFor="let order of orderItems; let i=index">
           <div class="col-sm-3">
-            <img src="https://static.contrado.com/resources/images/2017-2/55807/sensation-silk-fabric-online-110251.jpg" height="170px" width="170px">
+            <img src="{{order.image}}" height="170px" width="170px">
           </div>
           <div class="col-sm-2">
               <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Product description</p>
@@ -138,7 +138,7 @@
               </div>
 
             <div class="col-sm-2" >
-                <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Quantity</p>
+                <p style="margin-top:40px;height:50px;width:100%;font-size: 20px">Length</p>
                 {{order.length}}
   <!--dynamically needs to be populated-->
               </div>

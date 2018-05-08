@@ -131,7 +131,7 @@
             Design requested from customer :
           </h2>
         </label>
-        <div class="row" *ngFor="let catalog of catalogList" style="margin-top: 30px">
+        <div class="row" *ngFor="let catalog of catalogList;let i=index;" style="margin-top: 30px">
           <div class="col-md-2"  style="width: 50%; overflow: hidden;">
             <img class="card-img-top" src="{{catalog.imagesUrl}}"  height="200"
                  width="200"  >
@@ -160,18 +160,18 @@
               <h5 style="color: deepskyblue">Enter Cost : </h5>
             </div>
             <div>
-              <input name="unitLengthCost" [(ngModel)]="unitLengthCost" type="text" id="unitLengthCost" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="20" />
+              <input name="unitLengthCost__{{i}}" [(ngModel)]="cost[i]" type="text" id="unitLengthCost" style="width:90%; margin-bottom: 10px; border: 1px solid #636466; border-radius: 5px 5px 5px 5px;" value="" maxlength="20" />
             </div>
             <div class="row">
             </div>
 
           </div>
           <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
-            <a class="btn btn-primary" >Accept</a>
+            <a class="btn btn-primary" (click)="approveCatalog(catalog,i)">Accept</a>
 
           </div>
           <div class="col-md-2"  style="width: 50%; overflow-wrap: break-word; overflow-scrolling: auto; margin-top: 40px; " align="center">
-            <a class="btn btn-primary" >Decline</a>
+            <a class="btn btn-primary" (click)="declineCatalog(catalog,i)">Decline</a>
 
           </div>
         </div>
