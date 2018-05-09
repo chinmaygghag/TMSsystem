@@ -178,7 +178,7 @@ changeBackend(ordernumber,newstatus,pos){
 f(orderchange){
   let headers = new Headers();
   headers.append('Content-Type','application/json');
-  return this.http.post('http://localhost:3001/agents/updateStatus',orderchange,{headers:headers})
+  return this.http.post('https://textilemanagementsystem.herokuapp.com/agents/updateStatus',orderchange,{headers:headers})
     .map(res=>res.json());
 }
 

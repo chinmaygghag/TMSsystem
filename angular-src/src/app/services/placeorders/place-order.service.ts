@@ -48,7 +48,7 @@ export class PlaceOrderService {
   getPastOrders(username){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3001/endUsers/get_order_history',username,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/endUsers/get_order_history',username,{headers:headers})
       .map(res=>res.json());
   }
 
