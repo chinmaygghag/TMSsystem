@@ -32,7 +32,7 @@ export class ApproveCatalogComponent implements OnInit {
           data.catalogs.forEach(
             i => {
               console.log(i);
-              const imageUrl = "https://textilemanagementsystem.herokuapp.com/assets/" + i.imageURL;
+              const imageUrl = i.imageURL;
               this.catalogList.push(new Catalog(i._id, imageUrl, i.title, i.desc));
             });
           console.log(this.catalogList);
