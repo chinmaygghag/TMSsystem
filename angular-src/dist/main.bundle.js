@@ -1838,7 +1838,7 @@ var CreateCatalogComponent = /** @class */ (function () {
             var formData = new FormData();
             formData.append('file', file, file.name);
             var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Headers */]();
-            this.http.post('https://textilemanagementsystem.herokuapp.com//create/upload', formData, { headers: headers })
+            this.http.post('https://textilemanagementsystem.herokuapp.com/create/upload', formData, { headers: headers })
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 var Response = data.success;
@@ -3638,7 +3638,7 @@ var CartServiceService = /** @class */ (function () {
     CartServiceService.prototype.addToCart = function (cart) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('https://textilemanagementsystem.herokuapp.com//cart/addToCart', cart, { headers: headers })
+        return this.http.post('https://textilemanagementsystem.herokuapp.com/cart/addToCart', cart, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CartServiceService.prototype.getCartElement = function (username) {

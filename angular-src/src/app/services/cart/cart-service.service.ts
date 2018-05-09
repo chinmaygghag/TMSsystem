@@ -9,7 +9,7 @@ export class CartServiceService {
   addToCart(cart){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post('https://textilemanagementsystem.herokuapp.com//cart/addToCart',cart,{headers:headers})
+    return this.http.post('https://textilemanagementsystem.herokuapp.com/cart/addToCart',cart,{headers:headers})
       .map(res=>res.json());
 
   }
