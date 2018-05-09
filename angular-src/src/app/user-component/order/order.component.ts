@@ -49,7 +49,7 @@ id:string;
             this.status=i.statusForCustomer;
             this.clothName=i.clothName;
             this.length=i.length;
-            this.image =  "../" + i.catalogImage;
+            this.image =  i.catalogImage;
 
 
             console.log(i);

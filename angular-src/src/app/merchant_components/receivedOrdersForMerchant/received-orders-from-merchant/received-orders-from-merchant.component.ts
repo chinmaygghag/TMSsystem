@@ -34,7 +34,7 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
           if (data.success) {
 
             data.orders.forEach(i => {
-              const imageUrl = "../" + i.catalogImage;
+              const imageUrl = i.catalogImage;
               console.log(imageUrl);
               console.log(i._id);
               console.log(i);

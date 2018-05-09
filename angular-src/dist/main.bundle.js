@@ -762,7 +762,7 @@ var ReceivedOrdersComponent = /** @class */ (function () {
             this.getAllOrders.getOrdersForAgentWaiting(orderParam).subscribe(function (data) {
                 data.order.forEach(function (i) {
                     console.log(i);
-                    var imageUrl = "../" + i.catalogImage;
+                    var imageUrl = i.catalogImage;
                     if (i._id != undefined)
                         _this.orders.push(new Orders(i._id, imageUrl, i.clothName, i.cost, i.length));
                 });
@@ -2133,7 +2133,7 @@ var ReceivedOrdersFromMerchantComponent = /** @class */ (function () {
             this.getAllOrders.getOrdersForMerchant().subscribe(function (data) {
                 if (data.success) {
                     data.orders.forEach(function (i) {
-                        var imageUrl = "../" + i.catalogImage;
+                        var imageUrl = i.catalogImage;
                         console.log(imageUrl);
                         console.log(i._id);
                         console.log(i);
@@ -2650,7 +2650,7 @@ var OrderComponent = /** @class */ (function () {
                             _this.status = i.statusForCustomer;
                             _this.clothName = i.clothName;
                             _this.length = i.length;
-                            _this.image = "../" + i.catalogImage;
+                            _this.image = i.catalogImage;
                             console.log(i);
                             // console.log(typeof i.totalCost);
                             // console.log(typeof this.totalCost);
@@ -2939,7 +2939,7 @@ var CartComponent = /** @class */ (function () {
                 if (data.success) {
                     var cost = 0;
                     data.cartItems.forEach(function (i) {
-                        var image = "../" + i.catalogImage;
+                        var image = i.catalogImage;
                         _this.totalCost += parseInt(i.totalCost);
                         console.log(i._id);
                         console.log(typeof i.totalCost);

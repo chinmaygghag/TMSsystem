@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
         data.cartItems.forEach(
 
           i=>{
-            const image =  "../" + i.catalogImage;
+            const image =  i.catalogImage;
             this.totalCost += parseInt(i.totalCost) ;
             console.log(i._id);
             console.log(typeof i.totalCost);

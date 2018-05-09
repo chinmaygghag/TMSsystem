@@ -32,7 +32,7 @@ export class ReceivedOrdersComponent implements OnInit {
       this.getAllOrders.getOrdersForAgentWaiting(orderParam).subscribe(data => {
         data.order.forEach(i => {
           console.log(i);
-          const imageUrl = "../" + i.catalogImage;
+          const imageUrl = i.catalogImage;
           if (i._id != undefined)
             this.orders.push(new Orders(i._id,imageUrl, i.clothName, i.cost, i.length)
             );
