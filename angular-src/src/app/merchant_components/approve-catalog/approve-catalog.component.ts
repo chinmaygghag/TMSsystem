@@ -71,7 +71,7 @@ export class ApproveCatalogComponent implements OnInit {
       data =>{
         if(data.success){
           this._flashMessagesService.show('Catalog Declined', { cssClass: 'alert-success', timeout: 1000 });
-          this.cost[index]=0
+          this.cost[index]=0;
           this.catalogList.splice(index,1)
         }
       }
