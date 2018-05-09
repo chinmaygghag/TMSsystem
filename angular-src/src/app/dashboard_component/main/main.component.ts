@@ -56,7 +56,7 @@ export class MainComponent implements OnInit {
       if(data.success){
         data.catalogs.forEach(
           i=>{
-            const imageUrl = "../../../assets/"+i.imageURL;
+            const imageUrl = "https://textilemanagementsystem.herokuapp.com/assets/"+i.imageURL;
             this.imagesUrl.push(imageUrl)
             this.catalogList.push(new Catalog(imageUrl,i.title,i.desc,i.unitLengthCost));
           });
