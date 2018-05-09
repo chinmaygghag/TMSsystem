@@ -69,7 +69,7 @@ export class ReceivedOrdersComponent implements OnInit {
     };
     this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
       if (data.success){
-        this.orders.splice(index,1)
+        this.orders.splice(index,1);
         this._flashMessagesService.show('Order Declined', { cssClass: 'alert-success', timeout: 1000 });
       } else{
 

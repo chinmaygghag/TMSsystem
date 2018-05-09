@@ -55,7 +55,7 @@ export class ApproveCatalogComponent implements OnInit {
     this.merchantService.approveWaitinglistCatalog(catalogObj).subscribe(
       data =>{
         if(data.success){
-          this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this._flashMessagesService.show('Catalog Approved', { cssClass: 'alert-success', timeout: 1000 });
           this.cost[index]=0
           this.catalogList.splice(index,1)
         }
@@ -66,11 +66,11 @@ export class ApproveCatalogComponent implements OnInit {
   declineCatalog(catalog,index){
     const catalogObj = {
       id: catalog.id
-    }
+    };
     this.merchantService.declineWaitinglistCatalog(catalogObj).subscribe(
       data =>{
         if(data.success){
-          this._flashMessagesService.show('Agent Declined!', { cssClass: 'alert-success', timeout: 1000 });
+          this._flashMessagesService.show('Catalog Declined', { cssClass: 'alert-success', timeout: 1000 });
           this.cost[index]=0
           this.catalogList.splice(index,1)
         }

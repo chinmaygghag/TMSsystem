@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
 })
 export class AgentapprovalComponent implements OnInit {
 
-  approvals: Array<AgentApprovalModel>;
   agentsList = [];
 
   username : String;
@@ -32,7 +31,7 @@ export class AgentapprovalComponent implements OnInit {
           data.agents.forEach(i=>{
             if(i.name != undefined)
               // console.log(i.name);
-              this.agentsList.push(i.name, i.agency_name, i.registration_number);
+              this.agentsList.push(new AgentApprovalModel(i.name, i.agency_name, i.registration_number));
           });
         }
       });
@@ -78,14 +77,11 @@ export class AgentapprovalComponent implements OnInit {
 
 class AgentApprovalModel{
   constructor(public agency_name: String,
-              public email : String,
               public name : String ,
-              public address : String,
               public registration_number : String,
-              public username : String,
-              public password : String,
-              public activeStatus : String) {
+              ) {
 
 
   }
 }
+

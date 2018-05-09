@@ -138,24 +138,65 @@
 
     <div class="container" >
       <h4>Awaiting Approvals</h4>
-      <div class="container" *ngFor="let agents of agentsList">
-        <ul class="list-group">
-          <li class="list-group-item">{{agents}} <span style="float: right;" ><button (click)="acceptAgent(agents)">Accept</button><button (click)="deleteItem(agents)">Decline</button>  </span></li>
-          <p></p>
-        </ul>
-      </div>
-    </div>
+
+      <div class="content mt-3">
+
+
+        <div class="col-sm-12">
 
 
 
-    <!--/.col-->
+          <table class="table">
 
+            <thead class="thead-dark">
 
-    <!--/.col-->
+            <tr>
 
+              <th scope="col">#</th>
 
-    <!--/.col-->
+              <th scope="col">Agent Name</th>
 
+              <th scope="col">Agency Name</th>
+
+              <th scope="col">Registration Number</th>
+
+              <th scope="col">Approval</th>
+
+              <th scope="col">Decline</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody *ngFor="let agent of agents;let i = index;">
+
+            <tr>
+
+              <th scope="row">1</th>
+
+              <td><img src="{{agent.name}}" alt="Card image cap" width="200" height="200" ></td>
+
+              <td>{{agent.agency_name}}</td>
+
+              <td>{{agent.registration_number}}</td>
+
+              <td>{{order.totalCost}}</td>
+
+              <td>{{order.username}}</td>
+
+              <td>{{order.address}}</td>
+
+              <td><button class="btn btn-primary" (click)="acceptAgent(agents)">Approve</button></td>
+
+              <td><button class="btn btn-primary" (click)="deleteItem(agents)">Decline</button></td>
+
+            </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
 
 
   </div> <!-- .content -->
