@@ -51,7 +51,7 @@ export class CreateCatalogComponent implements OnInit {
         this._flashMessagesService.show('Catalog Added Successfully', { cssClass: 'alert-success', timeout: 1000 });
       }
     })
-}
+  }
 
   fileChangeEvent(event) {
     const fileList: FileList = event.target.files;
