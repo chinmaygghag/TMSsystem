@@ -2,16 +2,25 @@ const express = require('express');
 const router = express.Router();
 const catalogAPI = require('../../models/catalog');
 const multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null,'./angular-src/src/assets/')
-    },
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require('multer-storage-cloudinary');
+
+cloudinary.config({
+   cloud_name:'dmq3setlj',
+   api_key:'358212839961235',
+    api_secret: 'A63YvZrdG9C-h588nG3RrDRfWRg'
+});
+
+
+const storage = cloudinaryStorage({
+    cloudinary: cloudinary,
+    folder: 'uploads',
     filename: function (req, file, cb) {
         cb(null, file.originalname)
     }
 });
 const upload = multer({
-    storage:storage
+    storage: storage
 });
 
 router.post('/upload',upload.single('file'),function (req,res) {

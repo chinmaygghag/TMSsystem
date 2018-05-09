@@ -3458,7 +3458,7 @@ var ViewCatalogComponent = /** @class */ (function () {
             console.log(data.success);
             if (data.success) {
                 data.catalogs.forEach(function (i) {
-                    var imageUrl = "https://textilemanagementsystem.herokuapp.com/assets/" + i.imageURL;
+                    var imageUrl = i.imageURL;
                     _this.catalogList.push(new Catalog(imageUrl, i.title, i.desc, i.unitLengthCost));
                 });
                 console.log(_this.catalogList);
