@@ -28,7 +28,7 @@ router.post('/upload',upload.single('file'),function (req,res) {
     if (req.file == null){
         res.json({success: false})
     } else{
-        res.json({success:true, filename: req.file.originalname});
+        res.json({success:true, filename: req.file.url});
     }
 });
 

@@ -67,7 +67,7 @@ export class CreateCatalogComponent implements OnInit {
             const Response = data.success;
             if (Response) {
               // this.uploadFile.push(data);
-              console.log(data)
+              console.log(data);
               this.filename = data.filename;
             } else {
               // this.showFileError = data['_error'];
