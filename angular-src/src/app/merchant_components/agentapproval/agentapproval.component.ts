@@ -76,8 +76,8 @@ export class AgentapprovalComponent implements OnInit {
 }
 
 class AgentApprovalModel{
-  constructor(public agency_name: String,
-              public name : String ,
+  constructor(public name: String,
+              public agency_name : String ,
               public registration_number : String,
               ) {
 

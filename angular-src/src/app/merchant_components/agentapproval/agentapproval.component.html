@@ -174,17 +174,14 @@
 
               <th scope="row">1</th>
 
-              <td><img src="{{agent.name}}" alt="Card image cap" width="200" height="200" ></td>
+
+              <td>{{agent.name}}</td>
 
               <td>{{agent.agency_name}}</td>
 
               <td>{{agent.registration_number}}</td>
 
-              <td>{{order.totalCost}}</td>
-
-              <td>{{order.username}}</td>
-
-              <td>{{order.address}}</td>
+              <td>{{agent.totalCost}}</td>
 
               <td><button class="btn btn-primary" (click)="acceptAgent(agents)">Approve</button></td>
 
