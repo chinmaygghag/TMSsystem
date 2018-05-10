@@ -43,9 +43,8 @@ export class AgentapprovalComponent implements OnInit {
 
 
 
-  deleteItem(item){
+  deleteItem(item,index){
      {
-       const index: number = this.agentsList.indexOf(item);
        const agent = {username: item,
                       changeStatus: "3"};
        this.merchantService.changeAgentApprovalStatus(agent).subscribe(
@@ -59,8 +58,7 @@ export class AgentapprovalComponent implements OnInit {
     }
   }
 
-  acceptAgent(item){
-    const index: number = this.agentsList.indexOf(item);
+  acceptAgent(item,index){
     const agent = {username: item,
                    changeStatus: "2"};
     console.log(agent,index);

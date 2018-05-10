@@ -181,9 +181,9 @@
 
               <td>{{agent.registration_number}}</td>
 
-              <td><button class="btn btn-primary" (click)="acceptAgent(agent.name)">Approve</button></td>
+              <td><button class="btn btn-primary" (click)="acceptAgent(agent.name,i)">Approve</button></td>
 
-              <td><button class="btn btn-primary" (click)="deleteItem(agent.name)">Decline</button></td>
+              <td><button class="btn btn-primary" (click)="deleteItem(agent.name,i)">Decline</button></td>
 
             </tr>
 
