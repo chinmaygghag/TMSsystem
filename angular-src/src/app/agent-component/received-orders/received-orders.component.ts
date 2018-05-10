@@ -44,8 +44,7 @@ export class ReceivedOrdersComponent implements OnInit {
   }
 
 
-  acceptOrder(item){
-    const index: number = this.orders.indexOf(item);
+  acceptOrder(item,index){
     const itemToBeAccepted = {
       orderId : item.id,
       status: "Accept"
@@ -53,7 +52,7 @@ export class ReceivedOrdersComponent implements OnInit {
     console.log(itemToBeAccepted);
     this.getAllOrders.acceptDeclineOrder(itemToBeAccepted).subscribe(data => {
       if (data.success){
-        this.orders.splice(index,1)
+        this.orders.splice(index,1);
         this._flashMessagesService.show('Order Approved', { cssClass: 'alert-success', timeout: 1000 });
       }else{
 
@@ -61,8 +60,7 @@ export class ReceivedOrdersComponent implements OnInit {
     })
   }
 
-  declineOrder(item){
-    const index: number = this.orders.indexOf(item);
+  declineOrder(item,index){
     const itemToBeAccepted = {
       orderId : item.id,
       status: "Decline"

@@ -72,12 +72,8 @@ export class ReceivedOrdersFromMerchantComponent implements OnInit {
   changeAgent(val:any,i){
     this.agentSelection[i] = val;
   }
-
-
-  assignAgent(orderId,agentName){
+  assignAgent(orderId,agentName,index){
     if(agentName != "Select an Agent"){
-    const index: number = this.orders.indexOf(orderId);
-    console.log(index);
     const orderParam = {
       id: orderId,
       agentName: agentName
