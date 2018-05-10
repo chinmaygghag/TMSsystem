@@ -63,7 +63,7 @@ export class AgentapprovalComponent implements OnInit {
     const index: number = this.agentsList.indexOf(item);
     const agent = {username: item,
                    changeStatus: "2"};
-    console.log(agent);
+    console.log(agent,index);
     this.merchantService.changeAgentApprovalStatus(agent).subscribe(
       data =>{
         if(data.success){
